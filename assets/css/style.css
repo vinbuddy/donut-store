@@ -1,0 +1,20 @@
+
+.container {
+    height: 100%;
+    padding: 0 40px;
+}
+
+.primary-btn {
+    color: #fff;
+    padding: 10px 16px;
+    background-color: var(--primary-color);
+    border-radius: 11px;
+    cursor: pointer;
+    transition: all ease-in 0.2s;
+    
+}
+
+.primary-btn:hover {
+    color: #fff;
+    opacity: 0.9;
+}
