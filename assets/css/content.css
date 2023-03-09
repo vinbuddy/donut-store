@@ -93,7 +93,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-image: url('../img/donut-banner-1.png');
+    background-image: url('../img/donut-banner-1.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -116,7 +116,7 @@
 
 .primary-btn.offer-btn {
     background-color: var(--secondary-color);
-    color: #817f7f;
+    color: #000;
     min-width: 120px;
     border-radius: 30px;
 }
