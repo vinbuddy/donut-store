@@ -1,6 +1,5 @@
 #banner {
-    /* position: absolute;
-    top: 0; */
+    margin-top: var(--header-height);
     z-index: 1;
     background-image: url('../img/donut-banner.jpg');
     background-repeat: no-repeat;
@@ -12,8 +11,8 @@
 
 .banner_inner {
     width: 50%;
-    position: absolute;
-    top: calc( var(--header-height) + 50px);
+    margin-top: calc(var(--header-height) + 30px);
+
 }
 
 .banner_caption {
@@ -22,6 +21,7 @@
     line-height: 1.2;
     letter-spacing: 0.5px;
 }
+
 
 .banner_main-caption {
     color: var(--primary-color);

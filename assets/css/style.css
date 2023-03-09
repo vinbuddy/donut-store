@@ -6,6 +6,7 @@
 
 .primary-btn {
     color: #fff;
+    text-align: center;
     padding: 10px 16px;
     background-color: var(--primary-color);
     border-radius: 11px;
@@ -18,3 +19,4 @@
     color: #fff;
     opacity: 0.9;
 }
+

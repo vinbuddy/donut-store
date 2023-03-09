@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="./assets/css/header.css">
     <link rel="stylesheet" href="./assets/css/banner.css">
     <link rel="stylesheet" href="./assets/css/content.css">
-    <link rel="stylesheet" href="./assets/css/cardProduct.css">
+    <link rel="stylesheet" href="./assets/css/card.css">
 
     <!-- box icon -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -20,7 +20,7 @@
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&family=Sigmar+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&family=Sigmar+One&family=Teko:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
      <!-- Bootstrap CSS -->
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -98,7 +98,7 @@
                                 <div class="col-lg-4">
                                     <div class="card_product">
                                         <a href="">
-                                            <img class="card_img" src="./assets/img/chocolate-covered-strawberry.png" alt="">
+                                            <img class="card_img" src="./assets/img/donuts/chocolate-covered-strawberry.png" alt="">
                                             <div class="card_info">
                                                 <h3 class="card_name">Chocolate Covered Strawberry</h3>
                                                 <div class="card_rating">
@@ -118,7 +118,7 @@
                                 <div class="col-lg-4">
                                     <div class="card_product">
                                         <a href="">
-                                            <img  class="card_img" src="./assets/img/Confetti-Cupcake-Frappe.png" alt="">
+                                            <img  class="card_img" src="./assets/img/drink/Confetti-Cupcake-Frappe.png" alt="">
                                             <div class="card_info">
                                                 <h3 class="card_name">Bavarian Choco </h3>
                                                 <div class="card_rating">
@@ -144,9 +144,46 @@
         </div>
        
         <div id="content">
-            <div class="container">
-                <!-- Category -->
+            <div>
+                <!-- Service -->
                 <section class="content_section">
+                    <div class="content_banner">
+                        <div class="content_info">
+                            <h2>Why Choose Vermon Store?</h2>
+                            <ul class="service">
+                                <li class="service_item">
+                                    <img class="service_img" src="./assets/img/icons/shipped.png" alt="">
+                                    <div class="service_info">
+                                        <h5>Delivery</h5>
+                                        <p>If you're a last-minute gifter, we've got you covered with next-day delivery.</p>
+                                    </div>
+                                </li>
+                                <li class="service_item">
+                                    <img class="service_img" src="./assets/img/icons/box.png" alt="">
+                                    <div class="service_info">
+                                        <h5>Carefully Packaged</h5>
+                                        <p>We make your doughnuts fresh every day and package them in our Doughnut Time postal boxes.</p>
+                                    </div>
+                                </li>
+                                <li class="service_item">
+                                    <img class="service_img" src="./assets/img/icons/baking.png" alt="">
+                                    <div class="service_info">
+                                        <h5>Made By Hand</h5>
+                                        <p>Try our one-of-a-kind doughnuts, hand made with the freshest and finest ingredients.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                            <!-- <div>
+                                <button class="primary-btn">Order Now</button>
+                            </div> -->
+                        </div>
+                        <img class="content_img" src="./assets/img/donut-girl-background.jpg" />
+                        
+                    </div>
+                </section>
+
+                <!-- Category -->
+                <section class="content_section container">
                     <h2 class="content_title">Category</h2>
                     <div class="content_product">
                         <div class="row">
@@ -204,7 +241,223 @@
                     </div>
                 </section>
 
+               <!-- Best seller -->
+               <section class="content_section container">
+                <h2 class="content_title">Best selling</h2>
+                <div class="content_product content_card">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <div class="card_product">
+                                <a href="">
+                                    <img class="card_img" src="./assets/img/donuts/chocolate-covered-strawberry.png" alt="">
+                                    <div class="card_info">
+                                        <h3 class="card_name">Chocolate Covered Strawberry</h3>
+                                        <div class="card_rating">
+                                            <i class='card_star-solid bx bxs-star'></i>
+                                            <i class='card_star-solid bx bxs-star'></i>
+                                            <i class='card_star-solid bx bxs-star'></i>
+                                            <i class='card_star-solid bx bxs-star'></i>
+                                            <i class='card_star-solid bx bxs-star'></i>
+                                        </div>
+                                        <p class="card_price">$2.49</p>
+                                        
+                                    </div>
+                                </a>
+                                <button class="primary-btn card_btn">Add to cart</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="card_product">
+                                <a href="">
+                                    <img  class="card_img" src="./assets/img/donuts/cinnamon-bun.png" alt="">
+                                    <div class="card_info">
+                                        <h3 class="card_name">Cinamon bun</h3>
+                                        <div class="card_rating">
+                                            <!-- 4 -->
+                                            <i class='card_star-solid bx bxs-star'></i>
+                                            <i class='card_star-solid bx bxs-star'></i>
+                                            <i class='card_star-solid bx bxs-star'></i>
+                                            <i class='card_star-solid bx bxs-star'></i>
+                                            <i class='card_star-solid bx bxs-star'></i>
+                                        </div>
+                                        <p class="card_price">$1.99</p>
+                                        
+                                    </div>
+                                </a>             
+                                <button class="primary-btn card_btn">Add to cart</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="card_product">
+                                <a href="">
+                                    <img class="card_img" src="./assets/img/donuts/beach-ball-carnival-sprinkles.png" alt="">
+                                    <div class="card_info">
+                                        <h3 class="card_name">Beach ball</h3>
+                                        <div class="card_rating">
+                                            <i class='card_star-solid bx bxs-star'></i>
+                                            <i class='card_star-solid bx bxs-star'></i>
+                                            <i class='card_star-solid bx bxs-star'></i>
+                                            <i class='card_star-solid bx bxs-star'></i>
+                                            <i class='card_star-solid bx bxs-star'></i>
+                                        </div>
+                                        <p class="card_price">$2.99</p>
+                                        
+                                    </div>
+                                </a>
+                                <button class="primary-btn card_btn">Add to cart</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="card_product">
+                                <a href="">
+                                    <img  class="card_img" src="./assets/img/donuts/chocolate-with-peanuts-and-salted-caramel.png" alt="">
+                                    <div class="card_info">
+                                        <h3 class="card_name">Chocolate Caramel Crunch</h3>
+                                        <div class="card_rating">
+                                            <!-- 4 -->
+                                            <i class='card_star-solid bx bxs-star'></i>
+                                            <i class='card_star-solid bx bxs-star'></i>
+                                            <i class='card_star-solid bx bxs-star'></i>
+                                            <i class='card_star-solid bx bxs-star'></i>
+                                            <i class='card_star-empty bx bxs-star'></i>
+                                        </div>
+                                        <p class="card_price">$1.99</p>
+                                        
+                                    </div>
+                                </a>             
+                                <button class="primary-btn card_btn">Add to cart</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="card_product">
+                                <a href="">
+                                    <img  class="card_img" src="./assets/img/donuts/Strawberry-Shortcake.png" alt="">
+                                    <div class="card_info">
+                                        <h3 class="card_name">Strawberry Shortcake</h3>
+                                        <div class="card_rating">
+                                            <!-- 4 -->
+                                            <i class='card_star-solid bx bxs-star'></i>
+                                            <i class='card_star-solid bx bxs-star'></i>
+                                            <i class='card_star-solid bx bxs-star'></i>
+                                            <i class='card_star-solid bx bxs-star'></i>
+                                            <i class='card_star-empty bx bxs-star'></i>
+                                        </div>
+                                        <p class="card_price">$2</p>
+                                        
+                                    </div>
+                                </a>             
+                                <button class="primary-btn card_btn">Add to cart</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="card_product">
+                                <a href="">
+                                    <img  class="card_img" src="./assets/img/donuts/Midnight-Madness-removebg-preview.png" alt="">
+                                    <div class="card_info">
+                                        <h3 class="card_name">Cookie nightmare</h3>
+                                        <div class="card_rating">
+                                            <i class='card_star-solid bx bxs-star'></i>
+                                            <i class='card_star-solid bx bxs-star'></i>
+                                            <i class='card_star-solid bx bxs-star'></i>
+                                            <i class='card_star-solid bx bxs-star'></i>
+                                            <i class='card_star-solid bx bxs-star'></i>
+                                        </div>
+                                        <p class="card_price">$2.55</p>
+                                        
+                                    </div>
+                                </a>             
+                                <button class="primary-btn card_btn">Add to cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </section>
                
+
+               <section class="content_section">
+                    <div class="offer">
+                        <h3 class="offer_title">Get 20% off your first order</h3>
+                        <p class="offer_desc"></p>
+                        <a href="" class="primary-btn offer-btn">Sign in</a>
+                    </div>
+               </section>
+
+               <section class="content_section container-fluid">
+                    <h2 class="content_title">@vermon</h2>
+                    <div class="content_gallery">
+                        <div class="row">
+                            <div class="col-2">
+                                <a href="">
+                                    <div class="card_gallery">
+                                        <img class="card_gallery-img" src="./assets/img/instagram/insta-1.jpg" alt="">
+                                        <div class="card_gallery-overlay">
+                                            <i class='card_gallery-icon bx bxl-instagram'></i>
+                                            
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-2">
+                                <a href="">
+                                    <div class="card_gallery">
+                                        <img class="card_gallery-img" src="./assets/img/instagram/insta-2.jpg" alt="">
+                                        <div class="card_gallery-overlay">
+                                            <i class='card_gallery-icon bx bxl-instagram'></i>
+                                            
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-2">
+                                <a href="">
+                                    <div class="card_gallery">
+                                        <img class="card_gallery-img" src="./assets/img/instagram/insta-3.jpg" alt="">
+                                        <div class="card_gallery-overlay">
+                                            <i class='card_gallery-icon bx bxl-instagram'></i>
+                                            
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-2">
+                                <a href="">
+                                    <div class="card_gallery">
+                                        <img class="card_gallery-img" src="./assets/img/instagram/insta-4.jpg" alt="">
+
+                                        <div class="card_gallery-overlay">
+                                            <i class='card_gallery-icon bx bxl-instagram'></i>
+                                            
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-2">
+                                <a href="">
+                                    <div class="card_gallery">
+                                        <img class="card_gallery-img" src="./assets/img/instagram/insta-5.jpg" alt="">
+
+                                        <div class="card_gallery-overlay">
+                                            <i class='card_gallery-icon bx bxl-instagram'></i>
+                                            
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-2">
+                                <a href="">
+                                    <div class="card_gallery">
+                                        <img class="card_gallery-img" src="./assets/img/instagram/insta-6.jpg" alt="">
+
+                                        <div class="card_gallery-overlay">
+                                            <i class='card_gallery-icon bx bxl-instagram'></i>
+                                            
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+               </section>
             </div>
         </div>
 
