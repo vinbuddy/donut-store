@@ -3,19 +3,19 @@
     z-index: 1;
     background-image: url('../img/donut-banner.jpg');
     background-repeat: no-repeat;
-    background-position: top center;
+    background-position: top right;
     background-size: cover;
     height: 800px;
     width: 100%;
 }
 
-.banner_inner {
+.banner__inner {
     width: 50%;
     margin-top: calc(var(--header-height) + 30px);
 
 }
 
-.banner_caption {
+.banner__caption {
     font-size: 55px;
     font-weight: 400;
     line-height: 1.2;
@@ -23,11 +23,11 @@
 }
 
 
-.banner_main-caption {
+.banner__main-caption {
     color: var(--primary-color);
 }
 
-.banner_desc {
+.banner__desc {
     font-size: 18px;
     margin-top: 30px;
     color: var(--desc-color);
@@ -36,7 +36,36 @@
     border-left: 3px solid var(--primary-color);
 }
 
-.banner_best-seller {
+.banner__best-seller {
     padding-top: calc(var(--card-product-img-height) - 60px);
     padding-bottom: 50px;
+}
+
+/* Mobile -> Tablet */
+@media (max-width: 991px) {
+    #banner {
+        background-image: none;
+        height: auto;
+    }
+    
+    .banner__caption {
+        font-size: 40px;
+    }
+
+    .banner__inner {
+        width: 100%;
+    }
+
+    .banner__desc {
+        border-left: none;
+        padding: 14px;
+        border-radius: 8px;
+        background-color: var(--secondary-color);
+    }
+
+    .banner__best-seller {
+        display: none;
+    }
+
+    
 }

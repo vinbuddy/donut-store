@@ -29,46 +29,105 @@
 </head>
 <body>
     <main>
+        <div id="overlay"></div>
+
+        <div id="menu">
+            <header class="menu__header">
+                <div class="menu__search">
+                    <i class='bx bx-search menu__search-icon'></i>
+                    <input class="menu__search-input" type="text" placeholder="Search...">
+                </div>
+
+                <button id="menu-close-btn" class="menu__close-btn">
+                    <i class='bx bx-x-circle'></i>
+                </button>
+            </header>
+
+            <div class="menu__body">
+                <ul class="menu__nav-list">
+                    <li class="menu__nav-item ">
+                        
+                        <a class="menu__nav-link menu__nav-link--active" href="#">
+                            <i class='menu_nav-icon bx bx-home-alt-2'></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="menu__nav-item">
+                        <a class="menu__nav-link" href="#">
+                            <i class='menu_nav-icon bx bx-food-menu' ></i>
+                            <span>Menu</span>
+                        </a>
+                    </li>
+                    <li class="menu__nav-item">
+                        <a class="menu__nav-link" href="#">
+                            <i class='menu_nav-icon bx bx-info-circle'></i>
+                            <span>About</span>
+                        </a>
+                    </li>
+                    <li class="menu__nav-item">
+                        <a class="menu__nav-link" href="#footer">
+                            <i class='menu_nav-icon bx bx-info-circle'></i>
+                            <span>Contact</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
         <div class="wrapper">
             <header id="header">
                 <div class="container">
                     <nav id="nav">
-                        <div class="nav_navigate">
+                        <div class="nav__navigate">
+                            <button id="menu-btn" class="nav__menu-btn">
+                                <i class='bx bx-menu'></i>
+                            </button>
+
                             <a href="#">
-                                <img class="nav_logo" src="./assets/img/donut-logo.png" alt="">
+                                <img class="nav__logo" src="./assets/img/donut-logo.png" alt="">
                                
                             </a>
-                            <ul class="nav_list">
-                                <li class="nav_item">
+                            <ul class="nav__list">
+                                <li class="nav__item">
                                     <a href="">Home</a>
                                 </li>
-                                <li class="nav_item">
+                                <li class="nav__item">
                                     <a href="">Menu</a>
                                 </li>
-                                <li class="nav_item">
+                                <li class="nav__item">
                                     <a href="">About</a>
                                 </li>
-                                <li class="nav_item">
-                                    <a href="">Contact</a>
+                                <li class="nav__item">
+                                    <a href="#footer">Contact</a>
                                 </li>
                             </ul>
+  
                         </div>
 
-                        <div class="nav_actions">
-                            <div class="nav_product-bar">
+                        <div class="nav__actions">
+                            <div class="nav__product-bar">
                                 <div class="search">
-                                    <i class='bx bx-search search_icon'></i>
-                                    <input class="search_input" placeholder="Search..." type="text">
+                                    <i class='bx bx-search search__icon'></i>
+                                    <input class="search__input" placeholder="Search..." type="text">
                                 </div>
 
-                                <a class="nav_cart-btn">
+                                <a class="nav__cart-btn">
                                     <i class='bx bx-shopping-bag'></i>
 
-                                    <span class="nav_cart-badge">
+                                    <span class="nav__cart-badge">
                                         4
                                     </span>
                                 </a>
                             </div>
+
+                            <a href="" class="nav__cart-mobile">
+                                <i class='bx bx-shopping-bag'></i>
+
+                                <span class="nav__cart-badge">
+                                    4
+                                </span>
+                            </a>
 
                             <a class="primary-btn">
                                 Sign Up
@@ -80,60 +139,60 @@
             </header>
             <div id="banner">
                 <div class="container">
-                    <div class="banner_inner">
-                        <h1 class="banner_caption">
+                    <div class="banner__inner">
+                        <h1 class="banner__caption">
                             <span style="font-weight: 500;">Donut not donot</span> <br />
                             Have you ever tried <br />
-                            <span class="banner_main-caption">donuts?</span>
+                            <span class="banner__main-caption">donuts?</span>
                         </h1>
-                        <p class="banner_desc">
+                        <p class="banner__desc">
                             Doughnuts are a kind of ring-shaped snack food popular in many countries, 
                             which are usually deep fried from flour doughs. After being fried, 
                             doughnuts can be spread with chocolate or icing on top, 
                             covered with powdered sugar or fruit, or glazed with sugar icing.
                         </p>
 
-                        <div class="banner_best-seller">
+                        <div class="banner__best-seller">
                             <div class="row">
-                                <div class="col-lg-4">
-                                    <div class="card_product">
+                                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                                    <div class="card__product">
                                         <a href="">
-                                            <img class="card_img" src="./assets/img/donuts/chocolate-covered-strawberry.png" alt="">
-                                            <div class="card_info">
-                                                <h3 class="card_name">Chocolate Covered Strawberry</h3>
-                                                <div class="card_rating">
-                                                    <i class='card_star-solid bx bxs-star'></i>
-                                                    <i class='card_star-solid bx bxs-star'></i>
-                                                    <i class='card_star-solid bx bxs-star'></i>
-                                                    <i class='card_star-solid bx bxs-star'></i>
-                                                    <i class='card_star-solid bx bxs-star'></i>
+                                            <img class="card__img" src="./assets/img/donuts/chocolate-covered-strawberry.png" alt="">
+                                            <div class="card__info">
+                                                <h3 class="card__name">Chocolate Covered Strawberry</h3>
+                                                <div class="card__rating">
+                                                    <i class='card__star-solid bx bxs-star'></i>
+                                                    <i class='card__star-solid bx bxs-star'></i>
+                                                    <i class='card__star-solid bx bxs-star'></i>
+                                                    <i class='card__star-solid bx bxs-star'></i>
+                                                    <i class='card__star-solid bx bxs-star'></i>
                                                 </div>
-                                                <p class="card_price">$2.99</p>
+                                                <p class="card__price">$2.99</p>
                                                 
                                             </div>
                                         </a>
-                                        <button class="primary-btn card_btn">Add to cart</button>
+                                        <button class="primary-btn card__btn">Add to cart</button>
                                     </div>
                                 </div>
-                                <div class="col-lg-4">
-                                    <div class="card_product">
+                                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                                    <div class="card__product">
                                         <a href="">
-                                            <img  class="card_img" src="./assets/img/drink/Confetti-Cupcake-Frappe.png" alt="">
-                                            <div class="card_info">
-                                                <h3 class="card_name">Bavarian Choco </h3>
-                                                <div class="card_rating">
+                                            <img  class="card__img" src="./assets/img/drink/Confetti-Cupcake-Frappe.png" alt="">
+                                            <div class="card__info">
+                                                <h3 class="card__name">Bavarian Choco </h3>
+                                                <div class="card__rating">
                                                     <!-- 4 -->
-                                                    <i class='card_star-solid bx bxs-star'></i>
-                                                    <i class='card_star-solid bx bxs-star'></i>
-                                                    <i class='card_star-solid bx bxs-star'></i>
-                                                    <i class='card_star-solid bx bxs-star'></i>
-                                                    <i class='card_star-empty bx bxs-star'></i>
+                                                    <i class='card__star-solid bx bxs-star'></i>
+                                                    <i class='card__star-solid bx bxs-star'></i>
+                                                    <i class='card__star-solid bx bxs-star'></i>
+                                                    <i class='card__star-solid bx bxs-star'></i>
+                                                    <i class='card__star-empty bx bxs-star'></i>
                                                 </div>
-                                                <p class="card_price">$1.99</p>
+                                                <p class="card__price">$1.99</p>
                                                 
                                             </div>
                                         </a>             
-                                        <button class="primary-btn card_btn">Add to cart</button>
+                                        <button class="primary-btn card__btn">Add to cart</button>
                                     </div>
                                 </div>
                             </div>
@@ -146,28 +205,28 @@
         <div id="content">
             <div>
                 <!-- Service -->
-                <section class="content_section">
-                    <div class="content_banner">
-                        <div class="content_info">
+                <section class="content__section">
+                    <div class="content__banner">
+                        <div class="content__info">
                             <h2>Why Choose Vermon Store?</h2>
                             <ul class="service">
-                                <li class="service_item">
-                                    <img class="service_img" src="./assets/img/icons/shipped.png" alt="">
-                                    <div class="service_info">
+                                <li class="service__item">
+                                    <img class="service__img" src="./assets/img/icons/shipped.png" alt="">
+                                    <div class="service__info">
                                         <h5>Delivery</h5>
                                         <p>If you're a last-minute gifter, we've got you covered with next-day delivery.</p>
                                     </div>
                                 </li>
-                                <li class="service_item">
-                                    <img class="service_img" src="./assets/img/icons/box.png" alt="">
-                                    <div class="service_info">
+                                <li class="service__item">
+                                    <img class="service__img" src="./assets/img/icons/box.png" alt="">
+                                    <div class="service__info">
                                         <h5>Carefully Packaged</h5>
                                         <p>We make your doughnuts fresh every day and package them in our Doughnut Time postal boxes.</p>
                                     </div>
                                 </li>
-                                <li class="service_item">
-                                    <img class="service_img" src="./assets/img/icons/baking.png" alt="">
-                                    <div class="service_info">
+                                <li class="service__item">
+                                    <img class="service__img" src="./assets/img/icons/baking.png" alt="">
+                                    <div class="service__info">
                                         <h5>Made By Hand</h5>
                                         <p>Try our one-of-a-kind doughnuts, hand made with the freshest and finest ingredients.</p>
                                     </div>
@@ -177,60 +236,60 @@
                                 <button class="primary-btn">Order Now</button>
                             </div> -->
                         </div>
-                        <img class="content_img" src="./assets/img/donut-girl-background.jpg" />
+                        <img class="content__img" src="./assets/img/donut-girl-background.jpg" />
                         
                     </div>
                 </section>
 
                 <!-- Category -->
-                <section class="content_section container">
-                    <h2 class="content_title">Category</h2>
-                    <div class="content_product">
-                        <div class="row">
-                            <div class="col-lg-3">
-                                <div class="card_category">
+                <section class="content__section container">
+                    <h2 class="content__title">Category</h2>
+                    <div class="content__product">
+                        <div class="row category-scroll-x">
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-12 mb-4">
+                                <div class="card__category">
                                    <a href="">
-                                        <div class="card_category-img">
+                                        <div class="card__category-img">
                                             <img src="./assets/img/category/donuts.jpg" alt="">
 
-                                            <div class="card_category-info">
-                                                <h4 class="card_category-name">Donuts</h4>
+                                            <div class="card__category-info">
+                                                <h4 class="card__category-name">Donuts</h4>
                                             </div>
                                         </div>
                                    </a>
                                 </div>
                             </div>
-                            <div class="col-lg-3">
-                                <div class="card_category">
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-12 mb-4">
+                                <div class="card__category">
                                    <a href="">
-                                        <div class="card_category-img">
+                                        <div class="card__category-img">
                                             <img src="./assets/img/category/sandwiches.jpg" alt="">
-                                            <div class="card_category-info">
-                                                <h4 class="card_category-name">Sandwiches</h4>
+                                            <div class="card__category-info">
+                                                <h4 class="card__category-name">Sandwiches</h4>
                                             </div>
                                         </div>
                                    </a>
                                 </div>
                             </div>
-                            <div class="col-lg-3">
-                                <div class="card_category">
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-12 mb-4">
+                                <div class="card__category">
                                    <a href="">
-                                        <div class="card_category-img">
+                                        <div class="card__category-img">
                                             <img src="./assets/img/category/ice-blended.jpg" alt="">
-                                            <div class="card_category-info">
-                                                <h4 class="card_category-name">Ice blended</h4>
+                                            <div class="card__category-info">
+                                                <h4 class="card__category-name">Ice blended</h4>
                                             </div>
                                         </div>
                                    </a>
                                 </div>
                             </div>
-                            <div class="col-lg-3">
-                                <div class="card_category">
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-12 mb-4">
+                                <div class="card__category">
                                    <a href="">
-                                        <div class="card_category-img">
+                                        <div class="card__category-img">
                                             <img src="./assets/img/category/coffee.jpg" alt="">
-                                            <div class="card_category-info">
-                                                <h4 class="card_category-name">Coffee</h4>
+                                            <div class="card__category-info">
+                                                <h4 class="card__category-name">Coffee</h4>
                                             </div>
                                         </div>
                                    </a>
@@ -242,131 +301,131 @@
                 </section>
 
                <!-- Best seller -->
-               <section class="content_section container">
-                    <h2 class="content_title">Best selling</h2>
-                    <div class="content_product content_card">
+               <section class="content__section container">
+                    <h2 class="content__title">Best selling</h2>
+                    <div class="content__product content__card">
                         <div class="row">
-                            <div class="col-lg-3">
-                                <div class="card_product">
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-6 mb-4">
+                                <div class="card__product">
                                     <a href="">
-                                        <img class="card_img" src="./assets/img/donuts/chocolate-covered-strawberry.png" alt="">
-                                        <div class="card_info">
-                                            <h3 class="card_name">Chocolate Covered Strawberry</h3>
-                                            <div class="card_rating">
-                                                <i class='card_star-solid bx bxs-star'></i>
-                                                <i class='card_star-solid bx bxs-star'></i>
-                                                <i class='card_star-solid bx bxs-star'></i>
-                                                <i class='card_star-solid bx bxs-star'></i>
-                                                <i class='card_star-solid bx bxs-star'></i>
+                                        <img class="card__img" src="./assets/img/donuts/chocolate-covered-strawberry.png" alt="">
+                                        <div class="card__info">
+                                            <h3 class="card__name">Chocolate Covered Strawberry</h3>
+                                            <div class="card__rating">
+                                                <i class='card__star-solid bx bxs-star'></i>
+                                                <i class='card__star-solid bx bxs-star'></i>
+                                                <i class='card__star-solid bx bxs-star'></i>
+                                                <i class='card__star-solid bx bxs-star'></i>
+                                                <i class='card__star-solid bx bxs-star'></i>
                                             </div>
-                                            <p class="card_price">$2.49</p>
+                                            <p class="card__price">$2.49</p>
                                             
                                         </div>
                                     </a>
-                                    <button class="primary-btn card_btn">Add to cart</button>
+                                    <button class="primary-btn card__btn">Add to cart</button>
                                 </div>
                             </div>
-                            <div class="col-lg-3">
-                                <div class="card_product">
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-6 mb-4">
+                                <div class="card__product">
                                     <a href="">
-                                        <img  class="card_img" src="./assets/img/donuts/cinnamon-bun.png" alt="">
-                                        <div class="card_info">
-                                            <h3 class="card_name">Cinamon bun</h3>
-                                            <div class="card_rating">
+                                        <img  class="card__img" src="./assets/img/donuts/cinnamon-bun.png" alt="">
+                                        <div class="card__info">
+                                            <h3 class="card__name">Cinamon bun</h3>
+                                            <div class="card__rating">
                                                 <!-- 4 -->
-                                                <i class='card_star-solid bx bxs-star'></i>
-                                                <i class='card_star-solid bx bxs-star'></i>
-                                                <i class='card_star-solid bx bxs-star'></i>
-                                                <i class='card_star-solid bx bxs-star'></i>
-                                                <i class='card_star-solid bx bxs-star'></i>
+                                                <i class='card__star-solid bx bxs-star'></i>
+                                                <i class='card__star-solid bx bxs-star'></i>
+                                                <i class='card__star-solid bx bxs-star'></i>
+                                                <i class='card__star-solid bx bxs-star'></i>
+                                                <i class='card__star-solid bx bxs-star'></i>
                                             </div>
-                                            <p class="card_price">$1.99</p>
+                                            <p class="card__price">$1.99</p>
                                             
                                         </div>
                                     </a>             
-                                    <button class="primary-btn card_btn">Add to cart</button>
+                                    <button class="primary-btn card__btn">Add to cart</button>
                                 </div>
                             </div>
-                            <div class="col-lg-3">
-                                <div class="card_product">
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-6 mb-4">
+                                <div class="card__product">
                                     <a href="">
-                                        <img class="card_img" src="./assets/img/donuts/beach-ball-carnival-sprinkles.png" alt="">
-                                        <div class="card_info">
-                                            <h3 class="card_name">Beach ball</h3>
-                                            <div class="card_rating">
-                                                <i class='card_star-solid bx bxs-star'></i>
-                                                <i class='card_star-solid bx bxs-star'></i>
-                                                <i class='card_star-solid bx bxs-star'></i>
-                                                <i class='card_star-solid bx bxs-star'></i>
-                                                <i class='card_star-solid bx bxs-star'></i>
+                                        <img class="card__img" src="./assets/img/donuts/beach-ball-carnival-sprinkles.png" alt="">
+                                        <div class="card__info">
+                                            <h3 class="card__name">Beach ball</h3>
+                                            <div class="card__rating">
+                                                <i class='card__star-solid bx bxs-star'></i>
+                                                <i class='card__star-solid bx bxs-star'></i>
+                                                <i class='card__star-solid bx bxs-star'></i>
+                                                <i class='card__star-solid bx bxs-star'></i>
+                                                <i class='card__star-solid bx bxs-star'></i>
                                             </div>
-                                            <p class="card_price">$2.99</p>
+                                            <p class="card__price">$2.99</p>
                                             
                                         </div>
                                     </a>
-                                    <button class="primary-btn card_btn">Add to cart</button>
+                                    <button class="primary-btn card__btn">Add to cart</button>
                                 </div>
                             </div>
-                            <div class="col-lg-3">
-                                <div class="card_product">
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-6 mb-4">
+                                <div class="card__product">
                                     <a href="">
-                                        <img  class="card_img" src="./assets/img/donuts/chocolate-with-peanuts-and-salted-caramel.png" alt="">
-                                        <div class="card_info">
-                                            <h3 class="card_name">Chocolate Caramel Crunch</h3>
-                                            <div class="card_rating">
+                                        <img  class="card__img" src="./assets/img/donuts/chocolate-with-peanuts-and-salted-caramel.png" alt="">
+                                        <div class="card__info">
+                                            <h3 class="card__name">Chocolate Caramel Crunch</h3>
+                                            <div class="card__rating">
                                                 <!-- 4 -->
-                                                <i class='card_star-solid bx bxs-star'></i>
-                                                <i class='card_star-solid bx bxs-star'></i>
-                                                <i class='card_star-solid bx bxs-star'></i>
-                                                <i class='card_star-solid bx bxs-star'></i>
-                                                <i class='card_star-empty bx bxs-star'></i>
+                                                <i class='card__star-solid bx bxs-star'></i>
+                                                <i class='card__star-solid bx bxs-star'></i>
+                                                <i class='card__star-solid bx bxs-star'></i>
+                                                <i class='card__star-solid bx bxs-star'></i>
+                                                <i class='card__star-empty bx bxs-star'></i>
                                             </div>
-                                            <p class="card_price">$1.99</p>
+                                            <p class="card__price">$1.99</p>
                                             
                                         </div>
                                     </a>             
-                                    <button class="primary-btn card_btn">Add to cart</button>
+                                    <button class="primary-btn card__btn">Add to cart</button>
                                 </div>
                             </div>
-                            <div class="col-lg-3">
-                                <div class="card_product">
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-6 mb-4">
+                                <div class="card__product">
                                     <a href="">
-                                        <img  class="card_img" src="./assets/img/donuts/Strawberry-Shortcake.png" alt="">
-                                        <div class="card_info">
-                                            <h3 class="card_name">Strawberry Shortcake</h3>
-                                            <div class="card_rating">
+                                        <img  class="card__img" src="./assets/img/donuts/Strawberry-Shortcake.png" alt="">
+                                        <div class="card__info">
+                                            <h3 class="card__name">Strawberry Shortcake</h3>
+                                            <div class="card__rating">
                                                 <!-- 4 -->
-                                                <i class='card_star-solid bx bxs-star'></i>
-                                                <i class='card_star-solid bx bxs-star'></i>
-                                                <i class='card_star-solid bx bxs-star'></i>
-                                                <i class='card_star-solid bx bxs-star'></i>
-                                                <i class='card_star-empty bx bxs-star'></i>
+                                                <i class='card__star-solid bx bxs-star'></i>
+                                                <i class='card__star-solid bx bxs-star'></i>
+                                                <i class='card__star-solid bx bxs-star'></i>
+                                                <i class='card__star-solid bx bxs-star'></i>
+                                                <i class='card__star-empty bx bxs-star'></i>
                                             </div>
-                                            <p class="card_price">$2</p>
+                                            <p class="card__price">$2</p>
                                             
                                         </div>
                                     </a>             
-                                    <button class="primary-btn card_btn">Add to cart</button>
+                                    <button class="primary-btn card__btn">Add to cart</button>
                                 </div>
                             </div>
-                            <div class="col-lg-3">
-                                <div class="card_product">
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-6 mb-4">
+                                <div class="card__product">
                                     <a href="">
-                                        <img  class="card_img" src="./assets/img/donuts/Midnight-Madness-removebg-preview.png" alt="">
-                                        <div class="card_info">
-                                            <h3 class="card_name">Cookie nightmare</h3>
-                                            <div class="card_rating">
-                                                <i class='card_star-solid bx bxs-star'></i>
-                                                <i class='card_star-solid bx bxs-star'></i>
-                                                <i class='card_star-solid bx bxs-star'></i>
-                                                <i class='card_star-solid bx bxs-star'></i>
-                                                <i class='card_star-solid bx bxs-star'></i>
+                                        <img  class="card__img" src="./assets/img/donuts/Midnight-Madness-removebg-preview.png" alt="">
+                                        <div class="card__info">
+                                            <h3 class="card__name">Cookie nightmare</h3>
+                                            <div class="card__rating">
+                                                <i class='card__star-solid bx bxs-star'></i>
+                                                <i class='card__star-solid bx bxs-star'></i>
+                                                <i class='card__star-solid bx bxs-star'></i>
+                                                <i class='card__star-solid bx bxs-star'></i>
+                                                <i class='card__star-solid bx bxs-star'></i>
                                             </div>
-                                            <p class="card_price">$2.55</p>
+                                            <p class="card__price">$2.55</p>
                                             
                                         </div>
                                     </a>             
-                                    <button class="primary-btn card_btn">Add to cart</button>
+                                    <button class="primary-btn card__btn">Add to cart</button>
                                 </div>
                             </div>
                         </div>
@@ -374,81 +433,81 @@
                 </section>
                
 
-               <section class="content_section">
+               <section class="content__section">
                     <div class="offer">
-                        <h3 class="offer_title">Get 20% off your first order</h3>
+                        <h3 class="offer__title">Get 20% off your first order</h3>
                         <a href="" class="primary-btn offer-btn">Sign in</a>
                     </div>
                </section>
 
-               <section class="content_section container-fluid">
-                    <h2 class="content_title">@vermon</h2>
-                    <div class="content_gallery">
+               <section class="content__section container-fluid">
+                    <h2 class="content__title">@vermon</h2>
+                    <div class="content__gallery">
                         <div class="row">
-                            <div class="col-2">
-                                <a href="https://www.instagram.com/vermon.js/" target="_blank">
-                                    <div class="card_gallery">
-                                        <img class="card_gallery-img" src="./assets/img/instagram/insta-1.jpg" alt="">
-                                        <div class="card_gallery-overlay">
-                                            <i class='card_gallery-icon bx bxl-instagram'></i>
+                            <div class="col-lg-2 col-md-4 col-sm-4 col-6 mb-4">
+                                <a href="https://www.instagram.com/vermon.js/" target="__blank">
+                                    <div class="card__gallery">
+                                        <img class="card__gallery-img" src="./assets/img/instagram/insta-1.jpg" alt="">
+                                        <div class="card__gallery-overlay">
+                                            <i class='card__gallery-icon bx bxl-instagram'></i>
                                             
                                         </div>
                                     </div>
                                 </a>
                             </div>
-                            <div class="col-2">
-                                <a href="https://www.instagram.com/vermon.js/" target="_blank">
-                                    <div class="card_gallery">
-                                        <img class="card_gallery-img" src="./assets/img/instagram/insta-2.jpg" alt="">
-                                        <div class="card_gallery-overlay">
-                                            <i class='card_gallery-icon bx bxl-instagram'></i>
+                            <div class="col-lg-2 col-md-4 col-sm-4 col-6 mb-4">
+                                <a href="https://www.instagram.com/vermon.js/" target="__blank">
+                                    <div class="card__gallery">
+                                        <img class="card__gallery-img" src="./assets/img/instagram/insta-2.jpg" alt="">
+                                        <div class="card__gallery-overlay">
+                                            <i class='card__gallery-icon bx bxl-instagram'></i>
                                             
                                         </div>
                                     </div>
                                 </a>
                             </div>
-                            <div class="col-2">
-                                <a href="https://www.instagram.com/vermon.js/" target="_blank">
-                                    <div class="card_gallery">
-                                        <img class="card_gallery-img" src="./assets/img/instagram/insta-3.jpg" alt="">
-                                        <div class="card_gallery-overlay">
-                                            <i class='card_gallery-icon bx bxl-instagram'></i>
+                            <div class="col-lg-2 col-md-4 col-sm-4 col-6 mb-4">
+                                <a href="https://www.instagram.com/vermon.js/" target="__blank">
+                                    <div class="card__gallery">
+                                        <img class="card__gallery-img" src="./assets/img/instagram/insta-3.jpg" alt="">
+                                        <div class="card__gallery-overlay">
+                                            <i class='card__gallery-icon bx bxl-instagram'></i>
                                             
                                         </div>
                                     </div>
                                 </a>
                             </div>
-                            <div class="col-2">
-                                <a href="https://www.instagram.com/vermon.js/" target="_blank">
-                                    <div class="card_gallery">
-                                        <img class="card_gallery-img" src="./assets/img/instagram/insta-4.jpg" alt="">
+                            <div class="col-lg-2 col-md-4 col-sm-4 col-6 mb-4">
+                                <a href="https://www.instagram.com/vermon.js/" target="__blank">
+                                    <div class="card__gallery">
+                                        <img class="card__gallery-img" src="./assets/img/instagram/insta-4.jpg" alt="">
 
-                                        <div class="card_gallery-overlay">
-                                            <i class='card_gallery-icon bx bxl-instagram'></i>
+                                        <div class="card__gallery-overlay">
+                                            <i class='card__gallery-icon bx bxl-instagram'></i>
                                             
                                         </div>
                                     </div>
                                 </a>
                             </div>
-                            <div class="col-2">
-                                <a href="https://www.instagram.com/vermon.js/" target="_blank">
-                                    <div class="card_gallery">
-                                        <img class="card_gallery-img" src="./assets/img/instagram/insta-5.jpg" alt="">
+                            <div class="col-lg-2 col-md-4 col-sm-4 col-6 mb-4">
+                                <a href="https://www.instagram.com/vermon.js/" target="__blank">
+                                    <div class="card__gallery">
+                                        <img class="card__gallery-img" src="./assets/img/instagram/insta-5.jpg" alt="">
 
-                                        <div class="card_gallery-overlay">
-                                            <i class='card_gallery-icon bx bxl-instagram'></i>
+                                        <div class="card__gallery-overlay">
+                                            <i class='card__gallery-icon bx bxl-instagram'></i>
                                             
                                         </div>
                                     </div>
                                 </a>
                             </div>
-                            <div class="col-2">
-                                <a href="https://www.instagram.com/vermon.js/" target="_blank">
-                                    <div class="card_gallery">
-                                        <img class="card_gallery-img" src="./assets/img/instagram/insta-6.jpg" alt="">
+                            <div class="col-lg-2 col-md-4 col-sm-4 col-6 mb-4">
+                                <a href="https://www.instagram.com/vermon.js/" target="__blank">
+                                    <div class="card__gallery">
+                                        <img class="card__gallery-img" src="./assets/img/instagram/insta-6.jpg" alt="">
 
-                                        <div class="card_gallery-overlay">
-                                            <i class='card_gallery-icon bx bxl-instagram'></i>
+                                        <div class="card__gallery-overlay">
+                                            <i class='card__gallery-icon bx bxl-instagram'></i>
                                             
                                         </div>
                                     </div>
@@ -462,26 +521,28 @@
 
         <footer id="footer">
             <!-- MDBootstrap Footer text-center -->
-            <div class=" text-lg-start bg-light text-muted">
-                <section class="d-flex  justify-content-between p-4 border-bottom">
-                  <div class="me-5">
-                    <span>Get connected with us</span>
-                  </div>
-                  <div>
-                        <a target="_blank" href="https://www.facebook.com/iamvinhhuynh" class="me-3 text-reset"> 
-                            <i style="font-size: 25px;" class='bx bxl-facebook'></i>
-                        </a>
-                        <a target="_blank" href="https://www.instagram.com/vermon.js/" class="me-3 text-reset"> 
-                            <i style="font-size: 25px;" class='bx bxl-instagram'></i>
-                        </a>
-                    
-                        <a target="_blank" href="https://github.com/vinbuddy" class="text-reset">
-                            <i style="font-size: 25px;" class='bx bxl-github'></i>
-                        </a>
-                  </div>
+            <div style="background-color: #fafafb;" class=" text-lg-start text-muted">
+                <section class="border-bottom">
+                    <div class="container d-flex justify-content-between p-4 ">
+                          <div class="me-5">
+                            <span>Get connected with us</span>
+                          </div>
+                          <div>
+                                <a target="__blank" href="https://www.facebook.com/iamvinhhuynh" class="me-3 text-reset"> 
+                                    <i style="font-size: 22px;" class='bx bxl-facebook'></i>
+                                </a>
+                                <a target="__blank" href="https://www.instagram.com/vermon.js/" class="me-3 text-reset"> 
+                                    <i style="font-size: 22px;" class='bx bxl-instagram'></i>
+                                </a>
+                            
+                                <a target="__blank" href="https://github.com/vinbuddy" class="text-reset">
+                                    <i style="font-size: 22px;" class='bx bxl-github'></i>
+                                </a>
+                          </div>
+                    </div>
                 </section>
       
-                <div class="container text-md-start mt-5">
+                <section class="container text-md-start mt-5">
                   <div class="row mt-3">
                     <!-- Grid column -->
                     <div class="col-md-3 col-lg-4 col-xl-3 mb-4">
@@ -489,21 +550,21 @@
                       <div class="d-flex flex-column justify-content-center h-100">
                           <div class="d-flex align-items-center mb-2    ">
                               <a href="#">
-                                  <img width="80px" height="80px" src="./assets/img/donut-logo.png" alt="">
+                                  <img width="40px" height="40px" src="./assets/img/donut-logo.png" alt="">
                               </a>
                               <h6 class="text-uppercase fw-bold">
-                                <i class="fas fa-gem me-2"></i>Vermon store
+                                <i class="fas fa-gem me-2"></i>Vermon
                               </h6>
                           </div>
                           <p>
-                            Vermon store where we sprinkle happiness
+                            Vermon store sprinkles happiness
                           </p>
                       </div>
                     </div>
                     <!-- Grid column -->
             
                     <!-- Grid column -->
-                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto text-md-center text-lg-start mb-4">
                       <!-- Links -->
                       <h6 class="text-uppercase fw-bold mb-4">
                         Category
@@ -524,7 +585,7 @@
                     <!-- Grid column -->
             
                     <!-- Grid column -->
-                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto text-md-center text-lg-start mb-4">
                       <!-- Links -->
                       <h6 class="text-uppercase fw-bold mb-4">
                         Other
@@ -542,7 +603,7 @@
                     <!-- Grid column -->
             
                     <!-- Grid column -->
-                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto text-md-center text-lg-start mb-md-0 mb-4">
                       <!-- Links -->
                       <h6 class="text-uppercase fw-bold mb-4 ">Contact</h6>
                       <p class="d-flex align-items-center"><i style="width: 20px;" class='bx bx-current-location' ></i>Ho Chi Minh, Viet Nam</p>
@@ -554,18 +615,17 @@
                     </div>
                     <!-- Grid column -->
                   </div>
-                </div>
+                </section>
       
                 <div class="text-center p-3" style="border-top: 1px solid #ddd;">
                   © 2023 Copyright
-                  <a target="_blank" class="text-reset fw-bold" href="https://github.com/vinbuddy">Vermon</a>
+                  <a target="__blank" class="text-reset fw-bold" href="https://github.com/vinbuddy">Vermon</a>
                 </div>
             </div>
         </footer>
     
     </main>
 
-      <!-- Option 1: Bootstrap Bundle with Popper -->
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="./index.js"></script>
 </body>
 </html>
