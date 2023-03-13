@@ -16,6 +16,11 @@
     box-sizing: border-box;
 }
 
+*::selection {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
 html {
     font-family: 'Roboto', sans-serif;
 

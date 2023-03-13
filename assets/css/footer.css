@@ -1,0 +1,66 @@
+#footer {
+    background-color: #fafafb;
+    color: #6c757d;
+}
+
+#footer .connect {
+    border-bottom: 1px solid#dee2e6;
+}
+#footer .connect__inner {
+    border-bottom: 1px solid#dee2e6;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #6c757d;
+}
+
+#footer .connect__link {
+    font-size: 22px;
+}
+
+#footer .connect__link:hover {
+   color: var(--primary-color);
+}
+
+#footer .info__brand {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#footer .info__title {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#footer .info__logo {
+    display: flex;
+    align-items: center;
+}
+
+#footer .info__payment {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-wrap: wrap;
+    padding-left: 0;
+}
+
+#footer .info__payment-img {
+    width: 50px;
+}
+
+#footer .info__contact {
+    display: flex;
+    align-items: center;
+}
+
+#footer .info__contact i {
+    width: 26px;
+}
+
+#footer .copyright {
+    text-align: center;
+    border-top: 1px solid #dee2e6;
+}

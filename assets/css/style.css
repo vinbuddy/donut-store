@@ -17,7 +17,7 @@
 
 .primary-btn:hover {
     color: #fff;
-    opacity: 0.9;
+    /* opacity: 0.9; */
 }
 
 #overlay {
@@ -78,7 +78,7 @@
 
 .menu__nav-list {
     padding-left: 0;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .menu__nav-item {
@@ -87,8 +87,8 @@
 
 
 .menu__nav-link {
-    padding: 15px;
-    border-radius: 5px;
+    padding: 12px;
+    border-radius: 7px;
     display: flex;
     align-items: center;
 }

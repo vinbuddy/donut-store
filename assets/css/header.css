@@ -40,6 +40,10 @@
     margin: 0 14px;
 }
 
+.nav__item.nav__item--active > a {
+    color: var(--primary-color);
+}
+
 .nav__item > a {
     color: #000;
     padding: 10px 0;
@@ -68,6 +72,7 @@
     flex: 1;
     display: flex;
     align-items: center;
+    color: #6c757d;
 }
 
 .search__input {

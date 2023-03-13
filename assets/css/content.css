@@ -1,5 +1,5 @@
-#content {
-    margin-top: 70px;
+.content {
+    margin-top: 80px;
 }
 
 .content__section {
@@ -124,9 +124,6 @@
 
 /* Mobile -> Tablet */
 @media (max-width: 991px) {
-    #content {
-        margin-top: 50px;
-    }
 
     .content__section {
         margin-bottom: 50px;

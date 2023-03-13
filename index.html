@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="./assets/css/banner.css">
     <link rel="stylesheet" href="./assets/css/content.css">
     <link rel="stylesheet" href="./assets/css/card.css">
+    <link rel="stylesheet" href="./assets/css/footer.css">
 
     <!-- box icon -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -47,19 +48,19 @@
                 <ul class="menu__nav-list">
                     <li class="menu__nav-item ">
                         
-                        <a class="menu__nav-link menu__nav-link--active" href="#">
+                        <a class="menu__nav-link menu__nav-link--active" href="./index.html">
                             <i class='menu_nav-icon bx bx-home-alt-2'></i>
                             <span>Home</span>
                         </a>
                     </li>
                     <li class="menu__nav-item">
-                        <a class="menu__nav-link" href="#">
+                        <a class="menu__nav-link" href="./pages/menu.html">
                             <i class='menu_nav-icon bx bx-food-menu' ></i>
                             <span>Menu</span>
                         </a>
                     </li>
                     <li class="menu__nav-item">
-                        <a class="menu__nav-link" href="#">
+                        <a class="menu__nav-link" href="./pages/about.html">
                             <i class='menu_nav-icon bx bx-info-circle'></i>
                             <span>About</span>
                         </a>
@@ -84,19 +85,19 @@
                                 <i class='bx bx-menu'></i>
                             </button>
 
-                            <a href="#">
+                            <a href="./index.html">
                                 <img class="nav__logo" src="./assets/img/donut-logo.png" alt="">
                                
                             </a>
                             <ul class="nav__list">
-                                <li class="nav__item">
-                                    <a href="">Home</a>
+                                <li class="nav__item  nav__item--active">
+                                    <a href="./index.html">Home</a>
                                 </li>
                                 <li class="nav__item">
-                                    <a href="">Menu</a>
+                                    <a href="./pages/menu.html">Menu</a>
                                 </li>
                                 <li class="nav__item">
-                                    <a href="">About</a>
+                                    <a href="./pages/about.html">About</a>
                                 </li>
                                 <li class="nav__item">
                                     <a href="#footer">Contact</a>
@@ -152,49 +153,9 @@
                             covered with powdered sugar or fruit, or glazed with sugar icing.
                         </p>
 
-                        <div class="banner__best-seller">
-                            <div class="row">
-                                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                                    <div class="card__product">
-                                        <a href="">
-                                            <img class="card__img" src="./assets/img/donuts/chocolate-covered-strawberry.png" alt="">
-                                            <div class="card__info">
-                                                <h3 class="card__name">Chocolate Covered Strawberry</h3>
-                                                <div class="card__rating">
-                                                    <i class='card__star-solid bx bxs-star'></i>
-                                                    <i class='card__star-solid bx bxs-star'></i>
-                                                    <i class='card__star-solid bx bxs-star'></i>
-                                                    <i class='card__star-solid bx bxs-star'></i>
-                                                    <i class='card__star-solid bx bxs-star'></i>
-                                                </div>
-                                                <p class="card__price">$2.99</p>
-                                                
-                                            </div>
-                                        </a>
-                                        <button class="primary-btn card__btn">Add to cart</button>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                                    <div class="card__product">
-                                        <a href="">
-                                            <img  class="card__img" src="./assets/img/drink/Confetti-Cupcake-Frappe.png" alt="">
-                                            <div class="card__info">
-                                                <h3 class="card__name">Bavarian Choco </h3>
-                                                <div class="card__rating">
-                                                    <!-- 4 -->
-                                                    <i class='card__star-solid bx bxs-star'></i>
-                                                    <i class='card__star-solid bx bxs-star'></i>
-                                                    <i class='card__star-solid bx bxs-star'></i>
-                                                    <i class='card__star-solid bx bxs-star'></i>
-                                                    <i class='card__star-empty bx bxs-star'></i>
-                                                </div>
-                                                <p class="card__price">$1.99</p>
-                                                
-                                            </div>
-                                        </a>             
-                                        <button class="primary-btn card__btn">Add to cart</button>
-                                    </div>
-                                </div>
+                        <div class="banner__outlet">
+                            <div id="outlet" class="row"> 
+                                <!-- Render outlet product from JS -->
                             </div>
                         </div>
                     </div> 
@@ -304,142 +265,22 @@
                <section class="content__section container">
                     <h2 class="content__title">Best selling</h2>
                     <div class="content__product content__card">
-                        <div class="row">
-                            <div class="col-lg-3 col-md-6 col-sm-6 col-6 mb-4">
-                                <div class="card__product">
-                                    <a href="">
-                                        <img class="card__img" src="./assets/img/donuts/chocolate-covered-strawberry.png" alt="">
-                                        <div class="card__info">
-                                            <h3 class="card__name">Chocolate Covered Strawberry</h3>
-                                            <div class="card__rating">
-                                                <i class='card__star-solid bx bxs-star'></i>
-                                                <i class='card__star-solid bx bxs-star'></i>
-                                                <i class='card__star-solid bx bxs-star'></i>
-                                                <i class='card__star-solid bx bxs-star'></i>
-                                                <i class='card__star-solid bx bxs-star'></i>
-                                            </div>
-                                            <p class="card__price">$2.49</p>
-                                            
-                                        </div>
-                                    </a>
-                                    <button class="primary-btn card__btn">Add to cart</button>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-sm-6 col-6 mb-4">
-                                <div class="card__product">
-                                    <a href="">
-                                        <img  class="card__img" src="./assets/img/donuts/cinnamon-bun.png" alt="">
-                                        <div class="card__info">
-                                            <h3 class="card__name">Cinamon bun</h3>
-                                            <div class="card__rating">
-                                                <!-- 4 -->
-                                                <i class='card__star-solid bx bxs-star'></i>
-                                                <i class='card__star-solid bx bxs-star'></i>
-                                                <i class='card__star-solid bx bxs-star'></i>
-                                                <i class='card__star-solid bx bxs-star'></i>
-                                                <i class='card__star-solid bx bxs-star'></i>
-                                            </div>
-                                            <p class="card__price">$1.99</p>
-                                            
-                                        </div>
-                                    </a>             
-                                    <button class="primary-btn card__btn">Add to cart</button>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-sm-6 col-6 mb-4">
-                                <div class="card__product">
-                                    <a href="">
-                                        <img class="card__img" src="./assets/img/donuts/beach-ball-carnival-sprinkles.png" alt="">
-                                        <div class="card__info">
-                                            <h3 class="card__name">Beach ball</h3>
-                                            <div class="card__rating">
-                                                <i class='card__star-solid bx bxs-star'></i>
-                                                <i class='card__star-solid bx bxs-star'></i>
-                                                <i class='card__star-solid bx bxs-star'></i>
-                                                <i class='card__star-solid bx bxs-star'></i>
-                                                <i class='card__star-solid bx bxs-star'></i>
-                                            </div>
-                                            <p class="card__price">$2.99</p>
-                                            
-                                        </div>
-                                    </a>
-                                    <button class="primary-btn card__btn">Add to cart</button>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-sm-6 col-6 mb-4">
-                                <div class="card__product">
-                                    <a href="">
-                                        <img  class="card__img" src="./assets/img/donuts/chocolate-with-peanuts-and-salted-caramel.png" alt="">
-                                        <div class="card__info">
-                                            <h3 class="card__name">Chocolate Caramel Crunch</h3>
-                                            <div class="card__rating">
-                                                <!-- 4 -->
-                                                <i class='card__star-solid bx bxs-star'></i>
-                                                <i class='card__star-solid bx bxs-star'></i>
-                                                <i class='card__star-solid bx bxs-star'></i>
-                                                <i class='card__star-solid bx bxs-star'></i>
-                                                <i class='card__star-empty bx bxs-star'></i>
-                                            </div>
-                                            <p class="card__price">$1.99</p>
-                                            
-                                        </div>
-                                    </a>             
-                                    <button class="primary-btn card__btn">Add to cart</button>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-sm-6 col-6 mb-4">
-                                <div class="card__product">
-                                    <a href="">
-                                        <img  class="card__img" src="./assets/img/donuts/Strawberry-Shortcake.png" alt="">
-                                        <div class="card__info">
-                                            <h3 class="card__name">Strawberry Shortcake</h3>
-                                            <div class="card__rating">
-                                                <!-- 4 -->
-                                                <i class='card__star-solid bx bxs-star'></i>
-                                                <i class='card__star-solid bx bxs-star'></i>
-                                                <i class='card__star-solid bx bxs-star'></i>
-                                                <i class='card__star-solid bx bxs-star'></i>
-                                                <i class='card__star-empty bx bxs-star'></i>
-                                            </div>
-                                            <p class="card__price">$2</p>
-                                            
-                                        </div>
-                                    </a>             
-                                    <button class="primary-btn card__btn">Add to cart</button>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-sm-6 col-6 mb-4">
-                                <div class="card__product">
-                                    <a href="">
-                                        <img  class="card__img" src="./assets/img/donuts/Midnight-Madness-removebg-preview.png" alt="">
-                                        <div class="card__info">
-                                            <h3 class="card__name">Cookie nightmare</h3>
-                                            <div class="card__rating">
-                                                <i class='card__star-solid bx bxs-star'></i>
-                                                <i class='card__star-solid bx bxs-star'></i>
-                                                <i class='card__star-solid bx bxs-star'></i>
-                                                <i class='card__star-solid bx bxs-star'></i>
-                                                <i class='card__star-solid bx bxs-star'></i>
-                                            </div>
-                                            <p class="card__price">$2.55</p>
-                                            
-                                        </div>
-                                    </a>             
-                                    <button class="primary-btn card__btn">Add to cart</button>
-                                </div>
-                            </div>
+                        <div id="best-seller" class="row">
+                            <!-- Render Best Seller Product  -->
                         </div>
                     </div>
                 </section>
                
 
+                <!-- Offer -->
                <section class="content__section">
                     <div class="offer">
                         <h3 class="offer__title">Get 20% off your first order</h3>
-                        <a href="" class="primary-btn offer-btn">Sign in</a>
+                        <a href="" class="primary-btn offer-btn">Order now</a>
                     </div>
                </section>
 
+               <!-- Activities on insta -->
                <section class="content__section container-fluid">
                     <h2 class="content__title">@vermon</h2>
                     <div class="content__gallery">
@@ -520,112 +361,103 @@
         </div>
 
         <footer id="footer">
-            <!-- MDBootstrap Footer text-center -->
-            <div style="background-color: #fafafb;" class=" text-lg-start text-muted">
-                <section class="border-bottom">
-                    <div class="container d-flex justify-content-between p-4 ">
-                          <div class="me-5">
-                            <span>Get connected with us</span>
-                          </div>
-                          <div>
-                                <a target="__blank" href="https://www.facebook.com/iamvinhhuynh" class="me-3 text-reset"> 
-                                    <i style="font-size: 22px;" class='bx bxl-facebook'></i>
-                                </a>
-                                <a target="__blank" href="https://www.instagram.com/vermon.js/" class="me-3 text-reset"> 
-                                    <i style="font-size: 22px;" class='bx bxl-instagram'></i>
-                                </a>
-                            
-                                <a target="__blank" href="https://github.com/vinbuddy" class="text-reset">
-                                    <i style="font-size: 22px;" class='bx bxl-github'></i>
-                                </a>
-                          </div>
+            <section class="connect">
+                <div class="connect__inner container p-4">
+                    <div class="me-5">
+                        <span>Get connected with us</span>
                     </div>
-                </section>
-      
-                <section class="container text-md-start mt-5">
-                  <div class="row mt-3">
-                    <!-- Grid column -->
-                    <div class="col-md-3 col-lg-4 col-xl-3 mb-4">
-                      <!-- Content -->
-                      <div class="d-flex flex-column justify-content-center h-100">
-                          <div class="d-flex align-items-center mb-2    ">
-                              <a href="#">
-                                  <img width="40px" height="40px" src="./assets/img/donut-logo.png" alt="">
-                              </a>
-                              <h6 class="text-uppercase fw-bold">
-                                <i class="fas fa-gem me-2"></i>Vermon
-                              </h6>
-                          </div>
-                          <p>
-                            Vermon store sprinkles happiness
-                          </p>
-                      </div>
+                    <div>
+                        <a class="connect__link me-3" target="__blank" href="https://www.facebook.com/iamvinhhuynh" > 
+                            <i class='bx bxl-facebook'></i>
+                        </a>
+                        <a class="connect__link me-3" target="__blank" href="https://www.instagram.com/vermon.js/"> 
+                            <i class='bx bxl-instagram'></i>
+                        </a>
+                    
+                        <a class="connect__link" target="__blank" href="https://github.com/vinbuddy">
+                            <i class='bx bxl-github'></i>
+                        </a>
                     </div>
-                    <!-- Grid column -->
-            
-                    <!-- Grid column -->
-                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto text-md-center text-lg-start mb-4">
-                      <!-- Links -->
-                      <h6 class="text-uppercase fw-bold mb-4">
-                        Category
-                      </h6>
-                      <p>
-                        <a href="#!" class="text-reset">Donuts</a>
-                      </p>
-                      <p>
-                        <a href="#!" class="text-reset">Sandwiches</a>
-                      </p>
-                      <p>
-                        <a href="#!" class="text-reset">Coffee</a>
-                      </p>
-                      <p>
-                        <a href="#!" class="text-reset">Ice blended</a>
-                      </p>
-                    </div>
-                    <!-- Grid column -->
-            
-                    <!-- Grid column -->
-                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto text-md-center text-lg-start mb-4">
-                      <!-- Links -->
-                      <h6 class="text-uppercase fw-bold mb-4">
-                        Other
-                      </h6>
-                      <p>
-                        <a href="#!" class="text-reset">About</a>
-                      </p>
-                      <p>
-                        <a href="#!" class="text-reset">Cart</a>
-                      </p>
-                      <p>
-                        <a href="#!" class="text-reset">Register</a>
-                      </p>
-                    </div>
-                    <!-- Grid column -->
-            
-                    <!-- Grid column -->
-                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto text-md-center text-lg-start mb-md-0 mb-4">
-                      <!-- Links -->
-                      <h6 class="text-uppercase fw-bold mb-4 ">Contact</h6>
-                      <p class="d-flex align-items-center"><i style="width: 20px;" class='bx bx-current-location' ></i>Ho Chi Minh, Viet Nam</p>
-                      <p class="d-flex align-items-center">
-                        <i style="width: 20px;" class='bx bx-envelope' ></i>
-                        <span>huynhthevinh.work@gmail.com</span>
-                      </p>
-                      <p class="d-flex align-items-center"><i style="width: 20px;" class='bx bxs-phone'></i> 0933693264</p>
-                    </div>
-                    <!-- Grid column -->
-                  </div>
-                </section>
-      
-                <div class="text-center p-3" style="border-top: 1px solid #ddd;">
-                  © 2023 Copyright
-                  <a target="__blank" class="text-reset fw-bold" href="https://github.com/vinbuddy">Vermon</a>
                 </div>
-            </div>
+            </section>
+
+            <section class="info container mt-5">
+                <div class="row ">
+                    <div class="col-md-3 col-lg-3 mb-4">
+                        <div class="info__brand">
+                            <div class="info__logo mb-2">
+                                <a href="./index.html">
+                                    <img width="80px" height="80px" src="./assets/img/donut-logo.png" alt="">
+                                </a>
+                                <h6 class="info__title">
+                                  <i class="fas fa-gem me-2"></i>Vermon
+                                </h6>
+                            </div>
+                            <p>
+                              Vermon store sprinkles happiness
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2 col-lg-2 mb-4 mx-auto">
+                        <h6 class="info__title mb-4">
+                            Category
+                          </h6>
+                          <p>
+                            <a href="#!">Donuts</a>
+                          </p>
+                          <p>
+                            <a href="#!">Sandwiches</a>
+                          </p>
+                          <p>
+                            <a href="#!">Coffee</a>
+                          </p>
+                          <p>
+                            <a href="#!">Ice blended</a>
+                          </p>
+                    </div>
+
+                    <div class="col-md-3 col-lg-2 mb-4 mx-auto">
+                        <h6 class="info__title mb-4">
+                            Payment methods
+                        </h6>
+                        <ul class="info__payment">
+                            <li class="me-3" title="visa">
+                                <img class="info__payment-img" src="./assets/img/payment/visa.png" alt="">
+                            </li>
+                            <li class="me-3" title="master card">
+                                <img class="info__payment-img" src="./assets/img/payment/master.png" alt="">
+                            </li>
+                            <li class="me-3" title="paypal">
+                                <img class="info__payment-img" src="./assets/img/payment/paypal.png" alt="">
+                            </li>
+                            <li title="cash">
+                                <img class="info__payment-img" src="./assets/img/payment/cod.png" alt="">
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 col-lg-3 mb-4 mx-auto">
+                        <h6 class="info__title mb-4">Contact</h6>
+                        <p class="info__contact"><i class='bx bx-time-five'></i> 09.00 AM - 09.00 PM</p>
+                        <p class="info__contact"><i class='bx bx-current-location' ></i>Ho Chi Minh, Viet Nam</p>
+                        <p class="info__contact">
+                            <i class='bx bx-envelope' ></i>
+                            <span>huynhthevinh.work@gmail.com</span>
+                        </p>
+                        <p class="info__contact"><i class='bx bxs-phone'></i> 0933693264</p>
+                    </div>
+                </div>
+
+            </section>
+            
+            <section class="copyright p-3">
+                © 2023 Copyright
+                <a target="__blank" class="fw-bold" href="https://github.com/vinbuddy">Vermon</a>
+            </section>
         </footer>
     
     </main>
 
-    <script src="./index.js"></script>
+    <script src="./js/index.js" type="module"></script>
 </body>
 </html>
