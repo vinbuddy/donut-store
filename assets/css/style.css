@@ -17,7 +17,13 @@
 
 .primary-btn:hover {
     color: #fff;
-    /* opacity: 0.9; */
+}
+
+.primary-btn.circle {
+    padding: 5px 10px;
+    min-width: 38px;
+    min-height: 38px;
+    border-radius: 50%;
 }
 
 #overlay {

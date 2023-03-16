@@ -56,7 +56,7 @@ function renderOutletProducts () {
                         <a href="">
                             <img class="card__img" src="${product.img_path}" alt="">
                             <div class="card__info">
-                                <h3 class="card__name">${product.name}</h3>
+                                <h3 title="${product.name}" class="card__name">${product.name}</h3>
                                 <div class="card__rating">
                                     ${renderStarRating(product.rating)}
                                 </div>
@@ -84,7 +84,7 @@ function renderBestSellerProducts() {
                         <a href="">
                             <img class="card__img" src="${product.img_path}" alt="">
                             <div class="card__info">
-                                <h3 class="card__name">${product.name}</h3>
+                                <h3 title="${product.name}" class="card__name">${product.name}</h3>
                                 <div class="card__rating">
                                     ${renderStarRating(product.rating)}
                                 </div>

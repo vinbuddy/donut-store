@@ -149,40 +149,133 @@
                 <div class="menu">
                     <!-- Tab menu -->
                     <ul class="menu__tab">
-                        <li class="menu__tab-item menu__tab-item--active">
+                        <li data-type="donut" class="menu__tab-item">
                             <img src="../assets/img/tabs/tab-donut.png" alt="Menu Tab" class="menu__tab-img">
                             <h3 class="menu__tab-name">Donuts</h3>
                         </li>
-                        <li class="menu__tab-item">
+                        <li data-type="sandwich" class="menu__tab-item">
                             <img src="../assets/img/tabs/tab-sandwich.png" alt="Menu Tab" class="menu__tab-img">
-                            <h3 class="menu__tab-name">Sanwiches</h3>
+                            <h3 class="menu__tab-name">Sandwiches</h3>
                         </li>
 
-                        <li class="menu__tab-item">
+                        <li data-type="coffee" class="menu__tab-item">
                             <img src="../assets/img/tabs/tab-cup-coffee.png" alt="Menu Tab" class="menu__tab-img">
                             <h3 class="menu__tab-name">Coffee</h3>
                         </li>
-                        <li class="menu__tab-item">
+                        <li data-type="ice-blended" class="menu__tab-item">
                             <img src="../assets/img/tabs/tab-smoothie.png" alt="Menu Tab" class="menu__tab-img">
                             <h3 class="menu__tab-name">Ice Blended</h3>
                         </li>
                     </ul>
                     
                     <div class="menu__product">
-                        <div class="row">
-                            <div class="col-lg-2">
-                                <div class="menu__card">
-                                    
-                                </div>
-                            </div>
+                        <div id="menu-list" class="row">
+                            <!-- RENDER -->
                         </div>
                     </div>
                 </div>
             </section>
         </div>
+
+        <footer id="footer">
+            <section class="connect">
+                <div class="connect__inner container p-4">
+                    <div class="me-5">
+                        <span>Get connected with us</span>
+                    </div>
+                    <div>
+                        <a class="connect__link me-3" target="__blank" href="https://www.facebook.com/iamvinhhuynh" > 
+                            <i class='bx bxl-facebook'></i>
+                        </a>
+                        <a class="connect__link me-3" target="__blank" href="https://www.instagram.com/vermon.js/"> 
+                            <i class='bx bxl-instagram'></i>
+                        </a>
+                    
+                        <a class="connect__link" target="__blank" href="https://github.com/vinbuddy">
+                            <i class='bx bxl-github'></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="info container mt-5">
+                <div class="row ">
+                    <div class="col-md-3 col-lg-3 mb-4">
+                        <div class="info__brand">
+                            <div class="info__logo mb-2">
+                                <a href="./index.html">
+                                    <img width="80px" height="80px" src="../assets/img/donut-logo.png" alt="">
+                                </a>
+                                <h6 class="info__title">
+                                  <i class="fas fa-gem me-2"></i>Vermon
+                                </h6>
+                            </div>
+                            <p>
+                              Vermon store sprinkles happiness
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2 col-lg-2 mb-4 mx-auto">
+                        <h6 class="info__title mb-4">
+                            Category
+                          </h6>
+                          <p>
+                            <a href="#!">Donuts</a>
+                          </p>
+                          <p>
+                            <a href="#!">Sandwiches</a>
+                          </p>
+                          <p>
+                            <a href="#!">Coffee</a>
+                          </p>
+                          <p>
+                            <a href="#!">Ice blended</a>
+                          </p>
+                    </div>
+
+                    <div class="col-md-3 col-lg-2 mb-4 mx-auto">
+                        <h6 class="info__title mb-4">
+                            Payment methods
+                        </h6>
+                        <ul class="info__payment">
+                            <li class="me-3" title="visa">
+                                <img class="info__payment-img" src="../assets/img/payment/visa.png" alt="">
+                            </li>
+                            <li class="me-3" title="master card">
+                                <img class="info__payment-img" src="../assets/img/payment/master.png" alt="">
+                            </li>
+                            <li class="me-3" title="paypal">
+                                <img class="info__payment-img" src="../assets/img/payment/paypal.png" alt="">
+                            </li>
+                            <li title="cash">
+                                <img class="info__payment-img" src="../assets/img/payment/cod.png" alt="">
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 col-lg-3 mb-4 mx-auto">
+                        <h6 class="info__title mb-4">Contact</h6>
+                        <p class="info__contact"><i class='bx bx-time-five'></i> 09.00 AM - 09.00 PM</p>
+                        <p class="info__contact"><i class='bx bx-current-location' ></i>Ho Chi Minh, Viet Nam</p>
+                        <p class="info__contact">
+                            <i class='bx bx-envelope' ></i>
+                            <span>huynhthevinh.work@gmail.com</span>
+                        </p>
+                        <p class="info__contact"><i class='bx bxs-phone'></i> 0933693264</p>
+                    </div>
+                </div>
+
+            </section>
+            
+            <section class="copyright p-3">
+                © 2023 Copyright
+                <a target="__blank" class="fw-bold" href="https://github.com/vinbuddy">Vermon</a>
+            </section>
+        </footer>
     
     </main>
 
     <script src="../js/index.js" type="module"></script>
+    <script src="../js/menu.js" type="module"></script>
 </body>
 </html>
