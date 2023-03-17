@@ -5,7 +5,6 @@ const tabs = document.querySelectorAll('.menu__tab-item')
 const menu = document.getElementById('menu-list')
 
 function renderMenuItem (tabType) {
-
     const htmls = products.filter(item => item.type === tabType)
         .map((product) => {
             return `

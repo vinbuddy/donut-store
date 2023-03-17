@@ -10,6 +10,18 @@ const header = document.getElementById('header')
 const outlet = document.getElementById('outlet')
 const bestSeller = document.getElementById('best-seller')
 
+const searchInput = document.querySelector('.search__input')
+const resultList = document.getElementById('result-list')
+const searchResult = document.getElementById('result')
+const resultTitle = document.querySelector('.result__title')
+const closeResultBtn = document.querySelector('.result__close-btn')
+
+const inputMenu = document.querySelector('.menu__search-input')
+const resultMenuList = document.getElementById('menu__search-list')
+const menuResult = document.getElementById('result-mobile')
+const resultMenuTilte = document.querySelector('.menu__result-title')
+const closeMenuResult = document.querySelector('.menu__resule-close-btn')
+
 function handleMenu() {
 
     const openMenu = () => {
@@ -102,6 +114,55 @@ function renderBestSellerProducts() {
     }
 }
 
+function searchProducts(input, title, list, result, closeBtn) {
+    input.oninput = (e) => {
+
+        let value = e.target.value.toLocaleLowerCase()
+        title.innerText = `Result of '${value}'`
+
+        if (value.length > 0) {
+            result.classList.remove('hide')
+            result.classList.add('show') // show 
+
+            const htmls = products.filter(item => item.name.toLocaleLowerCase().includes(value))
+            .map(product => {
+                return `
+                    <li class="result__item">
+                       <a href="">
+                            <img class="result__img" src="${product.img_path}" alt="">
+                            <h4 class="result__name">${product.name}</h4>
+                       </a>
+                    </li>
+                `
+            })
+
+        
+            if (htmls.length > 0) {
+                list.innerHTML = htmls.join('')
+            } else {
+                list.innerHTML = '';
+                title.innerText = 'No Results'
+            }
+            
+        } else {
+            result.classList.remove('show') // hide 
+            result.classList.add('hide') // hide 
+
+        }
+    }
+
+    input.onblur = () => {
+        input.value = ''
+        result.classList.add('hide')
+    }
+
+    closeBtn.onclick = () => {
+        input.value = ''
+        input.focus()
+        result.classList.add('hide')
+    }
+}
+
 function start() {
     renderOutletProducts()
     renderBestSellerProducts()
@@ -109,6 +170,8 @@ function start() {
     handleMenu()
     handleScrollHeader()
 
+    searchProducts(searchInput, resultTitle, resultList, searchResult, closeResultBtn) // Search PC
+    searchProducts(inputMenu, resultMenuTilte, resultMenuList, menuResult, closeMenuResult) // Search Mobile
 }
 
 start()
