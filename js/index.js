@@ -151,15 +151,11 @@ function searchProducts(input, title, list, result, closeBtn) {
         }
     }
 
-    input.onblur = () => {
-        input.value = ''
-        result.classList.add('hide')
-    }
-
+    
     closeBtn.onclick = () => {
         input.value = ''
-        input.focus()
         result.classList.add('hide')
+        input.focus()
     }
 }
 

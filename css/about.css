@@ -1,0 +1,66 @@
+.about {
+    margin-bottom: 50px;
+}
+
+.intro__video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.85);
+}
+
+.intro__content {
+    height: 100%;
+    padding: 20px;
+    background-color: var(--secondary-color);
+
+}
+
+.intro__title {
+    font-size: 55px;
+    font-family: var(--heading-font);
+}
+
+.intro__text {
+    font-size: 17px;
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+}
+
+.self {
+    margin-bottom: 30px;
+}
+
+.self__wrapper {
+    padding: 10px;
+}
+
+.self__avatar {
+    width: 100%;
+}
+
+.self__name {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+.self__socials {
+    margin-top: 10px;
+    padding-left: 0;
+}
+
+.self__social-link {
+    display: inline-block;
+    padding: 10px 0;
+}
+
+.self__social-link:hover .self__social-icon {
+    color: var(--primary-color);
+}
+
+.self__social-icon {
+    color: #444;
+    font-size: 28px;
+}

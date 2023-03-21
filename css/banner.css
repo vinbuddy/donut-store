@@ -1,0 +1,83 @@
+#banner {
+    margin-top: var(--header-height);
+    z-index: 1;
+    background-image: url('../assets/img/donut-banner.jpg');
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: cover;
+    height: 800px;
+    width: 100%;
+    margin-bottom: 80px;
+}
+
+.banner__inner {
+    width: 50%;
+    margin-top: calc(var(--header-height) + 30px);
+
+}
+
+.banner__caption {
+    font-size: 55px;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: 0.5px;
+}
+
+
+.banner__main-caption {
+    color: var(--primary-color);
+}
+
+.banner__desc {
+    font-size: 18px;
+    margin-top: 30px;
+    color: #333;
+    letter-spacing: 0.8px;
+    padding-left: 10px;
+    border-left: 3px solid var(--primary-color);
+}
+
+.banner__outlet {
+    padding-top: calc(var(--card-product-img-height) / 2);
+    padding-bottom: 40px; 
+}
+
+/* Mobile -> Tablet */
+@media (max-width: 991px) {
+    #banner {
+        background-image: none;
+        height: auto;
+        margin-bottom: 50px;
+    }
+    
+    .banner__caption {
+        font-size: 40px;
+    }
+
+    .banner__inner {
+        width: 100%;
+    }
+
+    .banner__caption {
+        font-size: 47px;
+    }
+
+    .banner__desc {
+        border-left: none;
+        padding: 14px;
+        border-radius: 8px;
+        font-size: 15px;
+        background-color: rgba(255, 255, 255, 0.9);
+        border: 1px solid var(--primary-color);
+    }
+    
+}
+
+
+
+/* Mobile */
+@media (max-width: 575px) {
+    .banner__caption {
+        font-size: 37px;
+    }
+}
