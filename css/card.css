@@ -49,7 +49,6 @@
     font-size: 17px;
     font-weight: 700;
     text-align: left;
-    /* margin-bottom: 0; */
 }
 
 .card__rating {
@@ -57,14 +56,6 @@
     text-align: left;
 }
 
-.card__star-solid {
-    color: #fca244;
-}
-
-.card__star-empty {
-    color: #ddd;
-
-}
 
 .card__btn {
     position: absolute;
@@ -75,9 +66,9 @@
 
 .card__btn.primary-btn {
     border-radius: 26px;
-    padding: 7px 20px;
+    padding: 7px 5px;
     font-weight: 400;
-    min-width: 120px;
+    min-width: 124px;
 
 }
 

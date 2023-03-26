@@ -1,16 +1,16 @@
 function renderStarRating(ratingValue = 5) {
     let stars = [
-        `<i class='card__star-solid bx bxs-star'></i>`,
-        `<i class='card__star-solid bx bxs-star'></i>`,
-        `<i class='card__star-solid bx bxs-star'></i>`,
-        `<i class='card__star-solid bx bxs-star'></i>`,
-        `<i class='card__star-solid bx bxs-star'></i>`,
+        `<i class='rating-solid-star bx bxs-star'></i>`,
+        `<i class='rating-solid-star bx bxs-star'></i>`,
+        `<i class='rating-solid-star bx bxs-star'></i>`,
+        `<i class='rating-solid-star bx bxs-star'></i>`,
+        `<i class='rating-solid-star bx bxs-star'></i>`,
 
-        `<i class='card__star-empty bx bxs-star'></i>`,
-        `<i class='card__star-empty bx bxs-star'></i>`,
-        `<i class='card__star-empty bx bxs-star'></i>`,
-        `<i class='card__star-empty bx bxs-star'></i>`,
-        `<i class='card__star-empty bx bxs-star'></i>`,
+        `<i class='rating-empty-star bx bxs-star'></i>`,
+        `<i class='rating-empty-star bx bxs-star'></i>`,
+        `<i class='rating-empty-star bx bxs-star'></i>`,
+        `<i class='rating-empty-star bx bxs-star'></i>`,
+        `<i class='rating-empty-star bx bxs-star'></i>`,
         
     ]
 

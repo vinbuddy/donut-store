@@ -7,7 +7,10 @@ export const products = [
         img_path: '../assets/img/donuts/chocolate-covered-strawberry.png',
         type: 'donut',
         outlet: true,
-        best_seller: true
+        best_seller: true,
+        description: 'Enjoy the sweet flavor of strawberry icing finished with chocolate drizzle',
+        ingredients: ['Strawberry Icing', 'Chocolate Drizzle'],
+        detail_img_path: '../assets/img/donuts/detail-chocolate-covered-strawberry.png'
     },
     {
         id: 'd-2',
@@ -16,8 +19,10 @@ export const products = [
         rating: 10,
         img_path: '../assets/img/donuts/cinnamon-bun.png',
         type: 'donut',
-        best_seller: true
-
+        best_seller: true,
+        description: 'Love cinnamon buns? Then you will love this sweet donut with cinnamon sugar and vanilla icing. Get enough for everyone - this donuts too good to share!',
+        ingredients: ['Cinnamon Sugar', 'Vanilla Drizzle'],
+        detail_img_path: '../assets/img/donuts/detail-cinnamon-bun.png'
     },
     {
         id: 'd-3',
@@ -26,8 +31,10 @@ export const products = [
         rating: 10,
         img_path: '../assets/img/donuts/beach-ball-carnival-sprinkles.png',
         type: 'donut',
-        best_seller: true
-
+        best_seller: true,
+        description: 'Can not decide between sprinkles and a chocolate drizzle - get both! Unlock your inner child and get the works on this donut with vanilla icing, rainbow sprinkles, and chocolate drizzle',
+        ingredients: ['Vanilla Icing', 'Rainbow Sprinkles', 'Chocolate Drizzle'],
+        detail_img_path: '../assets/img/donuts/detail-beach-ball-carnival-sprinkles.png'
     },
     {
         id: 'd-4',
@@ -36,7 +43,10 @@ export const products = [
         rating: 8,
         img_path: '../assets/img/donuts/chocolate-with-peanuts-and-salted-caramel.png',
         type: 'donut',
-        best_seller: true
+        best_seller: true,
+        description: 'Go nuts over this salty, sweet, and crunchy donut! Enjoy this donut covered in chocolate icing, peanuts, and salted caramel drizzle.',
+        ingredients: ['Chocolate Icing', 'Peanuts', 'Salted Caramel Drizzle'],
+        detail_img_path: '../assets/img/donuts/detail-chocolate-with-peanuts-and-salted-caramel.png'
 
     },
     {
@@ -46,8 +56,10 @@ export const products = [
         rating: 8,
         img_path: '../assets/img/donuts/Strawberry-Shortcake.png',
         type: 'donut',
-        best_seller: true
-
+        best_seller: true,
+        description: 'This cheerful combination includes strawberry icing, graham cracker crumbs, and a sweet vanilla drizzle.',
+        ingredients: ['Strawberry Icing', 'Graham Cracker Crumbs','Vanilla Drizzle'],
+        detail_img_path: '../assets/img/donuts/detail-Strawberry-Shortcake.png'
     },
     {
         id: 'd-6',
@@ -56,8 +68,10 @@ export const products = [
         rating: 8,
         img_path: '../assets/img/donuts/Midnight-Madness.png',
         type: 'donut',
-        best_seller: true
-
+        best_seller: true,
+        description: 'Chocolate icing with chocolate sprinkles is sure to satisfy your sweet tooth.',
+        ingredients: ['Chocolate Icing', 'Chocolate Sprinkles'],
+        detail_img_path: '../assets/img/donuts/detail-Midnight-Madness.png'
     },
     {
         id: 'd-7',
@@ -66,7 +80,10 @@ export const products = [
         rating: 8,
         img_path: '../assets/img/donuts/bacon-in-the-sun.png',
         type: 'donut',
-        best_seller: true
+        best_seller: true,
+        description: 'Enjoy the flavors of maple icing topped with chopped bacon and salted caramel drizzle.',
+        ingredients: ['Maple Icing', 'Chopped Bacon', 'Salted Caramel Drizzle'],
+        detail_img_path: '../assets/img/donuts/bacon-in-the-sun.png',
 
     },
     {
@@ -76,6 +93,9 @@ export const products = [
         rating:  7.5,
         img_path: '../assets/img/donuts/Blueberry-Lemonade.png',
         type: 'donut',
+        description: 'Sweet, tangy, and totally satisfying, this summer feature will remind you of a blueberry lemonade-only better!',
+        ingredients: ['Blueberry Icing', 'Lemon Drizzle'],
+        detail_img_path: '../assets/img/donuts/Blueberry-Lemonade.png'
     },
     {
         id: 'd-9',
@@ -84,6 +104,10 @@ export const products = [
         rating:  9.7,
         img_path: '../assets/img/donuts/Chocolate-Explosion.png',
         type: 'donut',
+        description: 'What could be better than chocolate, chocolate and more chocolate! It\'s a chocolate lover\'s dream!',
+        ingredients: ['Chocolate Icing', 'OREO® Crumbles', 'Hot Fudge Drizzle'],
+        detail_img_path: '../assets/img/donuts/Chocolate-Explosion.png',
+
     },
     {
         id: 'd-10',
@@ -92,6 +116,9 @@ export const products = [
         rating:  6.5,
         img_path: '../assets/img/donuts/Coconut-Island-Bliss.png',
         type: 'donut',
+        description: 'Chocolate and peanuts is a classic combo—now add coconut for a new twist on this time-honored taste.',
+        ingredients: ['Chocolate Icing', 'Peanuts', 'Coconut'],
+        detail_img_path: '../assets/img/donuts/detail-Coconut-Island-Bliss.png',
     },
     {
         id: 'd-11',
@@ -100,6 +127,10 @@ export const products = [
         rating:  9.5,
         img_path: '../assets/img/donuts/peanut-butter-paradise.png',
         type: 'donut',
+        description: 'Treat yourself to this donut with peanut butter icing and chocolate drizzle. These two crowd-pleasing flavors combine to make the donut dream team!',
+        ingredients: ['Peanut Butter Icing', 'Chocolate Drizzle'],
+        detail_img_path: '../assets/img/donuts/detail-peanut-butter-paradise.png',
+        
     },
     {
         id: 'd-12',
@@ -108,30 +139,39 @@ export const products = [
         rating:  9.5,
         img_path: '../assets/img/donuts/the-beach.png',
         type: 'donut',
+        description: 'Rich vanilla poured over a generous dusting of blissful cinnamon sugar. This classic, homemade flavor is sure to satisfy.',
+        ingredients: ['Vanilla Icing', 'Cinnamon Sugar'],
+        detail_img_path: '../assets/img/donuts/detail-the-beach.png',
+
     },
     {
         id: 's-1',
-        name: 'Maple Drizzle',
+        name: 'Maple Drizzle, Chopped Bacon, Sausage, Egg & Cheese Breakfast Sandwich',
         price: '3.4',
         rating:  9.5,
         img_path: '../assets/img/sandwich/Maple-Drizzle.png',
         type: 'sandwich',
+        description: 'Get the works with this flavorful breakfast sandwich with egg, sausage, and cheese on a donut topped with maple icing and chopped bacon.',
+        detail_img_path: '../assets/img/sandwich/Maple-Drizzle.png'
     },
     {
         id: 's-2',
-        name: 'Bacon Cheese',
+        name: 'Bacon, Egg, and Cheese Breakfast Sandwich',
         price: '3',
         rating:  9.5,
         img_path: '../assets/img/sandwich/Bacon-Cheese.png',
         type: 'sandwich',
+        description: 'Everybody loves bacon and donuts - paired with egg and cheese, they make one delicious breakfast sandwich!',
+        detail_img_path: '../assets/img/sandwich/Bacon-Cheese.png',
     },
     {
         id: 's-3',
-        name: 'Egg Cheese',
+        name: 'Egg & Cheese Breakfast Sandwich',
         price: '2.8',
         rating:  8,
         img_path: '../assets/img/sandwich/Egg-Cheese.png',
         type: 'sandwich',
+        description: 'Enjoy an every day classic with a twist!'
     },
     {
         id: 'c-1',
@@ -140,6 +180,8 @@ export const products = [
         rating:  10,
         img_path: '../assets/img/coffee/Cappuccino.png',
         type: 'coffee',
+        description: 'Freshly brewed espresso topped with a milk foam handcrafted by frothing the milk. Cappuccinos are only served hot.',
+        detail_img_path: '../assets/img/coffee/Cappuccino.png',
     },
     {
         id: 'c-2',
@@ -148,6 +190,8 @@ export const products = [
         rating:  8,
         img_path: '../assets/img/coffee/Americano.png',
         type: 'coffee',
+        description: 'Freshly brewed espresso shots combined with water, available hot or iced.',
+        detail_img_path: '../assets/img/coffee/Americano.png',
     },
     {
         id: 'c-3',
@@ -156,6 +200,8 @@ export const products = [
         rating:  10,
         img_path: '../assets/img/coffee/Espresso.png',
         type: 'coffee',
+        description: 'Freshly brewed double shot of espresso available hot or iced.',
+        detail_img_path: '../assets/img/coffee/Espresso.png'
     },
     {
         id: 'c-4',
@@ -164,6 +210,8 @@ export const products = [
         rating:  10,
         img_path: '../assets/img/coffee/Latte.png',
         type: 'coffee',
+        description: 'Available with custom flavors such as caramel and vanilla, a hot latte is freshly brewed espresso and steamed milk with a thin layer of foam on the top and an iced latte is freshly brewed espresso, cold milk, and ice.',
+        detail_img_path: '../assets/img/coffee/Latte.png'
     },
     {
         id: 'c-5',
@@ -172,6 +220,8 @@ export const products = [
         rating:  10,
         img_path: '../assets/img/coffee/Cold-Brew.png',
         type: 'coffee',
+        description: 'A tailor-roasted blend, slow-steeped in cold water for 12-16 hours, without touching heat, and poured over ice to order.',
+        detail_img_path: '../assets/img/coffee/Cold-Brew.png',
     },
     {
         id: 'c-6',
@@ -180,6 +230,7 @@ export const products = [
         rating:  9,
         img_path: '../assets/img/coffee/Coffee-Frappe.png',
         type: 'coffee',
+        detail_img_path: '../assets/img/coffee/Coffee-Frappe.png',
     },
     {
         id: 'c-7',
@@ -188,6 +239,7 @@ export const products = [
         rating:  9.8,
         img_path: '../assets/img/coffee/Cookie-Crumble-Frappe.png',
         type: 'coffee',
+        detail_img_path: '../assets/img/coffee/Cookie-Crumble-Frappe.png',
     },
     {
         id: 'c-8',
@@ -196,7 +248,8 @@ export const products = [
         rating:  10,
         img_path: '../assets/img/coffee/Confetti-Cupcake-Frappe.png',
         type: 'coffee',
-        outlet: true
+        outlet: true,
+        detail_img_path: '../assets/img/coffee/Confetti-Cupcake-Frappe.png',
     },
     {
         id: 'i-1',
@@ -204,7 +257,9 @@ export const products = [
         price: '3',
         rating:  10,
         img_path: '../assets/img/ice-blended/Vanilla-Milkshake.png',
-        type: 'ice-blended'
+        type: 'ice-blended',
+        description: 'Hand-dipped vanilla ice cream topped with whipped cream!',
+        detail_img_path: '../assets/img/ice-blended/detail-Vanilla-Milkshake.png',
     },
     {
         id: 'i-2',
@@ -212,7 +267,11 @@ export const products = [
         price: '2.85',
         rating:  10,
         img_path: '../assets/img/ice-blended/Strawberry-Milkshake.png',
-        type: 'ice-blended'
+        type: 'ice-blended',
+        description: 'Vanilla ice cream blended with bits of strawberry and topped with whipped cream!',
+        detail_img_path: '../assets/img/ice-blended/detail-Strawberry-Milkshake.png',
+
+        
     },
     {
         id: 'i-3',
@@ -220,7 +279,9 @@ export const products = [
         price: '2.85',
         rating:  10,
         img_path: '../assets/img/ice-blended/Chocolate-Milkshake.png',
-        type: 'ice-blended'
+        type: 'ice-blended',
+        description: 'A classic hand-dipped chocolate shake topped with whipped cream and chocolate drizzle!',
+        detail_img_path: '../assets/img/ice-blended/detail-Chocolate-Milkshake.png'
     },
     {
         id: 'i-4',
@@ -228,7 +289,8 @@ export const products = [
         price: '3.2',
         rating:  10,
         img_path: '../assets/img/ice-blended/Cookies-Milkshake.png',
-        type: 'ice-blended'
+        type: 'ice-blended',
+        detail_img_path: '../assets/img/ice-blended/detail-Cookies-Milkshake.png',
     },
     {
         id: 'i-5',
@@ -236,6 +298,8 @@ export const products = [
         price: '2.85',
         rating:  10,
         img_path: '../assets/img/ice-blended/Blueberry-Milkshake.png',
-        type: 'ice-blended'
+        type: 'ice-blended',
+        description: 'Vanilla ice cream blended with bits of blueberry and topped with whipped cream!',
+        detail_img_path: '../assets/img/ice-blended/detail-Blueberry-Milkshake.png',
     },
 ]

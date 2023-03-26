@@ -1,5 +1,8 @@
-import { products } from './products.js'
 import renderStarRating from './renderStarRating.js'
+import { products } from './products.js'
+
+import { storage } from './cart/storage.js'
+import addToCart from './cart/addToCart.js'
 
 const menuBtn = document.getElementById('menu-btn')
 const menu = document.getElementById('menu')
@@ -21,6 +24,9 @@ const resultMenuList = document.getElementById('menu__search-list')
 const menuResult = document.getElementById('result-mobile')
 const resultMenuTilte = document.querySelector('.menu__result-title')
 const closeMenuResult = document.querySelector('.menu__resule-close-btn')
+
+// Create event addToCart global scope
+window.addToCart = addToCart
 
 function handleMenu() {
 
@@ -60,13 +66,14 @@ function handleScrollHeader () {
 }
 
 function renderOutletProducts () {
+
     if (outlet) {
         const htmls = products.filter((product) => product.outlet === true).map((product) => {
             return `
                 <div class="col-lg-4 col-md-6 col-sm-6 col-6">
                     <div class="card__product">
-                        <a href="">
-                            <img class="card__img" src="${product.img_path}" alt="">
+                        <a href="../pages/detail.html#${product.id}">
+                            <img class="product-img card__img" src="${product.img_path}" alt="">
                             <div class="card__info">
                                 <h3 title="${product.name}" class="card__name">${product.name}</h3>
                                 <div class="card__rating">
@@ -76,7 +83,12 @@ function renderOutletProducts () {
                                 
                             </div>
                         </a>
-                        <button class="primary-btn card__btn">Add to cart</button>
+                        <button data-id=${product.id} onclick="addToCart(this)" class="add primary-btn card__btn">
+                            <i class='add__cart-icon bx bx-cart-alt'></i>
+                            <span class="add__cart-content">Add to cart</span>
+                            
+                            <i class='add__cart-success bx bx-check'></i>
+                        </button>
                     </div>
                 </div>
             `
@@ -87,14 +99,14 @@ function renderOutletProducts () {
 }
 
 function renderBestSellerProducts() {
-   
     if (bestSeller) {
         const htmls = products.filter((product) => product.best_seller === true).map((product) => {
+            
             return `
                 <div class="col-lg-3 col-md-6 col-sm-6 col-6 mb-4">
                     <div class="card__product">
-                        <a href="">
-                            <img class="card__img" src="${product.img_path}" alt="">
+                        <a href="../pages/detail.html#${product.id}">
+                            <img class="product-img card__img" src="${product.img_path}" alt="">
                             <div class="card__info">
                                 <h3 title="${product.name}" class="card__name">${product.name}</h3>
                                 <div class="card__rating">
@@ -104,7 +116,9 @@ function renderBestSellerProducts() {
                                 
                             </div>
                         </a>
-                        <button class="primary-btn card__btn">Add to cart</button>
+                        <button data-id=${product.id} onclick="addToCart(this)" class="primary-btn card__btn">
+                            Add to cart
+                        </button>
                     </div>
                 </div>
             `
@@ -128,7 +142,7 @@ function searchProducts(input, title, list, result, closeBtn) {
             .map(product => {
                 return `
                     <li class="result__item">
-                       <a href="">
+                       <a href="../pages/detail.html#${product.id}">
                             <img class="result__img" src="${product.img_path}" alt="">
                             <h4 class="result__name">${product.name}</h4>
                        </a>
@@ -160,6 +174,7 @@ function searchProducts(input, title, list, result, closeBtn) {
 }
 
 function start() {
+
     renderOutletProducts()
     renderBestSellerProducts()
 

@@ -10,7 +10,7 @@ function renderMenuItem (tabType) {
             return `
                 <div class="col-xl-2 col-lg-3 col-md-3 col-sm-6 col-6 mb-4">
                     <div class="card__menu">
-                        <a href="">
+                        <a href="../pages/detail.html#${product.id}">
                             <img class="card__menu-img" src="${product.img_path}" />
                             <div class="card__menu-info">
                                 <h3 title="${product.name}" class="card__menu-name">${product.name}</h3>
@@ -33,9 +33,9 @@ function renderMenuItem (tabType) {
     menu.innerHTML = htmls.join('')
 }
 
-function handleChangeTab(hash) {
+function handleChangeTab(currentTab) {
     tabs.forEach((tab) => {
-        if (hash === tab.dataset.type) {
+        if (currentTab === tab.dataset.type) {
             tab.classList.add('menu__tab-item--active')
         } 
 
@@ -51,10 +51,10 @@ function handleChangeTab(hash) {
 }
 
 function start () {
-    const hash = window.location.hash.charAt(0) === '#' && window.location.hash.slice(1);
+    const currentTab = window.location.hash.charAt(0) === '#' && window.location.hash.slice(1);
 
-    renderMenuItem(hash || 'donut') // first active
-    handleChangeTab(hash || 'donut')
+    renderMenuItem(currentTab || 'donut') // first active
+    handleChangeTab(currentTab || 'donut')
 }
 
 start()

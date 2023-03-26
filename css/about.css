@@ -11,10 +11,12 @@
 }
 
 .intro__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     height: 100%;
     padding: 20px;
     background-color: var(--secondary-color);
-
 }
 
 .intro__title {
@@ -25,7 +27,6 @@
 .intro__text {
     font-size: 17px;
     letter-spacing: 0.5px;
-    margin-bottom: 20px;
 }
 
 .self {

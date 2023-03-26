@@ -3,11 +3,14 @@
     --secondary-color: #f3f3f4;
     --text-color: #000;
     --desc-color: #868686;
+    --rating-star-solid-color: #fca244;
+    --rating-star-empty-color: #ddd;
 
     --heading-font: 'Teko', sans-serif;
     
     --header-height: 70px;
     --card-product-img-height: 200px;
+    
 }
 
 * {
@@ -72,6 +75,7 @@ body a:hover {
 
 ul {
     list-style: none;
+    padding-left: 0;
 }
 
 button {
