@@ -2,7 +2,7 @@ import renderStarRating from './renderStarRating.js'
 import { products } from './products.js'
 
 import { storage } from './cart/storage.js'
-import addToCart from './cart/addToCart.js'
+import { updateQuantity } from './cart/updateQuantity.js'
 
 const menuBtn = document.getElementById('menu-btn')
 const menu = document.getElementById('menu')
@@ -24,9 +24,6 @@ const resultMenuList = document.getElementById('menu__search-list')
 const menuResult = document.getElementById('result-mobile')
 const resultMenuTilte = document.querySelector('.menu__result-title')
 const closeMenuResult = document.querySelector('.menu__resule-close-btn')
-
-// Create event addToCart global scope
-window.addToCart = addToCart
 
 function handleMenu() {
 
@@ -83,7 +80,7 @@ function renderOutletProducts () {
                                 
                             </div>
                         </a>
-                        <button data-id=${product.id} onclick="addToCart(this)" class="add primary-btn card__btn">
+                        <button data-id=${product.id} class="add primary-btn card__btn">
                             <i class='add__cart-icon bx bx-cart-alt'></i>
                             <span class="add__cart-content">Add to cart</span>
                             
@@ -116,8 +113,11 @@ function renderBestSellerProducts() {
                                 
                             </div>
                         </a>
-                        <button data-id=${product.id} onclick="addToCart(this)" class="primary-btn card__btn">
-                            Add to cart
+                        <button data-id=${product.id} class="add primary-btn card__btn">
+                            <i class='add__cart-icon bx bx-cart-alt'></i>
+                            <span class="add__cart-content">Add to cart</span>
+                            
+                            <i class='add__cart-success bx bx-check'></i>
                         </button>
                     </div>
                 </div>
@@ -171,6 +171,15 @@ function searchProducts(input, title, list, result, closeBtn) {
         result.classList.add('hide')
         input.focus()
     }
+
+    window.addEventListener("popstate", function() {
+        result.classList.add('hide')
+        input.value = ''
+    })
+}
+
+function renderQuantityValue() {
+    updateQuantity()
 }
 
 function start() {
@@ -180,9 +189,11 @@ function start() {
 
     handleMenu()
     handleScrollHeader()
-
+    
     searchProducts(searchInput, resultTitle, resultList, searchResult, closeResultBtn) // Search PC
     searchProducts(inputMenu, resultMenuTilte, resultMenuList, menuResult, closeMenuResult) // Search Mobile
+
+    renderQuantityValue()
 }
 
 start()

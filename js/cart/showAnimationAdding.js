@@ -6,8 +6,10 @@ function showAnimationAdding(btnElement) {
     cartIcon.classList.add('added')
     cartContent.classList.add('added')
     cartSuccess.classList.add('added')
-    
-    // after push => remove => hide
+
+    // Prevent pointer while adding 
+    btnElement.style.pointerEvents = 'none'
+
     setTimeout(( ) => {
         cartIcon.classList.remove('added')
     }, 1000)
@@ -19,6 +21,7 @@ function showAnimationAdding(btnElement) {
     
     setTimeout(() => {
         cartContent.classList.remove('added')
+        btnElement.style.pointerEvents = 'auto'
 
     }, 2600)
 

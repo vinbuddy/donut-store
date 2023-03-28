@@ -1,7 +1,7 @@
 .add__cart-icon {
     display: none !important;
-    font-size: 19px;
-    margin-right: 3px;
+    font-size: 18px;
+    
 }
 
 .add__cart-icon.added {

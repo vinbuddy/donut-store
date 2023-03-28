@@ -1,19 +1,19 @@
 import { storage } from "./storage.js"
 import showAnimationAdding from "./showAnimationAdding.js"
+import { updateQuantity } from "./updateQuantity.js"
 
-function addToCart(btnClicked) {
+function addToCart(id, quantity = 1) {
     const cart = storage.get() 
-    const id = btnClicked.dataset.id
-
+    
     let payload = {
         id,
-        quantity: 1,
+        quantity: quantity,
     }
 
     let isDuplicate = cart.some((item, index) => {
         // Duplicate => update quantity
         if(item.id === id) {
-            storage.update(index, {id, quantity: item.quantity + 1})
+            storage.update(index, {id, quantity: item.quantity + quantity})
         }
 
         return item.id === id
@@ -23,8 +23,36 @@ function addToCart(btnClicked) {
         storage.set(payload)
     }
 
-    showAnimationAdding(btnClicked)
 }
 
+function handleAdd(btnClicked) {
+    const addBtn = document.querySelectorAll('.add')
 
-export default addToCart
+    if (addBtn) {
+        // Multi add btn (home page, detail page)
+        addBtn.forEach(btn => {
+            btn.onclick = function () {
+                addToCart(btn.dataset.id)
+                updateQuantity()
+                showAnimationAdding(btn)
+            }
+        })
+    } 
+
+    // Excute at (menu page) because of changing tabs will not querySelectorAll('.add') 
+    // so get this btn clicked 
+    if (btnClicked) {
+        addToCart(btnClicked.dataset.id)
+        updateQuantity()
+        showAnimationAdding(btnClicked)
+    }
+   
+}
+
+function start() {
+    handleAdd()
+}
+
+start()
+
+export { handleAdd }

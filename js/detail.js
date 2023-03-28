@@ -44,8 +44,11 @@ function render (currentId) {
                 </div>
 
                 <div>
-                    <button class="primary-btn detai__add">
-                        <i class='bx bx-cart' ></i>  Add To Cart
+                    <button data-id=${product.id}  class="add primary-btn detai__add">
+                        <i class='add__cart-icon bx bx-cart-alt'></i>
+                        <span class="add__cart-content">Add to cart</span>
+                        
+                        <i class='add__cart-success bx bx-check'></i>
                     </button>
                 </div>
             </div>
@@ -57,8 +60,15 @@ function render (currentId) {
 
 function start () {
     const currentId = window.location.hash.charAt(0) === '#' && window.location.hash.slice(1);
-    
     render(currentId);
+    
+    
+    // re-render when location change
+    window.addEventListener("popstate", function() {
+        const newCurrentId = window.location.hash.charAt(0) === '#' && window.location.hash.slice(1);
+        render(newCurrentId)
+    })
+
 }
 
 start()

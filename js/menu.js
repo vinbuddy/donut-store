@@ -1,8 +1,11 @@
 import {products} from './products.js'
+import { handleAdd } from './cart/addToCart.js'
 import renderStarRating from './renderStarRating.js'
 
 const tabs = document.querySelectorAll('.menu__tab-item')
 const menu = document.getElementById('menu-list')
+
+window.handleAdd = handleAdd
 
 function renderMenuItem (tabType) {
     const htmls = products.filter(item => item.type === tabType)
@@ -21,8 +24,10 @@ function renderMenuItem (tabType) {
                         </a>
                         <div class="card__menu-buying">
                             <p class="card__menu-price">$${product.price}</p>
-                            <button class="primary-btn circle">
-                                <i class='bx bx-plus'></i>
+                            <button data-id=${product.id} onclick="handleAdd(this)" class="primary-btn circle">
+                                <i class='add__cart-icon bx bx-cart-alt'></i>
+                                <span class="add__cart-content"><i class='bx bx-plus'></i></span>
+                                <i class='add__cart-success bx bx-check'></i>
                             </button>
                         </div>
                     </div>

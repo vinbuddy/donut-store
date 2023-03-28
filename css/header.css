@@ -187,14 +187,14 @@
 .nav__menu-btn,
 .nav__cart-mobile {
     position: relative;
-    padding: 12px 12px 12px 0;
+    padding: 12px 18px 12px 0;
     font-size: 30px;
     display: none;
 }
 
 .nav__cart-mobile > .nav__cart-badge {
-    top: 4px;
-    right: 3px;
+    top: 5px;
+    right: 7px;
 }
 
 /* Mobile -> Tablet */
