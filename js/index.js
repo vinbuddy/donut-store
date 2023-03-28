@@ -2,7 +2,7 @@ import renderStarRating from './renderStarRating.js'
 import { products } from './products.js'
 
 import { storage } from './cart/storage.js'
-import { updateQuantity } from './cart/updateQuantity.js'
+import { renderQuantity } from './cart/updateQuantity.js'
 
 const menuBtn = document.getElementById('menu-btn')
 const menu = document.getElementById('menu')
@@ -179,7 +179,7 @@ function searchProducts(input, title, list, result, closeBtn) {
 }
 
 function renderQuantityValue() {
-    updateQuantity()
+    renderQuantity()
 }
 
 function start() {
