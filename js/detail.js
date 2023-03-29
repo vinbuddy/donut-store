@@ -32,13 +32,13 @@ function render (currentId) {
                 </ul>
 
                 <div class="detail__quantity">
-                    <button class="detail__quantity-btn decrease">
+                    <button class="detail__quantity-btn decrease decrease-btn">
                         <i class='bx bx-minus'></i>
                     </button>
-                    <div class="detail__quantity-value">
-                        <input class="detail__quantity-input" type="text" value="1"  oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');">
+                    <div class="detail__quantity-value quantity-select-value">
+                        1
                     </div>
-                    <button class="detail__quantity-btn increase">
+                    <button class="detail__quantity-btn increase increase-btn">
                         <i class='bx bx-plus'></i>
                     </button>
                 </div>
@@ -56,6 +56,8 @@ function render (currentId) {
     `
 
     detail.innerHTML = htmls
+    //<input class="detail__quantity-input quantity-select-value" type="text" value="1"  oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');">
+     
 }
 
 function start () {
