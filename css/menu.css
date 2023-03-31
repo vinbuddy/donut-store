@@ -3,6 +3,8 @@
     padding-left: 0;
     display: flex;
     align-items: center;
+    max-width: 100%;
+    overflow-x: scroll;
 }
 
 .menu__tab-item {

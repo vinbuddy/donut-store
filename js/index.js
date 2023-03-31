@@ -1,8 +1,9 @@
 import renderStarRating from './renderStarRating.js'
 import { products } from './products.js'
 
-import { storage } from './cart/storage.js'
 import { renderQuantity } from './cart/updateQuantity.js'
+import renderPreviewCart from './cart/renderPreviewCart.js'
+import { addToCart } from './cart/addToCart.js'
 
 const menuBtn = document.getElementById('menu-btn')
 const menu = document.getElementById('menu')
@@ -24,6 +25,7 @@ const resultMenuList = document.getElementById('menu__search-list')
 const menuResult = document.getElementById('result-mobile')
 const resultMenuTilte = document.querySelector('.menu__result-title')
 const closeMenuResult = document.querySelector('.menu__resule-close-btn')
+
 
 function handleMenu() {
 
@@ -182,6 +184,7 @@ function renderQuantityValue() {
     renderQuantity()
 }
 
+
 function start() {
 
     renderOutletProducts()
@@ -194,6 +197,10 @@ function start() {
     searchProducts(inputMenu, resultMenuTilte, resultMenuList, menuResult, closeMenuResult) // Search Mobile
 
     renderQuantityValue()
+
+    renderPreviewCart()
+
+    addToCart()
 }
 
 start()

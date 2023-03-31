@@ -1,11 +1,9 @@
 import {products} from './products.js'
-import { handleAdd } from './cart/addToCart.js'
+import { addToCart } from './cart/addToCart.js'
 import renderStarRating from './renderStarRating.js'
 
 const tabs = document.querySelectorAll('.menu__tab-item')
 const menu = document.getElementById('menu-list')
-
-window.handleAdd = handleAdd
 
 function renderMenuItem (tabType) {
     const htmls = products.filter(item => item.type === tabType)
@@ -24,7 +22,7 @@ function renderMenuItem (tabType) {
                         </a>
                         <div class="card__menu-buying">
                             <p class="card__menu-price">$${product.price}</p>
-                            <button data-id=${product.id} onclick="handleAdd(this)" class="primary-btn circle">
+                            <button data-id=${product.id} class="add primary-btn circle">
                                 <i class='add__cart-icon bx bx-cart-alt'></i>
                                 <span class="add__cart-content"><i class='bx bx-plus'></i></span>
                                 <i class='add__cart-success bx bx-check'></i>
@@ -46,10 +44,12 @@ function handleChangeTab(currentTab) {
 
         tab.onclick = function() {
             renderMenuItem(this.dataset.type)
-
             // add - remove active tab
             document.querySelector('.menu__tab-item.menu__tab-item--active').classList.remove('menu__tab-item--active')
             this.classList.add('menu__tab-item--active')
+            
+            // call addToCart to querySelector new button class when change tab
+            addToCart()
         }
         
     })
@@ -60,6 +60,8 @@ function start () {
 
     renderMenuItem(currentTab || 'donut') // first active
     handleChangeTab(currentTab || 'donut')
+
+    addToCart()
 }
 
 start()

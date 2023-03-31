@@ -1,8 +1,9 @@
 import { storage } from "./storage.js"
-import showAnimationAdding from "./showAnimationAdding.js"
+import showAnimationAdding, {showAnimationShakeCart} from "./showAnimationAdding.js"
 import { updateQuantity } from "./updateQuantity.js"
+import renderPreviewCart from "./renderPreviewCart.js"
 
-function addToCart(id, quantity) {
+function addToStorage(id, quantity) {
     const cart = storage.get() 
     
     let payload = {
@@ -25,36 +26,30 @@ function addToCart(id, quantity) {
 
 }
 
-function handleAdd(btnClicked) {
+function addToCart() {
     const addBtn = document.querySelectorAll('.add')
     const quantity = document.querySelector('.quantity-select-value')
    
     if (addBtn) {
-        // Multi add btn (home page, detail page)
         addBtn.forEach(btn => {
             btn.onclick = function () {
-                addToCart(btn.dataset.id, quantity && quantity.innerHTML || 1)
+                addToStorage(btn.dataset.id, quantity && quantity.innerHTML || 1)
                 updateQuantity()
                 showAnimationAdding(btn)
+                showAnimationShakeCart()
+                renderPreviewCart()
             }
         })
     } 
 
-    // Excute at (menu page) because of changing tabs will not querySelectorAll('.add') 
-    // so get this btn clicked 
-    if (btnClicked) {
-        addToCart(btnClicked.dataset.id, quantity && quantity.innerHTML || 1)
-        updateQuantity()
-        showAnimationAdding(btnClicked)
-    }
-   
+    
 }
 
 
 function start() {
-    handleAdd()
+    addToCart()
 }
 
 start()
 
-export { handleAdd }
+export { addToCart }

@@ -5,7 +5,7 @@ export const storage = {
         return JSON.parse(localStorage.getItem('cart')) || []
     }, 
     set(payload) {
-        cart.push(payload)
+        cart.unshift(payload)
         return localStorage.setItem('cart', JSON.stringify(cart))
     },
     update (index, newPayload) {

@@ -1,3 +1,4 @@
+import { addToCart } from './cart/addToCart.js';
 import {products} from './products.js'
 import renderStarRating from './renderStarRating.js';
 
@@ -44,7 +45,7 @@ function render (currentId) {
                 </div>
 
                 <div>
-                    <button data-id=${product.id}  class="add primary-btn detai__add">
+                    <button data-id=${product.id}  class="add primary-btn detail__add">
                         <i class='add__cart-icon bx bx-cart-alt'></i>
                         <span class="add__cart-content">Add to cart</span>
                         
@@ -56,7 +57,6 @@ function render (currentId) {
     `
 
     detail.innerHTML = htmls
-    //<input class="detail__quantity-input quantity-select-value" type="text" value="1"  oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');">
      
 }
 
@@ -64,11 +64,15 @@ function start () {
     const currentId = window.location.hash.charAt(0) === '#' && window.location.hash.slice(1);
     render(currentId);
     
+    addToCart()
     
     // re-render when location change
     window.addEventListener("popstate", function() {
         const newCurrentId = window.location.hash.charAt(0) === '#' && window.location.hash.slice(1);
         render(newCurrentId)
+
+        addToCart()
+
     })
 
 }

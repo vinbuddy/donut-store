@@ -129,7 +129,7 @@
                                 </div>
 
                                 <!-- Search result -->
-                                <ul id="result" class="result">
+                                <div id="result" class="result">
                                     <header class="result__header">
                                         <h5 class="result__title"></h5>
                                         <button class="result__close-btn">
@@ -137,22 +137,34 @@
                                         </button>
                                     </header>
 
-                                    <div id="result-list" class="result-body">
+                                    <ul id="result-list" class="result-list">
                                         
+                                    </ul>
+                                </div>
+
+                                <div class="nav__cart">
+                                    <a href="" id="cart-btn" class="nav__cart-btn">
+                                        <i class='cart-icon bx bx-shopping-bag'></i>
+    
+                                        <span class="quantity nav__cart-badge">
+                                            <!-- render quantity -->
+                                        </span>
+                                    </a>
+
+                                    <div class="preview">
+                                        <h3 class="preview__title">Products just added</h3>
+    
+                                        <ul id="preview-list" class="preview__list">
+                                            <!-- render preview cart item -->
+                                        </ul>
+                                        <footer id="preview-quantity" class="preview__footer">
+                                        </footer>
                                     </div>
-                                </ul>
-
-                                <a class="nav__cart-btn">
-                                    <i class='bx bx-shopping-bag'></i>
-
-                                    <span class="quantity nav__cart-badge">
-                                        <!-- render quantity -->
-                                     </span>
-                                </a>
+                                </div>
                             </div>
 
                             <a href="" class="nav__cart-mobile">
-                                <i class='bx bx-shopping-bag'></i>
+                                <i class='cart-icon bx bx-shopping-bag'></i>
 
                                 <span class="quantity nav__cart-badge">
                                     <!-- render quantity -->
@@ -273,7 +285,6 @@
 
     <script src="../js/index.js" type="module"></script>
     <script src="../js/detail.js" type="module"></script>
-    <script src="../js/cart/addToCart.js" type="module"></script>
     <script src="../js/cart/selectQuantity.js" type="module"></script>
 </body>
 </html>
