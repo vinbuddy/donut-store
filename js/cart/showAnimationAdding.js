@@ -23,7 +23,7 @@ function showAnimationAdding(btnElement) {
     setTimeout(() => {
         cartContent.classList.remove('added')
         btnElement.style.pointerEvents = 'auto'
-        btnElement.style.cursor = 'default'
+        btnElement.style.cursor = 'pointer'
 
     }, 2600)
 

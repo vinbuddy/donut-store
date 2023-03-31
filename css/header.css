@@ -148,14 +148,14 @@
     visibility: visible;
     transform: scale(1);
     opacity: 1;
-
-
 }
 
 .preview__title {
     font-size: 16px;
     padding: 10px;
     color: #666;
+    margin-bottom: 0;
+    color: var(--primary-color);
 }
 
 .preview__list {
@@ -238,6 +238,14 @@
     border-radius: 3px;
 }
 
+.preview__empty {
+    text-align: center;
+
+}
+
+.preview__empty-img {
+    width: 100%;
+}
 
 /* Result */
 .result {

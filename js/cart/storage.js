@@ -2,7 +2,7 @@ const cart = JSON.parse(localStorage.getItem('cart')) || []
 
 export const storage = {
     get () {
-        return JSON.parse(localStorage.getItem('cart')) || []
+        return cart
     }, 
     set(payload) {
         cart.unshift(payload)

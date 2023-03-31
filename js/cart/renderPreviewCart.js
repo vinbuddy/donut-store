@@ -8,7 +8,7 @@ function renderPreviewCart() {
     const cart = storage.get()
     const previewCart = cart.slice(0, 4)
 
-    const htmls = previewCart.map((cartItem => {
+    const previewItem = previewCart.map((cartItem => {
 
         const product = products.find((product) => {
             return product.id === cartItem.id
@@ -33,7 +33,17 @@ function renderPreviewCart() {
         `
     }))
 
-    previewList.innerHTML = htmls.join('')
+    const emptyCart = `
+        <li class="preview__empty">
+            <img src="../../assets/img/empty-cart.png" class="preview__empty-img" />
+        </li>
+    `
+
+    if (cart.length > 0) {
+        previewList.innerHTML = previewItem.join('')
+    } else {
+        previewList.innerHTML = emptyCart
+    }
 
     previewQuantity.innerHTML = `
         <span id="preview-quantity" class="preview__quantity">${cart.length} products added</span>
