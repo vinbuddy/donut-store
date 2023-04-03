@@ -34,40 +34,55 @@
                     <div class="col-8 g-0">
                         <div class="form__background">
                             <video
+                                id="form-video"
                                 src="../assets/videos/form-navigate.mp4"></video>
                         </div>
                     </div>
 
                     <div class="col-4 g-0">
                         <div class="form__wrapper">
-                            <form action="">
-                                <a href="../index.html" class="form__logo">
-                                    <img width="75px" src="../assets/img/donut-logo.png" alt="">
-                                </a>
-                                <h3 class="form__title">Sign up to Vermon</h3>
+                            <form id="form-register" action="">
+                                <header class="form__header">
+                                    <a href="../index.html" class="form__logo">
+                                        <img width="75px" src="../assets/img/donut-logo.png" alt="">
+                                    </a>
+                                    <h3 class="form__title">Sign up</h3>
+                                </header>
 
                                 <div class="form__inner">
                                     <section class="form__group">
-                                        <label class="form__label" for="">Name</label>
-                                        <input class="form__input" type="text" placeholder="Enter your name">
+                                        <label class="form__label" for="">User name</label>
+                                        <input id="name" name="name" class="form__input" type="text" placeholder="Enter your user name">
+                                        <span class="form__error invalid"></span>
                                     </section>
                                     <section class="form__group">
                                         <label class="form__label" for="">Email</label>
-                                        <input class="form__input" type="text" placeholder="Enter your email address">
+                                        <input id="email" name="email" class="form__input" type="text" placeholder="Enter your email address">
+                                        <span class="form__error invalid"></span>
+                                        
+                                    </section>
+                                    <section class="form__group">
+                                        <label class="form__label" for="">Phone</label>
+                                        <input id="phone" name="phone" class="form__input" type="text" placeholder="Enter your phone number">
+                                        <span class="form__error invalid"></span>
+                                        
                                     </section>
                                     <section class="form__group">
                                         <label class="form__label" for="">Password</label>
-                                        <input class="form__input" type="password" placeholder="Enter your password">
+                                        <input id="password" name="password" class="form__input" type="password" placeholder="Enter your password">
+                                        <span class="form__error invalid"></span>
+                                        
                                     </section>
                                     <section class="form__group">
                                         <label class="form__label" for="">Confirm password</label>
-                                        <input class="form__input" type="password" placeholder="Confirm your password">
+                                        <input id="confirm_password" name="confirm-password" class="form__input" type="password" placeholder="Confirm your password">
+                                        <span class="form__error invalid"></span>
                                     </section>
 
-                                    <button class="form__btn primary-btn">Create your account</button>
+                                    <button class="form__submit primary-btn">Create your account</button>
 
                                     <p class="form__other">
-                                        Already a member 
+                                        Already a member?
                                         <a class="form__link" href="">Sign in</a>
                                     </p>
                                 </div>
@@ -79,6 +94,6 @@
         </div>
     </main>
 
-
+    <script src="../js/form/register.js" type="module"></script>
 </body>
 </html>

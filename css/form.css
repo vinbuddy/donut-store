@@ -16,12 +16,16 @@
 }
 
 .form__wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 20px;
+    padding: 20px 30px;
     height: 100vh;
     overflow-y: overlay;
+}
+
+.form__header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
 }
 
 .form__logo {
@@ -33,6 +37,8 @@
     font-size: 40px;
     text-align: center;
     letter-spacing: 0.8px;
+    margin-bottom: 0;
+    margin-left: 10px;
     font-family: var(--heading-font);
 }
 
@@ -55,8 +61,22 @@
     border-radius: 6px;
 }
 
-.form__btn {
-    margin-top: 30px;
+.form__input:focus {
+    border-color: var(--primary-color);
+}
+
+.form__error {
+    margin-top: 4px;
+    margin-bottom: 0;
+    font-size: 13px;
+}
+
+.form__error.invalid {
+    color: #ed4337;
+}
+
+.form__submit {
+    margin-top: 26px;
     width: 100%;
     border-radius: 6px;
 }
