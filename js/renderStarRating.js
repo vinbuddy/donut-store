@@ -14,8 +14,8 @@ function renderStarRating(ratingValue = 5) {
         
     ]
 
-        // Rating score from 5 -> 10 
-        let rating = Math.round(ratingValue / 2)
+    // Rating score from 5 -> 10 
+    let rating = Math.round(ratingValue / 2)
 
     
     let result  = stars.slice(5 - rating, 10 - rating)

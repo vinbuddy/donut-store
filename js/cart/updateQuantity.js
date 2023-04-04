@@ -1,6 +1,7 @@
 import { storage } from "./storage.js"
 
-const quantityValues = document.querySelectorAll('.quantity')
+const quantityValues = document.querySelector('.quantity')
+console.log("quantityValues: ", quantityValues);
 
 function updateQuantity() {
     const cart = storage.get()
@@ -12,9 +13,7 @@ function updateQuantity() {
 function renderQuantity () {
     let quantity = localStorage.getItem('quantity') || 0
 
-    quantityValues.forEach((quantityValue) => {
-        quantityValue.innerText = quantity
-    })
+    quantityValues.innerText = quantity
 }
 
 export {updateQuantity, renderQuantity}

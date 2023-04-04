@@ -12,6 +12,4 @@ export const storage = {
         cart[index] = newPayload
         return localStorage.setItem('cart', JSON.stringify(cart))
     }
-    
-
 }

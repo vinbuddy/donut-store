@@ -49,17 +49,14 @@
         height: auto;
         margin-bottom: 50px;
     }
-    
-    .banner__caption {
-        font-size: 40px;
-    }
+   
 
     .banner__inner {
         width: 100%;
     }
 
     .banner__caption {
-        font-size: 47px;
+        font-size: 55px;
     }
 
     .banner__desc {
@@ -78,6 +75,6 @@
 /* Mobile */
 @media (max-width: 575px) {
     .banner__caption {
-        font-size: 37px;
+        font-size: 44px;
     }
 }

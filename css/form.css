@@ -94,3 +94,10 @@
     text-decoration: underline;
     color: var(--primary-color);
 }
+
+/* Mobile */
+@media (max-width: 575px) {
+    .form__wrapper {
+        overflow-y: auto;
+    }
+}

@@ -20,12 +20,6 @@ const searchResult = document.getElementById('result')
 const resultTitle = document.querySelector('.result__title')
 const closeResultBtn = document.querySelector('.result__close-btn')
 
-const inputMenu = document.querySelector('.menu__search-input')
-const resultMenuList = document.getElementById('menu__search-list')
-const menuResult = document.getElementById('result-mobile')
-const resultMenuTilte = document.querySelector('.menu__result-title')
-const closeMenuResult = document.querySelector('.menu__resule-close-btn')
-
 
 function handleMenu() {
 
@@ -129,16 +123,15 @@ function renderBestSellerProducts() {
         bestSeller.innerHTML = htmls.join('') 
     }
 }
-
-function searchProducts(input, title, list, result, closeBtn) {
-    input.oninput = (e) => {
+function searchProducts() {
+    searchInput.oninput = (e) => {
 
         let value = e.target.value.toLocaleLowerCase()
-        title.innerText = `Result of '${value}'`
+        resultTitle.innerText = `Result of '${value}'`
 
         if (value.length > 0) {
-            result.classList.remove('hide')
-            result.classList.add('show') // show 
+            searchResult.classList.remove('hide')
+            searchResult.classList.add('show') // show 
 
             const htmls = products.filter(item => item.name.toLocaleLowerCase().includes(value))
             .map(product => {
@@ -154,29 +147,29 @@ function searchProducts(input, title, list, result, closeBtn) {
 
         
             if (htmls.length > 0) {
-                list.innerHTML = htmls.join('')
+                resultList.innerHTML = htmls.join('')
             } else {
-                list.innerHTML = '';
-                title.innerText = 'No Results'
+                resultList.innerHTML = '';
+                resultTitle.innerText = 'No Results'
             }
             
         } else {
-            result.classList.remove('show') // hide 
-            result.classList.add('hide') // hide 
+            searchResult.classList.remove('show') // hide 
+            searchResult.classList.add('hide') // hide 
 
         }
     }
 
     
-    closeBtn.onclick = () => {
-        input.value = ''
-        result.classList.add('hide')
-        input.focus()
+    closeResultBtn.onclick = () => {
+        searchInput.value = ''
+        searchResult.classList.add('hide')
+        searchInput.focus()
     }
 
     window.addEventListener("popstate", function() {
-        result.classList.add('hide')
-        input.value = ''
+        searchResult.classList.add('hide')
+        searchInput.value = ''
     })
 }
 
@@ -192,10 +185,9 @@ function start() {
 
     handleMenu()
     handleScrollHeader()
-    
-    searchProducts(searchInput, resultTitle, resultList, searchResult, closeResultBtn) // Search PC
-    searchProducts(inputMenu, resultMenuTilte, resultMenuList, menuResult, closeMenuResult) // Search Mobile
 
+    searchProducts()
+   
     renderQuantityValue()
 
     renderPreviewCart()

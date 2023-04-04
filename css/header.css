@@ -354,18 +354,26 @@
     .nav__menu-btn {
         display: block;
     }
+
+    .preview {
+        display: none;
+    }
 }
 
 
 /* Mobile */
 @media (max-width: 575px) {
-    .nav__logo,
+   
     .nav__product-bar {
+        margin-right: 0;
+    }
+
+    .nav__register {
         display: none;
     }
 
-    .nav__menu-btn,
-    .nav__cart-mobile {
-        display: block;
+    .nav__logo {
+        display: none;
     }
+
 }

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/img/donut-logo.png" type="image/x-icon">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/content.css">
+    <link rel="stylesheet" href="../css/card.css">
+    <link rel="stylesheet" href="../css/footer.css">
+
+    <!-- box icon -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&family=Sigmar+One&family=Teko:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+     <!-- Bootstrap CSS -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Cart | Donut store</title>
+</head>
+<body>
+    <main>
+        <div id="overlay"></div>
+
+        <div id="menu">
+            <header class="menu__header">
+                <a href="./pages/register.html" class="primary-btn">
+                    Sign Up
+                </a>
+
+                <button id="menu-close-btn" class="menu__close-btn">
+                    <i class='bx bx-x-circle'></i>
+                </button>
+            </header>
+
+            <div class="menu__body">
+                <ul class="menu__nav-list">
+                    <li class="menu__nav-item ">
+                        
+                        <a class="menu__nav-link" href="../index.html">
+                            <i class='menu_nav-icon bx bx-home-alt-2'></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="menu__nav-item">
+                        <a class="menu__nav-link  menu__nav-link--active" href="./menu.html">
+                            <i class='menu_nav-icon bx bx-food-menu' ></i>
+                            <span>Menu</span>
+                        </a>
+                    </li>
+                    <li class="menu__nav-item">
+                        <a class="menu__nav-link" href="./about.html">
+                            <i class='menu_nav-icon bx bx-info-circle'></i>
+                            <span>About</span>
+                        </a>
+                    </li>
+                    <li class="menu__nav-item">
+                        <a class="menu__nav-link" href="#footer">
+                            <i class='menu_nav-icon bx bx-info-circle'></i>
+                            <span>Contact</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="wrapper">
+            <header id="header">
+                <div class="container">
+                    <nav id="nav">
+                        <div class="nav__navigate">
+                            <button id="menu-btn" class="nav__menu-btn">
+                                <i class='bx bx-menu'></i>
+                            </button>
+
+                            <a href="../index.html">
+                                <img class="nav__logo" src="../assets/img/donut-logo.png" alt="">
+                               
+                            </a>
+                            <ul class="nav__list">
+                                <li class="nav__item">
+                                    <a href="../index.html">Home</a>
+                                </li>
+                                <li class="nav__item  nav__item--active">
+                                    <a href="./menu.html">Menu</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a href="./about.html">About</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a href="#footer">Contact</a>
+                                </li>
+                            </ul>
+  
+                        </div>
+
+                        <div class="nav__actions">
+                            <div class="nav__product-bar">
+                                <div class="search">
+                                    <i class='bx bx-search search__icon'></i>
+                                    <input class="search__input" placeholder="Search..." type="text">
+                                </div>
+
+                                <!-- Search result -->
+                                <div id="result" class="result">
+                                    <header class="result__header">
+                                        <h5 class="result__title"></h5>
+                                        <button class="result__close-btn">
+                                            <i class='bx bx-x'></i>
+                                        </button>
+                                    </header>
+
+                                    <ul id="result-list" class="result-list">
+                                        
+                                    </ul>
+                                </div>
+
+                                <div class="nav__cart">
+                                    <a href="" id="cart-btn" class="nav__cart-btn">
+                                        <i class='cart-icon bx bx-shopping-bag'></i>
+    
+                                        <span class="quantity nav__cart-badge">
+                                            <!-- render quantity -->
+                                        </span>
+                                    </a>
+
+                                    <div class="preview">
+                                        <h3 class="preview__title">Products just added</h3>
+    
+                                        <ul id="preview-list" class="preview__list">
+                                            <!-- render preview cart item -->
+                                        </ul>
+                                        <footer id="preview-quantity" class="preview__footer">
+                                        </footer>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <a  href="./register.html" class="nav__register primary-btn">
+                                Sign Up
+                            </a>
+                        </div>
+                    </nav>
+                </div >
+                
+            </header>
+        </div>
+       
+        <div id="content" class="content">
+            <section class="content__section container">
+                <h2 class="content__title">Your shopping cart</h2>
+            </section>
+        </div>
+    
+    </main>
+
+    <script src="../js/index.js" type="module"></script>
+</body>
+</html>
