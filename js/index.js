@@ -1,9 +1,11 @@
 import renderStarRating from './renderStarRating.js'
-import { products } from './products.js'
-
-import { renderQuantity } from './cart/updateQuantity.js'
 import renderPreviewCart from './cart/renderPreviewCart.js'
+import { products } from './products.js'
+import { renderQuantity } from './cart/updateQuantity.js'
 import { addToCart } from './cart/addToCart.js'
+
+import { user } from './user/user.js'
+import { storage } from './cart/storage.js'
 
 const menuBtn = document.getElementById('menu-btn')
 const menu = document.getElementById('menu')
@@ -20,6 +22,8 @@ const searchResult = document.getElementById('result')
 const resultTitle = document.querySelector('.result__title')
 const closeResultBtn = document.querySelector('.result__close-btn')
 
+
+const navAuth = document.querySelector('.nav__auth')
 
 function handleMenu() {
 
@@ -177,6 +181,55 @@ function renderQuantityValue() {
     renderQuantity()
 }
 
+function showCurrentUser () {
+    // check current user
+    const currentUser = user.get()
+
+    let isSignIn = Object.keys(currentUser).length !== 0
+
+    if (isSignIn) {
+        navAuth.innerHTML = `
+            <div class="user">
+                <img src="./assets/img/avatar-fallback.jpg" class="user__avatar" alt="">
+                <p class="user__name">
+                    ${currentUser?.name}
+                    <i class='bx bx-chevron-down'></i>
+                </p>
+
+                <ul class="user__menu">
+                    <li class="user__action">
+                        <a href="./pages/cart.html">
+                            <i class='user__icon bx bx-shopping-bag' ></i>
+                            Your cart
+                        </a>
+                    </li>
+                    <li class="sign-out user__action">
+                        <i class='user__icon bx bx-log-out'></i>
+                        Sign out
+                    </li>
+                </ul>
+            </div>
+        `
+    } else {
+        navAuth.innerHTML = `
+            <a href="../pages/register.html" class="nav__register primary-btn">
+                Sign Up
+            </a> 
+        `
+    }
+}
+
+function handleSignOutUser() {
+    const signOutBtns = document.querySelectorAll('.sign-out')
+
+    signOutBtns.forEach(btn => {
+        btn.onclick = function () {
+            user.delete()
+            showCurrentUser()
+        }
+    })
+}
+
 
 function start() {
 
@@ -189,10 +242,11 @@ function start() {
     searchProducts()
    
     renderQuantityValue()
-
     renderPreviewCart()
-
     addToCart()
+
+    showCurrentUser()
+    handleSignOutUser()
 }
 
 start()

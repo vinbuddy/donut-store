@@ -1,15 +1,26 @@
-const cart = JSON.parse(localStorage.getItem('cart')) || []
+var cart;
+const save = () => {
+    return localStorage.setItem('cart', JSON.stringify(cart))
+}
+
 
 export const storage = {
     get () {
-        return cart
+        return JSON.parse(localStorage.getItem('cart')) || []
     }, 
-    set(payload) {
-        cart.unshift(payload)
-        return localStorage.setItem('cart', JSON.stringify(cart))
+    set(value) {
+        cart = this.get()
+
+        cart.unshift(value)
+        save()
     },
-    update (index, newPayload) {
-        cart[index] = newPayload
-        return localStorage.setItem('cart', JSON.stringify(cart))
+    update (index, newValue) {
+        cart = this.get()
+
+        cart[index] = newValue
+        save()
+    },
+    remove() {
+        return localStorage.removeItem('cart')
     }
 }

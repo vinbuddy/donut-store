@@ -1,7 +1,6 @@
 import { storage } from "./storage.js"
 
 const quantityValues = document.querySelector('.quantity')
-console.log("quantityValues: ", quantityValues);
 
 function updateQuantity() {
     const cart = storage.get()

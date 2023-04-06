@@ -316,11 +316,6 @@
     border-radius: 5px;
     transition: all 0.3s;
 }
-
-/* .result__item:hover .result__img {
-    border-color: var(--primary-color);
-} */
-
 .result__name {
     font-size: 16px;
     margin-left: 7px;
@@ -345,6 +340,95 @@
 }
 
 
+.user {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.user:hover .user__menu {
+    visibility: visible;
+    pointer-events: auto;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.user__avatar {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.user__name {
+    font-size: 15px;
+    font-weight: 500;
+    margin-left: 10px;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+}
+
+.user__menu {
+    z-index: 5;
+    width: 100%;
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    padding: 8px;
+    background-color: #fafafa;
+    box-shadow: 0 0 12px -6px #666;
+    border-radius: 5px;
+
+    transition: all ease 0.25s;
+    transform: translateY(-30px);
+    visibility: hidden;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.user__menu::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background-color: transparent;
+}
+
+.user__action {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 7px 3px;
+    color: #333;
+    border-radius: 4px;
+}
+
+.user__action:hover {
+    background-color: #f5f4f4;
+}
+
+.user__action:last-child {
+    border-top: 1px solid #eee;
+    color: #ff0a54;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.user__action a {
+    display: flex;
+    align-items: center;
+}
+
+.user__icon {
+    margin-right: 7px;
+}
+
 /* Mobile -> Tablet */
 @media (max-width: 991px) {
     .nav__list {
@@ -356,6 +440,10 @@
     }
 
     .preview {
+        display: none;
+    }
+
+    .nav__auth {
         display: none;
     }
 }
@@ -371,6 +459,8 @@
     .nav__register {
         display: none;
     }
+
+   
 
     .nav__logo {
         display: none;

@@ -184,6 +184,7 @@ function validateSignUp (formElement ,onSubmit) {
     formElement.onsubmit = function(e) {
         e.preventDefault()
 
+        // Validate all
         fields.forEach(field => {
             validate(field.name, field, field.value.trimStart())
         })
@@ -195,6 +196,9 @@ function validateSignUp (formElement ,onSubmit) {
                 formData[field.name] = field.value
             })
 
+            // create unique id
+            formData['id'] = Date.now()
+        
             onSubmit(formData)
         }
     }
