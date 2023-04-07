@@ -55,19 +55,13 @@
         width: 100%;
     }
 
+    .banner__desc {
+        display: none;
+    }
+
     .banner__caption {
         font-size: 55px;
     }
-
-    .banner__desc {
-        border-left: none;
-        padding: 14px;
-        border-radius: 8px;
-        font-size: 15px;
-        background-color: rgba(255, 255, 255, 0.9);
-        border: 1px solid var(--primary-color);
-    }
-    
 }
 
 
@@ -75,6 +69,6 @@
 /* Mobile */
 @media (max-width: 575px) {
     .banner__caption {
-        font-size: 44px;
+        font-size: 40px;
     }
 }

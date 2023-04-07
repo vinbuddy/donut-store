@@ -11,6 +11,8 @@ const menuBtn = document.getElementById('menu-btn')
 const menu = document.getElementById('menu')
 const overlay = document.getElementById('overlay')
 const closeBtn = document.getElementById('menu-close-btn')
+const menuNavs = document.querySelectorAll('.menu__nav-link')
+
 const header = document.getElementById('header')
 
 const outlet = document.getElementById('outlet')
@@ -24,31 +26,37 @@ const closeResultBtn = document.querySelector('.result__close-btn')
 
 
 const navAuth = document.querySelector('.nav__auth')
+const menuNavAuth = document.querySelector('.menu__nav-auth')
+const menuNavSignOut = document.querySelector('.menu__nav-sign-out')
 
 function handleMenu() {
-
-    const openMenu = () => {
-        menuBtn.addEventListener('click', () => {
-            menu.classList.toggle('menu--show')
-            overlay.classList.toggle('menu--show')
-        })
+    const open = () => {
+        menu.classList.toggle('menu--show')
+        overlay.classList.toggle('menu--show')
+    }
+    const close = () => {
+        menu.classList.remove('menu--show')
+        overlay.classList.remove('menu--show')
     }
 
-    const closeMenu =() => {
-        closeBtn.addEventListener('click', () => {
-            menu.classList.remove('menu--show')
-            overlay.classList.remove('menu--show')
-        })
+    menuBtn.addEventListener('click', () => {
+        open()
+    })
 
-        overlay.addEventListener('click', () => {
-            menu.classList.remove('menu--show')
-            overlay.classList.remove('menu--show')
-        })
-    }
+    closeBtn.addEventListener('click', () => {
+        close()
+    })
 
+    overlay.addEventListener('click', () => {
+        close()
+    })
 
-    openMenu()
-    closeMenu()
+    
+    menuNavs.forEach((nav => {
+        nav.onclick = function () {
+            close()
+        }
+    }))
 }
 
 function handleScrollHeader () {
@@ -190,15 +198,15 @@ function showCurrentUser () {
     if (isSignIn) {
         navAuth.innerHTML = `
             <div class="user">
-                <img src="./assets/img/avatar-fallback.jpg" class="user__avatar" alt="">
+                <img src="../assets/img/avatar-fallback.jpg" class="user__avatar" alt="">
                 <p class="user__name">
-                    ${currentUser?.name}
+                    ${currentUser.name}
                     <i class='bx bx-chevron-down'></i>
                 </p>
 
                 <ul class="user__menu">
                     <li class="user__action">
-                        <a href="./pages/cart.html">
+                        <a href="../pages/cart.html">
                             <i class='user__icon bx bx-shopping-bag' ></i>
                             Your cart
                         </a>
@@ -210,12 +218,41 @@ function showCurrentUser () {
                 </ul>
             </div>
         `
+
+        menuNavAuth.innerHTML = `
+            <div class="menu__user">
+                <img class="menu__user-img" src="../assets/img/avatar-fallback.jpg" alt="">
+                <p class="menu__user-name">${currentUser.name}</p>
+            </div>
+        `
+
+        menuNavSignOut.innerHTML = `
+            <li class="menu__nav-item sign-out">
+                <i class='menu_nav-icon bx bx-log-out'></i>
+                <span>Sign out</span>
+            </li>
+        `
+
     } else {
         navAuth.innerHTML = `
-            <a href="../pages/register.html" class="nav__register primary-btn">
+            <a href="../pages/register.html" class="primary-btn transparent">
                 Sign Up
             </a> 
+            <a href="../pages/login.html" class="primary-btn">
+                Sign In
+            </a>  
         `
+
+        menuNavAuth.innerHTML = `
+            <a href="../pages/register.html" class="primary-btn transparent">
+                Sign Up
+            </a> 
+            <a href="../pages/login.html" class="primary-btn">
+                Sign In
+            </a>  
+        `
+
+        menuNavSignOut.innerHTML = ''
     }
 }
 

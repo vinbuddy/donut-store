@@ -339,6 +339,11 @@
     right: 7px;
 }
 
+.nav__auth {
+    display: flex;
+    align-items: center;
+}
+
 
 .user {
     position: relative;
@@ -455,12 +460,6 @@
     .nav__product-bar {
         margin-right: 0;
     }
-
-    .nav__register {
-        display: none;
-    }
-
-   
 
     .nav__logo {
         display: none;

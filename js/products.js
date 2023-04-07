@@ -125,6 +125,7 @@ export const products = [
         name: 'Peanut Butter Paradise',
         price: '2.99',
         rating:  9.5,
+        best_seller: true,
         img_path: '../assets/img/donuts/peanut-butter-paradise.png',
         type: 'donut',
         description: 'Treat yourself to this donut with peanut butter icing and chocolate drizzle. These two crowd-pleasing flavors combine to make the donut dream team!',

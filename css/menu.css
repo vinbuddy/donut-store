@@ -55,3 +55,14 @@
     transition: all ease 0.2s;
     background-color: #fff;
 }
+
+/* Mobile */
+@media (max-width: 575px) {
+    .menu__tab {
+        justify-content: space-between;
+    }
+
+    .menu__tab-item {
+        margin-right: 0;
+    }
+}

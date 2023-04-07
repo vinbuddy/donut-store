@@ -8,11 +8,13 @@
     background-color: #fafafa;
 }
 
-.form__background > video {
+.form__background > video,
+.form__background > img {
     display: block;
     height: 100%;
     width: 100%;
     object-fit: cover;
+    filter: brightness(0.9);
 }
 
 .form__wrapper {
@@ -21,11 +23,17 @@
     overflow-y: overlay;
 }
 
+.form__area {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .form__header {
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .form__logo {
@@ -71,8 +79,13 @@
     font-size: 13px;
 }
 
-.form__error.invalid {
+.form__error.invalid,
+.form__exist.invalid  {
     color: #ed4337;
+}
+
+.form__exist {
+    text-align: center;
 }
 
 .form__submit {

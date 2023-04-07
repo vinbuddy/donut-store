@@ -22,7 +22,7 @@
      <!-- Bootstrap CSS -->
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <title>Sign Up | Donut store</title>
+    <title>Sign in | Donut store</title>
 </head>
 <body>
     <main>
@@ -31,22 +31,14 @@
         <div class="form">
             <div class="container-fluid g-0">
                 <div class="row g-0">
-                    <div class="col-lg-8 col-md-6 col-sm-12 col-12 g-0 d-none d-sm-none d-md-block">
-                        <div class="form__background">
-                            <video
-                                id="form-video"
-                                src="../assets/videos/form-navigate.mp4"></video>
-                        </div>
-                    </div>
-
                     <div class="col-lg-4 col-md-6 col-sm-12 col-12 g-0">
                         <div class="form__wrapper">
-                            <form id="form-register" action="">
+                            <form id="form-login" class="form__area" action="">
                                 <header class="form__header">
                                     <a href="../index.html" class="form__logo">
                                         <img width="75px" src="../assets/img/donut-logo.png" alt="">
                                     </a>
-                                    <h3 class="form__title">Sign up to Vermon</h3>
+                                    <h3 class="form__title">Sign in to Vermon</h3>
                                 </header>
 
                                 <div class="form__inner">
@@ -56,47 +48,38 @@
                                         <span class="form__error invalid"></span>
                                     </section>
                                     <section class="form__group">
-                                        <label class="form__label" for="">Email</label>
-                                        <input id="email" name="email" class="form__input" type="text" placeholder="Enter your email address">
-                                        <span class="form__error invalid"></span>
-                                        
-                                    </section>
-                                    <section class="form__group">
-                                        <label class="form__label" for="">Phone</label>
-                                        <input id="phone" name="phone" class="form__input" type="text" placeholder="Enter your phone number">
-                                        <span class="form__error invalid"></span>
-                                        
-                                    </section>
-                                    <section class="form__group">
                                         <label class="form__label" for="">Password</label>
                                         <input id="password" name="password" class="form__input" type="password" placeholder="Enter your password">
                                         <span class="form__error invalid"></span>
-                                        
-                                    </section>
-                                    <section class="form__group">
-                                        <label class="form__label" for="">Confirm password</label>
-                                        <input id="confirm_password" name="confirm-password" class="form__input" type="password" placeholder="Confirm your password">
-                                        <span class="form__error invalid"></span>
                                     </section>
 
+                                    <p class="form__exist invalid"></p>
+
                                     <button id="submit-btn" class="form__submit primary-btn">
-                                        Create your account
+                                        Sign in
                                         <i class='form__loading bx bx-loader-alt'></i>
                                     </button>
 
                                     <p class="form__other">
-                                        Already a member?
-                                        <a class="form__link" href="./login.html">Sign in</a>
+                                        Not a member?
+                                        <a class="form__link" href="./register.html">Sign up</a>
                                     </p>
                                 </div>
                             </form>
                         </div>
                     </div>
+                    <div class="col-lg-8 col-md-6 col-sm-12 col-12 g-0 d-none d-sm-none d-md-block">
+                        <div class="form__background">
+                            <img src="../assets/img/background-login.jpg" alt="">
+                        </div>
+                    </div>
+
+                    
                 </div>
             </div>
         </div>
     </main>
 
-    <script src="../js/form/register.js" type="module"></script>
+    <script src="../js/form/login.js" type="module"></script>
 </body>
 </html>

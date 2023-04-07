@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="./css/card.css">
     <link rel="stylesheet" href="./css/footer.css">
     <link rel="stylesheet" href="./css/addToCart.css">
+    <link rel="stylesheet" href="./css/menuSidebar.css">
 
     <!-- box icon -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -35,9 +36,9 @@
 
         <div id="menu">
             <header class="menu__header">
-                <a href="./pages/register.html" class="primary-btn">
-                    Sign Up
-                </a>
+                <div class="menu__nav-auth">
+                </div>
+
                 <button id="menu-close-btn" class="menu__close-btn">
                     <i class='bx bx-x-circle'></i>
                 </button>
@@ -45,10 +46,10 @@
 
             <div class="menu__body">
                 <ul class="menu__nav-list">
-                    <li class="menu__nav-item ">
+                    <li class="menu__nav-item menu__nav-item--active">
                         
-                        <a class="menu__nav-link menu__nav-link--active" href="./index.html">
-                            <i class='menu_nav-icon bx bx-home-alt-2'></i>
+                        <a class="menu__nav-link" href="./index.html">
+                            <i class='menu_nav-icon bx bx-home'></i>
                             <span>Home</span>
                         </a>
                     </li>
@@ -66,10 +67,16 @@
                     </li>
                     <li class="menu__nav-item">
                         <a class="menu__nav-link" href="#footer">
-                            <i class='menu_nav-icon bx bx-info-circle'></i>
+                            <i class='menu_nav-icon bx bx-phone'></i>
                             <span>Contact</span>
                         </a>
                     </li>
+                    <div class="menu__nav-sign-out">
+                        <!-- <li class="menu__nav-item sign-out">
+                            <i class='menu_nav-icon bx bx-log-out'></i>
+                            <span>Sign out</span>
+                        </li> -->
+                    </div>
 
                 </ul>
             </div>
@@ -148,8 +155,8 @@
                                 </div>
                             </div>
 
-                            
                             <div class="nav__auth">
+                                <!-- Render user or buttons -->
                             </div>
                         </div>
                     </nav>

@@ -1,3 +1,5 @@
+import { storeAccounts } from "../user/storeAccounts.js";
+
 const validator = {
     isRequired: function (value = "Please enter this field") {
         return value === '' ? false : true;
@@ -37,7 +39,6 @@ function showError(element, errorMessage) {
     const errorElement = getErrorElement(element)
     errorElement.innerText = errorMessage
 }
-
 
 function validateSignUp (formElement ,onSubmit) {
     const fields = formElement.querySelectorAll('.form__input')
@@ -85,7 +86,7 @@ function validateSignUp (formElement ,onSubmit) {
 
             case 'password':
                 if (!validator.isRequired(value)) {
-                    showError(element, "Please enter phone number")
+                    showError(element, "Please enter pasword")
                     isValid = false;
 
                 }
@@ -205,8 +206,100 @@ function validateSignUp (formElement ,onSubmit) {
 
 }
 
-function validateSignIn () {
-    
+function validateSignIn (formElement, onSubmit) {
+    const fields = formElement.querySelectorAll('.form__input')
+    let isValid = true
+
+    function checkExistAccount(name, password) {
+        const accounts = storeAccounts.get()
+
+        let existedAccount = accounts.find(account => account.name === name && account.password === password)
+        return existedAccount || {}
+    }
+
+    function validate(fieldName, element, value) {
+        switch (fieldName) {
+            // check isRequired - check existed 
+            case 'name':
+                if(!validator.isRequired(value)) {
+                    showError(element, "Please enter user name")
+                    isValid = false;
+                } else {
+                    removeError(element)
+                    isValid = true;
+
+                }
+                break;
+
+            case 'password':
+                if (!validator.isRequired(value)) {
+                    showError(element, "Please enter password")
+                    isValid = false;
+                } else {
+                    removeError(element)
+                    isValid = true;
+
+                }
+                break;
+
+            default:
+                break;
+        }
+
+        return isValid;
+    }
+
+    function validateWhileTyping(fieldName, element, value) {
+        switch (fieldName) {
+            case 'name':
+                if (validator.isRequired(value)) {
+                    removeError(element)
+                    isValid = true;
+                }
+
+                break;
+
+            case 'password':
+                if(validator.isRequired(value)) {
+                    removeError(element)
+                    isValid = true
+                }
+                    
+                break;
+
+        
+            default:
+                break;
+        }
+    }   
+
+    formElement.onsubmit = function (e) {
+        e.preventDefault()
+        const name = formElement.querySelector('input[name="name"]')
+        const password = formElement.querySelector('input[name="password"]')
+        const existError = formElement.querySelector(".form__exist")
+
+        let existedAccount = checkExistAccount(name.value, password.value)
+
+        fields.forEach(field => {
+            validate(field.name, field, field.value)
+
+            field.oninput = function () {
+                validateWhileTyping(field.name, field, field.value)
+            }
+        })
+
+        if (isValid) {
+            if (Object.keys(existedAccount).length !== 0) {
+                onSubmit(existedAccount)
+                existError.innerText = ""
+            } else {
+                
+                existError.innerText = "Account does not exist"
+            }
+        }
+
+    }
 }
 
-export { validateSignUp, validateSignIn}
+export { validateSignUp, validateSignIn }
