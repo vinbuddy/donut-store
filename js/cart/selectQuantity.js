@@ -20,7 +20,6 @@ function handleDecrease () {
             selectedQuantity.forEach(selectValue => {
                 if (selectValue.innerHTML > 1) {
                     selectValue.innerHTML--
-
                 }
             })
         }

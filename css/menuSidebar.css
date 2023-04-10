@@ -69,7 +69,7 @@
     cursor: pointer;
 }
 
-.menu__nav-item:last-child {
+.menu__nav-item.menu__nav-item--seperate {
     color: #ed4337;
 }
 

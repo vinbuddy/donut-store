@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/content.css">
+    <link rel="stylesheet" href="../css/cart.css">
     <link rel="stylesheet" href="../css/card.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/menuSidebar.css">
@@ -69,6 +70,9 @@
                             <span>Contact</span>
                         </a>
                     </li>
+                    <div class="menu__nav-sign-out">
+                        
+                    </div>
 
                 </ul>
             </div>
@@ -159,6 +163,128 @@
         <div id="content" class="content">
             <section class="content__section container">
                 <h2 class="content__title">Your shopping cart</h2>
+
+                <div class="cart">
+                    <header class="cart__header">
+                        <div class="row">
+                            <div class="col-lg-1 col-md-1">
+                                <h5 class="cart__header-title">
+                                    <label title="Seclect all" class="cart__checkbox ">
+                                        <i class='cart__check-icon bx bx-check'></i>
+                                    </label>
+                                </h5>
+                            </div>
+                            <div class="col-lg-5 col-md-5">
+                                <h5 class="cart__header-title">Product</h5>
+                            </div>
+                            <div class="col-lg-2 col-md-2">
+                                <h5 class="cart__header-title">Price</h5>
+                            </div>
+                            <div class="col-2 col-md-2">
+                                <h5 class="cart__header-title">Quantity</h5>
+                            </div>
+                            <div class="col-2 col-md-2">
+                                <h5 class="cart__header-title">Edit</h5>
+                            </div>
+                        </div>
+                    </header>
+
+                    <div class="cart__body">
+                        <div class="row">
+                            <div class="col-12 cart__item">
+                                <div class="row">
+                                    <div class="col-lg-1 col-md-1 col-sm-2 col-2">
+                                        <div class="cart__item-inner">
+                                            <label class="cart__checkbox cart__checkbox--checked">
+                                                <i class='cart__check-icon bx bx-check'></i>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5 col-md-5 col-sm-10 col-10">
+                                        <div class="cart__item-inner">
+                                            <a class="cart__link" href="">
+                                                <div class="cart__product">
+                                                    <img class="cart__product-img" src="../assets/img/donuts/Chocolate-Explosion.png" alt="">
+                                                    <p class="cart__product-name">Chocolate Explosion</p>
+                                                    <div class="cart__info-mobile">
+                                                        <p class="cart__product-name">Chocolate Explosion</p>
+                                                        <p class="cart__price">$2.99</p>
+
+                                                        <div class="cart__actions">
+                                                            <div class="cart__quantity">
+                                                                <button class="cart__quantity-decrease ">
+                                                                    <i class='bx bx-minus'></i>
+                                                                </button>
+                                                                <div class="cart__quantity-value">
+                                                                    2
+                                                                </div>
+                                                                <button  class="cart__quantity-increase">
+                                                                    <i class='bx bx-plus'></i>
+                                                                </button>
+                                                            </div>
+                                                            <button class="cart__remove">
+                                                                <img width="100%" height="100%" src="../assets/img/icons/bin.png" alt="">
+                                                            </button>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 d-none d-sm-block d-sm-none d-md-block">
+                                        <div class="cart__item-inner">
+                                            <p class="cart__price">$2.99</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 d-none d-sm-block d-sm-none d-md-block">
+                                        <div class="cart__item-inner">
+                                            <div class="cart__quantity">
+                                                <button class="cart__quantity-decrease ">
+                                                    <i class='bx bx-minus'></i>
+                                                </button>
+                                                <div class="cart__quantity-value">
+                                                    2
+                                                </div>
+                                                <button  class="cart__quantity-increase">
+                                                    <i class='bx bx-plus'></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 d-none d-sm-block d-sm-none d-md-block">
+                                        <div class="cart__item-inner">
+                                            <button class="cart__remove">
+                                                <img width="100%" height="100%" src="../assets/img/icons/bin.png" alt="">
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div class="checkout">
+                    <button class="checkout__voucher">
+                        <img width="25px" src="../assets/img/icons/voucher.png" alt="">
+                        <span>Vouchers</span>
+                    </button>
+
+                    <div class="checkout__area">
+                        <div class="checkout__info">
+                            <div class="checkout__total">
+                                <p>Total payment </p>
+                                <span class="checkout__price">$2.99</span>
+                            </div>
+                        </div>
+                        <button class="checkout__btn primary-btn">
+                            Check out
+                        </button>
+                    </div>
+                </div>
             </section>
         </div>
     

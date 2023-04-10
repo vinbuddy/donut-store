@@ -227,7 +227,7 @@ function showCurrentUser () {
         `
 
         menuNavSignOut.innerHTML = `
-            <li class="menu__nav-item sign-out">
+            <li class="menu__nav-item menu__nav-item--seperate sign-out">
                 <i class='menu_nav-icon bx bx-log-out'></i>
                 <span>Sign out</span>
             </li>
