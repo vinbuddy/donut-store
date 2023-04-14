@@ -27,8 +27,8 @@ function renderCart() {
                 <div class="col-lg-5 col-md-5 col-sm-10 col-10">
                     <div class="cart__item-inner">
                         <div class="cart__product">
-                            <a href="../pages/detail.html#${product.id}">
-                                <img class="cart__product-img" src="${product.img_path}" alt="">
+                            <a href="./detail.html#${product.id}">
+                                <img class="cart__product-img" src="./${product.img_path}" alt="">
                             </a>
                             <p class="cart__product-name">${product.name}</p>
                             <div class="cart__info-mobile">
@@ -79,7 +79,7 @@ function renderCart() {
                 <div class="col-lg-2 col-md-2 d-none d-sm-block d-sm-none d-md-block">
                     <div class="cart__item-inner">
                         <button class="cart__remove">
-                            <img width="100%" height="100%" src="../assets/img/icons/delete.png" alt="">
+                            <img width="100%" height="100%" src="./assets/img/icons/delete.png" alt="">
                         </button>
                     </div>
                 </div>

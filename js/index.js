@@ -149,8 +149,8 @@ function searchProducts() {
             .map(product => {
                 return `
                     <li class="result__item">
-                       <a href="../pages/detail.html#${product.id}">
-                            <img class="result__img" src="${product.img_path}" alt="">
+                       <a href="./detail.html#${product.id}">
+                            <img class="result__img" src="./${product.img_path}" alt="">
                             <h4 class="result__name">${product.name}</h4>
                        </a>
                     </li>
