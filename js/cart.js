@@ -48,7 +48,7 @@ function renderCart() {
                                         </button>
                                     </div>
                                     <button class="cart__remove">
-                                        <img width="100%" height="100%" src="../assets/img/icons/delete.png" alt="">
+                                        <img width="100%" height="100%" src="./assets/img/icons/delete.png" alt="">
                                     </button>
                                     
                                 </div>
