@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../assets/img/donut-logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./assets/img/donut-logo.png" type="image/x-icon">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="../css/base.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/header.css">
-    <link rel="stylesheet" href="../css/content.css">
-    <link rel="stylesheet" href="../css/cart.css">
-    <link rel="stylesheet" href="../css/card.css">
-    <link rel="stylesheet" href="../css/footer.css">
-    <link rel="stylesheet" href="../css/menuSidebar.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/content.css">
+    <link rel="stylesheet" href="./css/cart.css">
+    <link rel="stylesheet" href="./css/card.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/menuSidebar.css">
 
     <!-- box icon -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -45,15 +45,15 @@
 
             <div class="menu__body">
                 <ul class="menu__nav-list">
-                    <li class="menu__nav-item ">
+                    <li class="menu__nav-item menu__nav-item--active">
                         
-                        <a class="menu__nav-link" href="../index.html">
+                        <a class="menu__nav-link" href="./index.html">
                             <i class='menu_nav-icon bx bx-home'></i>
                             <span>Home</span>
                         </a>
                     </li>
                     <li class="menu__nav-item">
-                        <a class="menu__nav-link  menu__nav-link--active" href="./menu.html">
+                        <a class="menu__nav-link" href="./menu.html">
                             <i class='menu_nav-icon bx bx-food-menu' ></i>
                             <span>Menu</span>
                         </a>
@@ -78,6 +78,7 @@
             </div>
         </div>
 
+
         <div class="wrapper">
             <header id="header">
                 <div class="container">
@@ -87,15 +88,15 @@
                                 <i class='bx bx-menu'></i>
                             </button>
 
-                            <a href="../index.html">
-                                <img class="nav__logo" src="../assets/img/donut-logo.png" alt="">
+                            <a href="./index.html">
+                                <img class="nav__logo" src="./assets/img/donut-logo.png" alt="">
                                
                             </a>
                             <ul class="nav__list">
-                                <li class="nav__item">
-                                    <a href="../index.html">Home</a>
-                                </li>
                                 <li class="nav__item  nav__item--active">
+                                    <a href="./index.html">Home</a>
+                                </li>
+                                <li class="nav__item">
                                     <a href="./menu.html">Menu</a>
                                 </li>
                                 <li class="nav__item">
@@ -112,7 +113,28 @@
                             <div class="nav__product-bar">
                                 <div class="search">
                                     <i class='bx bx-search search__icon'></i>
-                                    <input class="search__input" placeholder="Search..." type="text">
+                                    <input class="search__input" spellcheck="false" placeholder="Search..." type="text">
+                                </div>
+
+                                <div class="nav__cart">
+                                    <a href="./cart.html" id="cart-btn" class="nav__cart-btn">
+                                        <i class='cart-icon bx bx-shopping-bag'></i>
+    
+                                        <span class="quantity nav__cart-badge">
+                                            <!-- render quantity -->
+                                        </span>
+                                    </a>
+
+                                    <div class="preview">
+                                        <h3 class="preview__title">Products just added</h3>
+    
+                                        <ul id="preview-list" class="preview__list">
+                                            <!-- render preview cart item -->
+                                            
+                                        </ul>
+                                        <footer id="preview-quantity" class="preview__footer">
+                                        </footer>
+                                    </div>
                                 </div>
 
                                 <!-- Search result -->
@@ -127,26 +149,6 @@
                                     <ul id="result-list" class="result-list">
                                         
                                     </ul>
-                                </div>
-
-                                <div class="nav__cart">
-                                    <a href="" id="cart-btn" class="nav__cart-btn">
-                                        <i class='cart-icon bx bx-shopping-bag'></i>
-    
-                                        <span class="quantity nav__cart-badge">
-                                            <!-- render quantity -->
-                                        </span>
-                                    </a>
-
-                                    <div class="preview">
-                                        <h3 class="preview__title">Products just added</h3>
-    
-                                        <ul id="preview-list" class="preview__list">
-                                            <!-- render preview cart item -->
-                                        </ul>
-                                        <footer id="preview-quantity" class="preview__footer">
-                                        </footer>
-                                    </div>
                                 </div>
                             </div>
 
@@ -230,7 +232,7 @@
     
     </main>
 
-    <script src="../js/index.js" type="module"></script>
-    <script src="../js/cart.js" type="module"></script>
+    <script src="./js/indexjs" type="module"></script>
+    <script src="./js/cart.js" type="module"></script>
 </body>
 </html>

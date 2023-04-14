@@ -77,7 +77,7 @@ function renderOutletProducts () {
             return `
                 <div class="col-lg-4 col-md-6 col-sm-6 col-6">
                     <div class="card__product">
-                        <a href="./pages/detail.html#${product.id}">
+                        <a href="./detail.html#${product.id}">
                             <img class="product-img card__img" src="./${product.img_path}" alt="">
                             <div class="card__info">
                                 <h3 title="${product.name}" class="card__name">${product.name}</h3>
@@ -110,7 +110,7 @@ function renderBestSellerProducts() {
             return `
                 <div class="col-lg-3 col-md-6 col-sm-6 col-6 mb-4">
                     <div class="card__product">
-                        <a href="./pages/detail.html#${product.id}">
+                        <a href="./detail.html#${product.id}">
                             <img class="product-img card__img" src="./${product.img_path}" alt="">
                             <div class="card__info">
                                 <h3 title="${product.name}" class="card__name">${product.name}</h3>
@@ -235,19 +235,19 @@ function showCurrentUser () {
 
     } else {
         navAuth.innerHTML = `
-            <a href="../pages/register.html" class="primary-btn transparent">
+            <a href="./register.html" class="primary-btn transparent">
                 Sign Up
             </a> 
-            <a href="../pages/login.html" class="primary-btn">
+            <a href="./login.html" class="primary-btn">
                 Sign In
             </a>  
         `
 
         menuNavAuth.innerHTML = `
-            <a href="../pages/register.html" class="primary-btn transparent">
+            <a href="./register.html" class="primary-btn transparent">
                 Sign Up
             </a> 
-            <a href="../pages/login.html" class="primary-btn">
+            <a href="./login.html" class="primary-btn">
                 Sign In
             </a>  
         `

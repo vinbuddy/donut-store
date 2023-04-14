@@ -47,7 +47,7 @@ function renderPreviewCart() {
 
     previewQuantity.innerHTML = `
         <span id="preview-quantity" class="preview__quantity">${cart.length} products added</span>
-        <a href="../../pages/cart.html" class="preview__view-cart">View Cart</a>
+        <a href="./pages/cart.html" class="preview__view-cart">View Cart</a>
     `
 }
 

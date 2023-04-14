@@ -11,8 +11,8 @@ function renderMenuItem (tabType) {
             return `
                 <div class="col-xl-2 col-lg-3 col-md-3 col-sm-6 col-6 mb-4">
                     <div class="card__menu">
-                        <a href="../pages/detail.html#${product.id}">
-                            <img class="card__menu-img" src="${product.img_path}" />
+                        <a href="./detail.html#${product.id}">
+                            <img class="card__menu-img" src="./${product.img_path}" />
                             <div class="card__menu-info">
                                 <h3 title="${product.name}" class="card__menu-name">${product.name}</h3>
                                 <div class="card__menu-rating">

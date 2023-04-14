@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../assets/img/donut-logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./assets/img/donut-logo.png" type="image/x-icon">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="../css/base.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/header.css">
-    <link rel="stylesheet" href="../css/content.css">
-    <link rel="stylesheet" href="../css/footer.css">
-    <link rel="stylesheet" href="../css/about.css">
-    <link rel="stylesheet" href="../css/menuSidebar.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/content.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/about.css">
+    <link rel="stylesheet" href="./css/menuSidebar.css">
 
     <!-- box icon -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -44,9 +44,9 @@
 
             <div class="menu__body">
                 <ul class="menu__nav-list">
-                    <li class="menu__nav-item ">
+                    <li class="menu__nav-item menu__nav-item--active">
                         
-                        <a class="menu__nav-link" href="../index.html">
+                        <a class="menu__nav-link" href="./index.html">
                             <i class='menu_nav-icon bx bx-home'></i>
                             <span>Home</span>
                         </a>
@@ -57,7 +57,7 @@
                             <span>Menu</span>
                         </a>
                     </li>
-                    <li class="menu__nav-item menu__nav-item--active">
+                    <li class="menu__nav-item">
                         <a class="menu__nav-link" href="./about.html">
                             <i class='menu_nav-icon bx bx-info-circle'></i>
                             <span>About</span>
@@ -69,7 +69,7 @@
                             <span>Contact</span>
                         </a>
                     </li>
-                    <div class="menu__nav-sign-out ">
+                    <div class="menu__nav-sign-out">
                         
                     </div>
 
@@ -86,18 +86,18 @@
                                 <i class='bx bx-menu'></i>
                             </button>
 
-                            <a href="../index.html">
-                                <img class="nav__logo" src="../assets/img/donut-logo.png" alt="">
+                            <a href="./index.html">
+                                <img class="nav__logo" src="./assets/img/donut-logo.png" alt="">
                                
                             </a>
                             <ul class="nav__list">
-                                <li class="nav__item">
-                                    <a href="../index.html">Home</a>
+                                <li class="nav__item  nav__item--active">
+                                    <a href="./index.html">Home</a>
                                 </li>
-                                <li class="nav__item  ">
+                                <li class="nav__item">
                                     <a href="./menu.html">Menu</a>
                                 </li>
-                                <li class="nav__item nav__item--active">
+                                <li class="nav__item">
                                     <a href="./about.html">About</a>
                                 </li>
                                 <li class="nav__item">
@@ -111,21 +111,7 @@
                             <div class="nav__product-bar">
                                 <div class="search">
                                     <i class='bx bx-search search__icon'></i>
-                                    <input class="search__input" placeholder="Search..." type="text">
-                                </div>
-
-                                <!-- Search result -->
-                                <div id="result" class="result">
-                                    <header class="result__header">
-                                        <h5 class="result__title"></h5>
-                                        <button class="result__close-btn">
-                                            <i class='bx bx-x'></i>
-                                        </button>
-                                    </header>
-
-                                    <ul id="result-list" class="result-list">
-                                        
-                                    </ul>
+                                    <input class="search__input" spellcheck="false" placeholder="Search..." type="text">
                                 </div>
 
                                 <div class="nav__cart">
@@ -142,19 +128,34 @@
     
                                         <ul id="preview-list" class="preview__list">
                                             <!-- render preview cart item -->
+                                            
                                         </ul>
                                         <footer id="preview-quantity" class="preview__footer">
                                         </footer>
                                     </div>
                                 </div>
+
+                                <!-- Search result -->
+                                <div id="result" class="result">
+                                    <header class="result__header">
+                                        <h5 class="result__title"></h5>
+                                        <button class="result__close-btn">
+                                            <i class='bx bx-x'></i>
+                                        </button>
+                                    </header>
+
+                                    <ul id="result-list" class="result-list">
+                                        
+                                    </ul>
+                                </div>
                             </div>
-                            
+
                             <div class="nav__auth">
                                 <!-- Render user or buttons -->
                             </div>
                         </div>
                     </nav>
-                </div>
+                </div >
                 
             </header>
         </div>
@@ -246,6 +247,7 @@
                         <a class="connect__link me-3" target="__blank" href="https://www.instagram.com/vermon.js/"> 
                             <i class='bx bxl-instagram'></i>
                         </a>
+                    
                     </div>
                 </div>
             </section>
@@ -256,7 +258,7 @@
                         <div class="info__brand">
                             <div class="info__logo mb-2">
                                 <a href="./index.html">
-                                    <img width="80px" height="80px" src="../assets/img/donut-logo.png" alt="">
+                                    <img width="80px" height="80px" src="./assets/img/donut-logo.png" alt="">
                                 </a>
                                 <h6 class="info__title">
                                   <i class="fas fa-gem me-2"></i>Vermon
@@ -292,16 +294,16 @@
                         </h6>
                         <ul class="info__payment">
                             <li class="me-3" title="visa">
-                                <img class="info__payment-img" src="../assets/img/payment/visa.png" alt="">
+                                <img class="info__payment-img" src="./assets/img/payment/visa.png" alt="">
                             </li>
                             <li class="me-3" title="master card">
-                                <img class="info__payment-img" src="../assets/img/payment/master.png" alt="">
+                                <img class="info__payment-img" src="./assets/img/payment/master.png" alt="">
                             </li>
                             <li class="me-3" title="paypal">
-                                <img class="info__payment-img" src="../assets/img/payment/paypal.png" alt="">
+                                <img class="info__payment-img" src="./assets/img/payment/paypal.png" alt="">
                             </li>
                             <li title="cash">
-                                <img class="info__payment-img" src="../assets/img/payment/cod.png" alt="">
+                                <img class="info__payment-img" src="./assets/img/payment/cod.png" alt="">
                             </li>
                         </ul>
                     </div>
@@ -327,6 +329,6 @@
     
     </main>
 
-    <script src="../js/index.js" type="module"></script>
+    <script src="./js/index.js" type="module"></script>
 </body>
 </html>

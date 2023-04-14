@@ -4,19 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../assets/img/donut-logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./assets/img/donut-logo.png" type="image/x-icon">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="../css/base.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/header.css">
-    <link rel="stylesheet" href="../css/content.css">
-    <link rel="stylesheet" href="../css/card.css">
-    <link rel="stylesheet" href="../css/menu.css">
-    <link rel="stylesheet" href="../css/footer.css">
-    <link rel="stylesheet" href="../css/addToCart.css">
-    <link rel="stylesheet" href="../css/menuSidebar.css">
-
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/content.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/detail.css">
+    <link rel="stylesheet" href="./css/addToCart.css">
+    <link rel="stylesheet" href="./css/menuSidebar.css">
 
     <!-- box icon -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -29,7 +27,7 @@
      <!-- Bootstrap CSS -->
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <title>Menu | Donut store</title>
+    <title>Detail | Donut store</title>
 </head>
 <body>
     <main>
@@ -47,14 +45,14 @@
 
             <div class="menu__body">
                 <ul class="menu__nav-list">
-                    <li class="menu__nav-item ">
+                    <li class="menu__nav-item menu__nav-item--active">
                         
-                        <a class="menu__nav-link" href="../index.html">
+                        <a class="menu__nav-link" href="./index.html">
                             <i class='menu_nav-icon bx bx-home'></i>
                             <span>Home</span>
                         </a>
                     </li>
-                    <li class="menu__nav-item menu__nav-item--active">
+                    <li class="menu__nav-item">
                         <a class="menu__nav-link" href="./menu.html">
                             <i class='menu_nav-icon bx bx-food-menu' ></i>
                             <span>Menu</span>
@@ -89,15 +87,15 @@
                                 <i class='bx bx-menu'></i>
                             </button>
 
-                            <a href="../index.html">
-                                <img class="nav__logo" src="../assets/img/donut-logo.png" alt="">
+                            <a href="./index.html">
+                                <img class="nav__logo" src="./assets/img/donut-logo.png" alt="">
                                
                             </a>
                             <ul class="nav__list">
-                                <li class="nav__item">
-                                    <a href="../index.html">Home</a>
-                                </li>
                                 <li class="nav__item  nav__item--active">
+                                    <a href="./index.html">Home</a>
+                                </li>
+                                <li class="nav__item">
                                     <a href="./menu.html">Menu</a>
                                 </li>
                                 <li class="nav__item">
@@ -114,21 +112,7 @@
                             <div class="nav__product-bar">
                                 <div class="search">
                                     <i class='bx bx-search search__icon'></i>
-                                    <input class="search__input" placeholder="Search..." type="text">
-                                </div>
-
-                                <!-- Search result -->
-                                <div id="result" class="result">
-                                    <header class="result__header">
-                                        <h5 class="result__title"></h5>
-                                        <button class="result__close-btn">
-                                            <i class='bx bx-x'></i>
-                                        </button>
-                                    </header>
-
-                                    <ul id="result-list" class="result-list">
-                                        
-                                    </ul>
+                                    <input class="search__input" spellcheck="false" placeholder="Search..." type="text">
                                 </div>
 
                                 <div class="nav__cart">
@@ -145,13 +129,28 @@
     
                                         <ul id="preview-list" class="preview__list">
                                             <!-- render preview cart item -->
+                                            
                                         </ul>
                                         <footer id="preview-quantity" class="preview__footer">
                                         </footer>
                                     </div>
                                 </div>
+
+                                <!-- Search result -->
+                                <div id="result" class="result">
+                                    <header class="result__header">
+                                        <h5 class="result__title"></h5>
+                                        <button class="result__close-btn">
+                                            <i class='bx bx-x'></i>
+                                        </button>
+                                    </header>
+
+                                    <ul id="result-list" class="result-list">
+                                        
+                                    </ul>
+                                </div>
                             </div>
-                            
+
                             <div class="nav__auth">
                                 <!-- Render user or buttons -->
                             </div>
@@ -163,38 +162,11 @@
         </div>
        
         <div id="content" class="content">
-            <section class="content__section container">
-                <h2 class="content__title">Our menu</h2>
-
-                <div class="menu">
-                    <!-- Tab menu -->
-                    <ul class="menu__tab">
-                        <li data-type="donut" class="menu__tab-item">
-                            <img src="../assets/img/tabs/tab-donut.png" alt="Menu Tab" class="menu__tab-img">
-                            <h3 class="menu__tab-name">Donuts</h3>
-                        </li>
-                        <li data-type="sandwich" class="menu__tab-item">
-                            <img src="../assets/img/tabs/tab-sandwich.png" alt="Menu Tab" class="menu__tab-img">
-                            <h3 class="menu__tab-name">Sandwiches</h3>
-                        </li>
-
-                        <li data-type="coffee" class="menu__tab-item">
-                            <img src="../assets/img/tabs/tab-cup-coffee.png" alt="Menu Tab" class="menu__tab-img">
-                            <h3 class="menu__tab-name">Coffee</h3>
-                        </li>
-                        <li data-type="ice-blended" class="menu__tab-item">
-                            <img src="../assets/img/tabs/tab-smoothie.png" alt="Menu Tab" class="menu__tab-img">
-                            <h3 class="menu__tab-name">Ice Blended</h3>
-                        </li>
-                    </ul>
-                    
-                    <div class="menu__product">
-                        <div id="menu-list" class="row">
-                            <!-- RENDER -->
-                        </div>
-                    </div>
+            <div class="container detail">
+                <div id="detail" class="row">
+                    <!-- Render Detail -->
                 </div>
-            </section>
+            </div>
         </div>
 
         <footer id="footer">
@@ -221,7 +193,7 @@
                         <div class="info__brand">
                             <div class="info__logo mb-2">
                                 <a href="./index.html">
-                                    <img width="80px" height="80px" src="../assets/img/donut-logo.png" alt="">
+                                    <img width="80px" height="80px" src="./assets/img/donut-logo.png" alt="">
                                 </a>
                                 <h6 class="info__title">
                                   <i class="fas fa-gem me-2"></i>Vermon
@@ -257,16 +229,16 @@
                         </h6>
                         <ul class="info__payment">
                             <li class="me-3" title="visa">
-                                <img class="info__payment-img" src="../assets/img/payment/visa.png" alt="">
+                                <img class="info__payment-img" src="./assets/img/payment/visa.png" alt="">
                             </li>
                             <li class="me-3" title="master card">
-                                <img class="info__payment-img" src="../assets/img/payment/master.png" alt="">
+                                <img class="info__payment-img" src="./assets/img/payment/master.png" alt="">
                             </li>
                             <li class="me-3" title="paypal">
-                                <img class="info__payment-img" src="../assets/img/payment/paypal.png" alt="">
+                                <img class="info__payment-img" src="./assets/img/payment/paypal.png" alt="">
                             </li>
                             <li title="cash">
-                                <img class="info__payment-img" src="../assets/img/payment/cod.png" alt="">
+                                <img class="info__payment-img" src="./assets/img/payment/cod.png" alt="">
                             </li>
                         </ul>
                     </div>
@@ -292,8 +264,8 @@
     
     </main>
 
-    <script src="../js/index.js" type="module"></script>
-    <script src="../js/menu.js" type="module"></script>
-    <script src="../js/cart/addToCart.js" type="module"></script>
+    <script src="./js/index.js" type="module"></script>
+    <script src="./js/detail.js" type="module"></script>
+    <script src="./js/cart/selectQuantity.js" type="module"></script>
 </body>
 </html>
