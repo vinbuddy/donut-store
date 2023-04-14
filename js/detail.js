@@ -9,7 +9,7 @@ function render (currentId) {
 
     const htmls = `
         <div class="col-lg-5 col-md-5 col-sm-12 col-12 mb-4">
-            <img class="detail__img" src="${product?.detail_img_path}" alt="">
+            <img class="detail__img" src="../${product?.detail_img_path}" alt="">
         </div>
         
         <div class="col-lg-7 col-md-7 col-sm-12 col-12">

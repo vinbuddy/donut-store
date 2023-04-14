@@ -77,8 +77,8 @@ function renderOutletProducts () {
             return `
                 <div class="col-lg-4 col-md-6 col-sm-6 col-6">
                     <div class="card__product">
-                        <a href="../pages/detail.html#${product.id}">
-                            <img class="product-img card__img" src="${product.img_path}" alt="">
+                        <a href="./pages/detail.html#${product.id}">
+                            <img class="product-img card__img" src="./${product.img_path}" alt="">
                             <div class="card__info">
                                 <h3 title="${product.name}" class="card__name">${product.name}</h3>
                                 <div class="card__rating">
@@ -110,8 +110,8 @@ function renderBestSellerProducts() {
             return `
                 <div class="col-lg-3 col-md-6 col-sm-6 col-6 mb-4">
                     <div class="card__product">
-                        <a href="../pages/detail.html#${product.id}">
-                            <img class="product-img card__img" src="${product.img_path}" alt="">
+                        <a href="./pages/detail.html#${product.id}">
+                            <img class="product-img card__img" src="./${product.img_path}" alt="">
                             <div class="card__info">
                                 <h3 title="${product.name}" class="card__name">${product.name}</h3>
                                 <div class="card__rating">

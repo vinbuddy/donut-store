@@ -16,8 +16,8 @@ function renderPreviewCart() {
 
         return `
             <li class="preview__item">
-                <a href="../../pages/detail.html#${product.id}" class="preview__link">
-                    <img class="preview__img" src="${product?.img_path}" alt="">
+                <a href="./pages/detail.html#${product.id}" class="preview__link">
+                    <img class="preview__img" src="./${product?.img_path}" alt="">
                     
                     <div class="preview__info">
                         <h4 class="preview__name">${product.name}</h4>
