@@ -184,83 +184,16 @@
                                 <h5 class="cart__header-title">Quantity</h5>
                             </div>
                             <div class="col-2 col-md-2">
-                                <h5 class="cart__header-title">Edit</h5>
+                                <h5 title="Delete all" class="cart__header-title">
+                                    <img id="delete-all" src="../assets/img/icons/bin.png" alt="">
+                                </h5>
                             </div>
                         </div>
                     </header>
 
                     <div class="cart__body">
-                        <div class="row">
-                            <div class="col-12 cart__item">
-                                <div class="row">
-                                    <div class="col-lg-1 col-md-1 col-sm-2 col-2">
-                                        <div class="cart__item-inner">
-                                            <label class="cart__checkbox cart__checkbox--checked">
-                                                <i class='cart__check-icon bx bx-check'></i>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-5 col-md-5 col-sm-10 col-10">
-                                        <div class="cart__item-inner">
-                                            <a class="cart__link" href="">
-                                                <div class="cart__product">
-                                                    <img class="cart__product-img" src="../assets/img/donuts/Chocolate-Explosion.png" alt="">
-                                                    <p class="cart__product-name">Chocolate Explosion</p>
-                                                    <div class="cart__info-mobile">
-                                                        <p class="cart__product-name">Chocolate Explosion</p>
-                                                        <p class="cart__price">$2.99</p>
-
-                                                        <div class="cart__actions">
-                                                            <div class="cart__quantity">
-                                                                <button class="cart__quantity-decrease ">
-                                                                    <i class='bx bx-minus'></i>
-                                                                </button>
-                                                                <div class="cart__quantity-value">
-                                                                    2
-                                                                </div>
-                                                                <button  class="cart__quantity-increase">
-                                                                    <i class='bx bx-plus'></i>
-                                                                </button>
-                                                            </div>
-                                                            <button class="cart__remove">
-                                                                <img width="100%" height="100%" src="../assets/img/icons/bin.png" alt="">
-                                                            </button>
-                                                            
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-2 col-md-2 d-none d-sm-block d-sm-none d-md-block">
-                                        <div class="cart__item-inner">
-                                            <p class="cart__price">$2.99</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-2 col-md-2 d-none d-sm-block d-sm-none d-md-block">
-                                        <div class="cart__item-inner">
-                                            <div class="cart__quantity">
-                                                <button class="cart__quantity-decrease ">
-                                                    <i class='bx bx-minus'></i>
-                                                </button>
-                                                <div class="cart__quantity-value">
-                                                    2
-                                                </div>
-                                                <button  class="cart__quantity-increase">
-                                                    <i class='bx bx-plus'></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-2 col-md-2 d-none d-sm-block d-sm-none d-md-block">
-                                        <div class="cart__item-inner">
-                                            <button class="cart__remove">
-                                                <img width="100%" height="100%" src="../assets/img/icons/bin.png" alt="">
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div id="cart-list" class="row">
+                            <!-- Render cart -->
                             
                         </div>
                         
@@ -272,15 +205,22 @@
                         <img width="25px" src="../assets/img/icons/voucher.png" alt="">
                         <span>Vouchers</span>
                     </button>
+                    
+                    <div class="d-flex align-items-center mt-3">
+                        <p class="checkout__price">Total bill: <span id="total-bill">$0</span></p>
+                        <p class="checkout__price">Shipping cost: <span>$1.99</span></p>
+                    </div>
 
                     <div class="checkout__area">
                         <div class="checkout__info">
+                            
                             <div class="checkout__total">
-                                <p>Total payment </p>
-                                <span class="checkout__price">$2.99</span>
+                                <p style="margin: 5px 0;">Total payment: </p>
+                                <span class="checkout__total-price">$0</span>
+                                
                             </div>
                         </div>
-                        <button class="checkout__btn primary-btn">
+                        <button disabled class="checkout__btn primary-btn">
                             Check out
                         </button>
                     </div>
@@ -291,5 +231,6 @@
     </main>
 
     <script src="../js/index.js" type="module"></script>
+    <script src="../js/cart.js" type="module"></script>
 </body>
 </html>

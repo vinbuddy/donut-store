@@ -76,7 +76,7 @@
 /* Category */
 
 .card__category {
-    box-shadow: 0 0 12px rgb(0 0 0 / 15%);
+    
     border-radius: 15px;
     overflow: hidden;
 }
@@ -262,6 +262,10 @@
     .card__menu-img {
         width: 130px;
         height: 130px;
+    }
+
+    .card__category-img {
+        height: 180px;
     }
    
 }

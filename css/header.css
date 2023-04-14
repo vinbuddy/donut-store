@@ -465,4 +465,8 @@
         display: none;
     }
 
+    .nav__menu-btn {
+        padding-right: 5px;
+    }
+
 }

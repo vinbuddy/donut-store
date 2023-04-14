@@ -1,6 +1,6 @@
 import { storage } from "./storage.js"
-import showAnimationAdding, {showAnimationShakeCart} from "./showAnimationAdding.js"
 import { updateQuantity } from "./updateQuantity.js"
+import showAnimationAdding, {showAnimationShakeCart} from "./showAnimationAdding.js"
 import renderPreviewCart from "./renderPreviewCart.js"
 
 function addToStorage(id, quantity) {
@@ -52,4 +52,4 @@ function start() {
 
 start()
 
-export { addToCart }
+export { addToCart, addToStorage }

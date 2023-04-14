@@ -1,6 +1,7 @@
 .cart {
     margin-top: 50px;
 }
+
 .cart p {
     font-size: 17px;
     margin-bottom: 0;
@@ -26,13 +27,20 @@
     margin-bottom: 0;
 }
 
+#delete-all {
+    width: 27px;
+    object-fit: contain;
+    opacity: 0.8;
+    cursor: pointer;
+}
+
 .cart__body {
     padding: 10px; 
     margin-bottom: 160px;
 }
 
 .cart__item {
-    border-bottom: 1px dotted #ccc;
+    /* border-bottom: 1px dotted #ccc; */
     padding: 24px 0;
 }
 
@@ -57,8 +65,13 @@
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    border: 1px solid #ccc;
+    border: 1px solid #888;
     cursor: pointer;
+    transition: all 0.2s;
+}
+
+.cart__checkbox:hover {
+    border-color: var(--primary-color);
 }
 
 .cart__checkbox.cart__checkbox--checked {
@@ -99,12 +112,17 @@
 }
 
 .cart__product {
+    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    padding-left: 40px;
 }
 
 .cart__product-img {
+    border: 1px solid #ddd;
+    padding: 5px;
+    border-radius: 8px;
     display: block;
     width: 70px;
     height: 70px;
@@ -114,6 +132,7 @@
 .cart__product-name {
     margin-left: 10px;
     margin-bottom: 0;
+    text-align: left;
 }
 
 /* Quantity */
@@ -151,31 +170,32 @@
     border-bottom: 1px solid #ccc;
 }
 
+.cart__item-inner .cart__price {
+    font-size: 17px;
+}
+
 /* Remove */
 .cart__remove {
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     opacity: 0.75;
 }
 
 
-/* Checkout box */
-.checkout span,
-.checkout p {
-    margin-bottom: 0;
-}
 .checkout {
     z-index: 3;
     position: fixed;
-    bottom: 30px;
+    /* bottom: 30px; */
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
     min-width: 450px;
     min-height: 125px;
-    border: 1px solid #ccc;
+    border: 1px solid #eee;
     background-color: #fff;
     border-radius: 10px;
     padding: 14px;
+    box-shadow: 0 0 12px rgb(0 0 0 / 15%);
 }
 
 .checkout__voucher {
@@ -185,11 +205,11 @@
 }
 
 .checkout__voucher span {
+    color: #555 ;
     margin-left: 10px;
 }
 
 .checkout__area {
-    margin-top: 10px;
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
@@ -199,10 +219,26 @@
     padding-right: 10px;
 }
 
-.checkout__price {
+.checkout__total-price {
     font-size: 24px;
     font-weight: 600;
     color: var(--primary-color);
+}
+
+.checkout__price {
+    color: #555 ;
+    margin-bottom: 3px;
+    margin-right: 20px;
+}
+
+.checkout__price span{
+    color: #333;
+    display: inline-block;
+    font-size: 15px;
+    padding: 1px 5px;
+    background-color: var(--secondary-color);
+    border-radius: 3px;
+    font-weight: 600;
 }
 
 .checkout__btn {
@@ -210,20 +246,40 @@
     border-radius: 7px;
 }
 
+.checkout__btn:disabled {
+    opacity: 0.8;
+    cursor: not-allowed;
+}
 
 .cart__info-mobile {
     display: none;
     margin-left: 14px;
 }
 
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .cart__product {
+        padding-left: 0;
+    }
+}
 
+/* Mobile */
 @media (max-width: 767px) {
+    .cart {
+        margin-top: 0;
+    }
+
     .cart__header {
         display: none;
     }
 
-    .cart__product {
+    .cart__item-inner {
         justify-content: flex-start;
+    }
+
+    .cart__product {
+        padding-left: 0;
+
     }
 
     .cart__product .cart__product-name {
@@ -231,10 +287,8 @@
     }
 
     .cart__product-img {
-        border: 1px solid #ddd;
-        padding: 5px;
-        border-radius: 8px;
-        width: 100px;
+        
+        width: 94px;
         height: 100%;
     }
 
@@ -278,18 +332,19 @@
     }
 
     .cart__remove {
-        width: 25px;
-        height: 25px;
+        width: 22px;
+        height: 22px;
     }
 
     .checkout {
         width: 100vw;
         min-width: unset;
-        height: auto    ;
+        height: auto;
         bottom: 0;
+        padding-bottom: 22px;
 
         border-radius: unset;
-        border-top: 1px dotted #ccc;
+        border: none;
         border-left: none;
         border-right: none;
         border-bottom: none;
