@@ -5,6 +5,8 @@ import renderPreviewCart from "./cart/renderPreviewCart.js"
 
 const cartList = document.getElementById('cart-list')
 const checkoutBtn = document.querySelector('.checkout__btn')
+const checkAllBtn = document.getElementById('select-all-btn')
+
 
 function renderCart() {
     const cart = storage.get()
@@ -92,6 +94,7 @@ function renderCart() {
 var totalBill = 0
 var islessThanOne = false
 var shippingCost = 1.99;
+var isCheckAll = false
 
 function renderPriceTotalBill() {
     const totalBillElement = document.getElementById('total-bill')
@@ -135,9 +138,9 @@ function calculateTotalBill(price, quantity, action) {
     renderPriceTotalPay()
 }
 
-function updatePriceCheckout(product) {
-    const isChecked = product.querySelector('.cart__checkbox--checked')
-    const data = products.find(item => item.id === product.dataset.id)
+function updatePriceCheckout(productElement) {
+    const isChecked = productElement.querySelector('.cart__checkbox--checked')
+    const data = products.find(item => item.id === productElement.dataset.id)
 
     let price = Number(data.price)
     let quantity = storage.get().find(item => item.id === data.id).quantity 
@@ -166,7 +169,17 @@ function selectProduct() {
                 checkoutBtn.disabled = true
             }
 
-            updatePriceCheckout(product)
+            if (!isCheckAll) {
+                updatePriceCheckout(product)
+            } else {
+                // Remove check all 
+                checkAllBtn.classList.remove('cart__checkbox--checked')
+                checkBtns.forEach(btn => {
+                    btn.classList.remove('cart__checkbox--checked')
+                })
+
+                isCheckAll = false
+            }
         }
     })
 }
@@ -178,19 +191,19 @@ function updateCartQuantity() {
     // Update quantity increase
     increaseBtns.forEach(btn => {
         btn.onclick = function () {
-            const product = this.closest('.cart__item')
-            const quantities = product.querySelectorAll('.cart__quantity-value')
-            const isChecked = product.querySelector('.cart__checkbox--checked')
+            const productElement = this.closest('.cart__item')
+            const quantities = productElement.querySelectorAll('.cart__quantity-value')
+            const isChecked = productElement.querySelector('.cart__checkbox--checked')
             
 
             quantities.forEach(quantity => {
                 quantity.innerHTML++
             })
             
-            addToStorage(product.dataset.id, 1)
+            addToStorage(productElement.dataset.id, 1)
             renderPreviewCart()
 
-            const data = products.find(item => item.id === product.dataset.id)
+            const data = products.find(item => item.id === productElement.dataset.id)
             let price = Number(data.price)
             let quantity = storage.get().find(item => item.id === data.id).quantity
             
@@ -203,9 +216,9 @@ function updateCartQuantity() {
     // Update quantity decrease
     decreaseBtns.forEach(btn => {
         btn.onclick = function () {
-            const product = this.closest('.cart__item')
-            const isChecked = product.querySelector('.cart__checkbox--checked')
-            const quantities = product.querySelectorAll('.cart__quantity-value')
+            const productElement = this.closest('.cart__item')
+            const isChecked = productElement.querySelector('.cart__checkbox--checked')
+            const quantities = productElement.querySelectorAll('.cart__quantity-value')
             const cart = storage.get()
 
             quantities.forEach(quantity => {
@@ -213,7 +226,7 @@ function updateCartQuantity() {
                     quantity.innerHTML--
 
                     cart.forEach((item, index) => {
-                        if(item.id === product.dataset.id) {
+                        if(item.id === productElement.dataset.id) {
                             storage.update(index, {id: item.id, quantity: item.quantity - 1})
                         }
                     })
@@ -226,7 +239,7 @@ function updateCartQuantity() {
            
             renderPreviewCart()
             
-            const data = products.find(item => item.id === product.dataset.id)
+            const data = products.find(item => item.id === productElement.dataset.id)
             let price = Number(data.price)
             let quantity = storage.get().find(item => item.id === data.id).quantity
             
@@ -240,10 +253,31 @@ function updateCartQuantity() {
     })
 }
 
+function selectAllProduct() {
+    const checkBtns = document.querySelectorAll('.cart__check-single')
+    const productElements = document.querySelectorAll('.cart__item')
+
+    checkAllBtn.onclick = function () {
+        checkAllBtn.classList.toggle('cart__checkbox--checked')
+
+        checkBtns.forEach(btn => {
+            btn.classList.toggle('cart__checkbox--checked')
+        })
+
+        productElements.forEach(productElement => {
+            updatePriceCheckout(productElement)
+        })
+
+        isCheckAll = true
+
+    }
+}
+
 function start() {
     renderCart()
     updateCartQuantity()
     selectProduct()
+    selectAllProduct()
 }
 
 start()
