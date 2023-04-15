@@ -18,7 +18,7 @@ function start() {
             submitBtn.classList.remove('loading')
             submitBtn.disabled = false
 
-            window.location.href = "/"
+            history.back()
         }, 2000)
     }
 

@@ -131,4 +131,8 @@
     .form__wrapper {
         overflow-y: auto;
     }
+
+    .form__header {
+        flex-direction: column;
+    }
 }

@@ -176,8 +176,7 @@
 
 /* Remove */
 .cart__remove {
-    width: 25px;
-    height: 25px;
+    width: 24px;
     opacity: 0.75;
 }
 
@@ -333,7 +332,6 @@
 
     .cart__remove {
         width: 22px;
-        height: 22px;
     }
 
     .checkout {

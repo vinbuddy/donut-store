@@ -47,6 +47,7 @@
 }
 
 .menu__close-btn {
+    color: #000;
     font-size: 30px;
     margin-left: 16px;
 }
@@ -78,15 +79,11 @@
 }
 
 .menu__nav-link {
-    /* padding: 12px; */
+    width: 100%;
     border-radius: 7px;
     display: flex;
     align-items: center;
 }
-
-/* .menu__nav-link.menu__nav-link--active {
-    background-color: var(--secondary-color);
-} */
 
 .menu_nav-icon {
     width: 32px;
