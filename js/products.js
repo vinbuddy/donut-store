@@ -114,11 +114,11 @@ export const products = [
         name: 'Coconut Island Bliss',
         price: '1.9',
         rating:  6.5,
-        img_path: 'assets/img/donuts/Coconut-Island-Bliss.png',
+        img_path: 'assets/img/donuts/coconut-island-bliss.png',
         type: 'donut',
         description: 'Chocolate and peanuts is a classic combo—now add coconut for a new twist on this time-honored taste.',
         ingredients: ['Chocolate Icing', 'Peanuts', 'Coconut'],
-        detail_img_path: 'assets/img/donuts/detail-Coconut-Island-Bliss.png',
+        detail_img_path: 'assets/img/donuts/detail-coconut-island-bliss.png',
     },
     {
         id: 'd-11',
