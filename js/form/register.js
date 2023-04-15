@@ -7,19 +7,10 @@ function start() {
     const submitBtn  = form.querySelector('#submit-btn')
     
     function onSubmit(data) {
-        const video = document.querySelector('#form-video')
-        let delay = 12000
         
         user.set(data)
         storeAccounts.set(data)
         
-        if (video.style.display !== 'none') {
-            video.play() // animation
-            delay = 3000
-
-        }
-        
-        if(video) 
         submitBtn.classList.add('loading')
         submitBtn.style.pointerEvents = 'none'
         submitBtn.disabled = true
@@ -40,7 +31,7 @@ function start() {
             let path = paths.join('/')
 
             window.location.href = window.location.origin + path
-        }, delay)
+        }, 3000)
     }
 
     // pass callback to get data
