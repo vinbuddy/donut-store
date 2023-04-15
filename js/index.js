@@ -198,7 +198,7 @@ function showCurrentUser () {
     if (isSignIn) {
         navAuth.innerHTML = `
             <div class="user">
-                <img src="../assets/img/avatar-fallback.jpg" class="user__avatar" alt="">
+                <img src="./assets/img/avatar-fallback.jpg" class="user__avatar" alt="">
                 <p class="user__name">
                     ${currentUser.name}
                     <i class='bx bx-chevron-down'></i>
@@ -206,7 +206,7 @@ function showCurrentUser () {
 
                 <ul class="user__menu">
                     <li class="user__action">
-                        <a href="../pages/cart.html">
+                        <a href="./cart.html">
                             <i class='user__icon bx bx-shopping-bag' ></i>
                             Your cart
                         </a>
@@ -221,7 +221,7 @@ function showCurrentUser () {
 
         menuNavAuth.innerHTML = `
             <div class="menu__user">
-                <img class="menu__user-img" src="../assets/img/avatar-fallback.jpg" alt="">
+                <img class="menu__user-img" src="./assets/img/avatar-fallback.jpg" alt="">
                 <p class="menu__user-name">${currentUser.name}</p>
             </div>
         `

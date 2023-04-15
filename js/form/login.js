@@ -18,7 +18,15 @@ function start() {
             submitBtn.classList.remove('loading')
             submitBtn.disabled = false
 
-            history.back()
+            // history.back()
+
+            let paths = window.location.pathname.split('/')
+            let length = paths.length
+            paths[length - 1] = 'index.html'
+
+            let path = paths.join('/')
+
+            window.location.href = window.location.origin + path
         }, 2000)
     }
 
