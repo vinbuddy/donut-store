@@ -113,13 +113,15 @@ function renderPriceTotalPay() {
     }
 }
 
-function calculateTotalBill(price, quantity, action) {
+function calculateTotalBill(price = 0, quantity = 1, action) {
+    
     switch(action) {
         case 'plus':
             totalBill = totalBill + (price * quantity)
             break 
         case 'minus':
             totalBill = totalBill - (price * quantity)
+            
             break
 
         case 'increase quantity':
@@ -130,6 +132,10 @@ function calculateTotalBill(price, quantity, action) {
                 totalBill = totalBill - price 
             }
             break
+        case 'reset':
+            totalBill = 0 
+            break
+        
         default: 
             totalBill = totalBill
             break;
@@ -139,13 +145,13 @@ function calculateTotalBill(price, quantity, action) {
 }
 
 function updatePriceCheckout(productElement) {
-    const isChecked = productElement.querySelector('.cart__checkbox--checked')
+    const checked = productElement.querySelector('.cart__checkbox--checked')
     const data = products.find(item => item.id === productElement.dataset.id)
 
     let price = Number(data.price)
-    let quantity = storage.get().find(item => item.id === data.id).quantity 
 
-    if (isChecked) {
+    let quantity = storage.get().find(item => item.id === data.id).quantity 
+    if (checked) {
         calculateTotalBill(price, quantity, 'plus')
     } else {
         calculateTotalBill(price, quantity, 'minus')
@@ -158,7 +164,10 @@ function selectProduct() {
 
     checkBtns.forEach(btn => {
         btn.onclick = function () {
+            // let datacheck = false
             this.classList.toggle('cart__checkbox--checked')
+            // this.dataset.checked = !datacheck
+           
             const product = this.closest('.cart__item')
             const checked = document.querySelectorAll('.cart__checkbox--checked')
 
@@ -171,6 +180,8 @@ function selectProduct() {
 
             if (!isCheckAll) {
                 updatePriceCheckout(product)
+                isCheckAll = false
+
             } else {
                 // Remove check all 
                 checkAllBtn.classList.remove('cart__checkbox--checked')
@@ -178,6 +189,7 @@ function selectProduct() {
                     btn.classList.remove('cart__checkbox--checked')
                 })
 
+                calculateTotalBill(0, 1, 'reset')
                 isCheckAll = false
             }
         }
@@ -258,6 +270,8 @@ function selectAllProduct() {
     const productElements = document.querySelectorAll('.cart__item')
 
     checkAllBtn.onclick = function () {
+
+        isCheckAll = !isCheckAll   
         checkAllBtn.classList.toggle('cart__checkbox--checked')
 
         checkBtns.forEach(btn => {
@@ -268,8 +282,7 @@ function selectAllProduct() {
             updatePriceCheckout(productElement)
         })
 
-        isCheckAll = true
-
+       
     }
 }
 
