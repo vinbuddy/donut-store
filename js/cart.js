@@ -89,7 +89,18 @@ function renderCart() {
         `
     })
 
-    cartList.innerHTML = htmls.join('')
+    if (htmls.length > 0) {
+        cartList.innerHTML = htmls.join('')
+    } else {
+        cartList.innerHTML = `
+            <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="d-flex align-items-center justify-content-center">
+                    <img class="cart__empty" src="./assets/img/empty-cart.png" />
+                </div>
+            </div>
+        `
+    }
+
 }
 
 var totalBill = 0
@@ -201,7 +212,7 @@ function selectProduct() {
     })
 }
 
-function updateCartQuantity() {
+function selectCartQuantity() {
     const increaseBtns = document.querySelectorAll('.cart__quantity-increase')
     const decreaseBtns = document.querySelectorAll('.cart__quantity-decrease')
 
@@ -325,13 +336,25 @@ function removeProduct() {
     })
 }
 
+function clearProduct() {
+    const clearBtn = document.getElementById('clear-btn')
+
+    clearBtn.onclick = function () {
+        storage.clear()
+
+        start()
+        renderPreviewCart()
+        updateQuantity()
+    }
+}
 
 function start() {
     renderCart()
-    updateCartQuantity()
+    selectCartQuantity()
     selectProduct()
     selectAllProduct()
     removeProduct()
+    clearProduct()
 }
 
 start()

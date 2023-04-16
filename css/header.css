@@ -81,9 +81,6 @@
     caret-color: var(--primary-color);
 }
 
-.nav__cart {
-    cursor: pointer;
-}
 
 .nav__cart-btn {
     position: relative;
