@@ -109,7 +109,7 @@ var shippingCost = 1.99;
 var isCheckAll = false
 
 function toggleDisableBtn() {
-    const checked = document.querySelectorAll('.cart__checkbox--checked')
+    const checked = cartList.querySelectorAll('.cart__checkbox--checked')
             
     // Toggle disable checkout btn
     if (checked.length > 0) {
