@@ -3,7 +3,6 @@ const save = () => {
     return localStorage.setItem('cart', JSON.stringify(cart))
 }
 
-
 export const storage = {
     get () {
         return JSON.parse(localStorage.getItem('cart')) || []
@@ -20,7 +19,13 @@ export const storage = {
         cart[index] = newValue
         save()
     },
-    remove() {
+    delete(index) {
+        cart = this.get()
+        cart.splice(index, 1)
+
+        save()
+    },
+    clear() {
         return localStorage.removeItem('cart')
     }
 }

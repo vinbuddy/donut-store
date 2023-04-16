@@ -35,7 +35,7 @@ function renderPreviewCart() {
 
     const emptyCart = `
         <li class="preview__empty">
-            <img src="../../assets/img/empty-cart.png" class="preview__empty-img" />
+            <img src="./assets/img/empty-cart.png" class="preview__empty-img" />
         </li>
     `
 

@@ -1,6 +1,7 @@
 import { addToStorage } from "./cart/addToCart.js"
 import { storage } from "./cart/storage.js"
 import { products } from "./products.js"
+import { updateQuantity } from "./cart/updateQuantity.js"
 import renderPreviewCart from "./cart/renderPreviewCart.js"
 
 const cartList = document.getElementById('cart-list')
@@ -96,6 +97,17 @@ var islessThanOne = false
 var shippingCost = 1.99;
 var isCheckAll = false
 
+function toggleDisableBtn() {
+    const checked = document.querySelectorAll('.cart__checkbox--checked')
+            
+    // Toggle disable checkout btn
+    if (checked.length > 0) {
+        checkoutBtn.disabled = false
+    } else {
+        checkoutBtn.disabled = true
+    }
+}
+
 function renderPriceTotalBill() {
     const totalBillElement = document.getElementById('total-bill')
     totalBillElement.innerHTML = `$${Math.round(totalBill * 100 ) / 100}`
@@ -161,22 +173,15 @@ function updatePriceCheckout(productElement) {
 // select -> update 
 function selectProduct() {
     const checkBtns = document.querySelectorAll('.cart__check-single')
-
+    
     checkBtns.forEach(btn => {
         btn.onclick = function () {
-            // let datacheck = false
             this.classList.toggle('cart__checkbox--checked')
-            // this.dataset.checked = !datacheck
-           
+
             const product = this.closest('.cart__item')
             const checked = document.querySelectorAll('.cart__checkbox--checked')
-
-            // Toggle disable checkout btn
-            if (checked.length > 0) {
-                checkoutBtn.disabled = false
-            } else {
-                checkoutBtn.disabled = true
-            }
+            
+            toggleDisableBtn()
 
             if (!isCheckAll) {
                 updatePriceCheckout(product)
@@ -270,27 +275,63 @@ function selectAllProduct() {
     const productElements = document.querySelectorAll('.cart__item')
 
     checkAllBtn.onclick = function () {
-
         isCheckAll = !isCheckAll   
         checkAllBtn.classList.toggle('cart__checkbox--checked')
 
         checkBtns.forEach(btn => {
-            btn.classList.toggle('cart__checkbox--checked')
+            if (isCheckAll) {
+                btn.classList.add('cart__checkbox--checked')
+
+                calculateTotalBill(null, null, 'reset') // reset total bill = null 
+
+                // update new total bill
+                productElements.forEach(productElement => {
+                    updatePriceCheckout(productElement)
+                })
+                
+            } else {
+                btn.classList.remove('cart__checkbox--checked')
+                
+                calculateTotalBill(null, null, 'reset')
+                
+            }
         })
 
-        productElements.forEach(productElement => {
-            updatePriceCheckout(productElement)
-        })
-
-       
+        toggleDisableBtn()
     }
 }
+
+function removeProduct() {
+    const removeBtns = document.querySelectorAll('.cart__remove')
+
+    removeBtns.forEach(btn => {
+        btn.onclick = function () {
+            const productElement = this.closest('.cart__item')
+            const cart =  storage.get()
+
+            cart.forEach((cartItem, index) => {
+                if (cartItem.id === productElement.dataset.id) {
+                    storage.delete(index)
+                }
+
+                // After removed product -> update new DOM
+                start()
+                updateQuantity()
+                calculateTotalBill(null, null, 'reset')
+            })
+
+            
+        }
+    })
+}
+
 
 function start() {
     renderCart()
     updateCartQuantity()
     selectProduct()
     selectAllProduct()
+    removeProduct()
 }
 
 start()
