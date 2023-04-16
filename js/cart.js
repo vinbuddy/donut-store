@@ -29,7 +29,7 @@ function renderCart() {
                     <div class="cart__item-inner">
                         <div class="cart__product">
                             <a href="./detail.html#${product.id}">
-                                <img class="cart__product-img" src="./${product.img_path}" alt="">
+                                <img loading="lazy" class="cart__product-img" src="./${product.img_path}" alt="">
                             </a>
                             <p class="cart__product-name">${product.name}</p>
                             <div class="cart__info-mobile">

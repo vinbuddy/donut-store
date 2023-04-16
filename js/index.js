@@ -78,7 +78,7 @@ function renderOutletProducts () {
                 <div class="col-lg-4 col-md-6 col-sm-6 col-6">
                     <div class="card__product">
                         <a href="./detail.html#${product.id}">
-                            <img class="product-img card__img" src="./${product.img_path}" alt="">
+                            <img loading="lazy" class="product-img card__img" src="./${product.img_path}" alt="">
                             <div class="card__info">
                                 <h3 title="${product.name}" class="card__name">${product.name}</h3>
                                 <div class="card__rating">
@@ -111,7 +111,7 @@ function renderBestSellerProducts() {
                 <div class="col-lg-3 col-md-6 col-sm-6 col-6 mb-4">
                     <div class="card__product">
                         <a href="./detail.html#${product.id}">
-                            <img class="product-img card__img" src="./${product.img_path}" alt="">
+                            <img loading="lazy" class="product-img card__img" src="./${product.img_path}" alt="">
                             <div class="card__info">
                                 <h3 title="${product.name}" class="card__name">${product.name}</h3>
                                 <div class="card__rating">
@@ -150,7 +150,7 @@ function searchProducts() {
                 return `
                     <li class="result__item">
                        <a href="./detail.html#${product.id}">
-                            <img class="result__img" src="./${product.img_path}" alt="">
+                            <img loading="lazy" class="result__img" src="./${product.img_path}" alt="">
                             <h4 class="result__name">${product.name}</h4>
                        </a>
                     </li>
@@ -198,7 +198,7 @@ function showCurrentUser () {
     if (isSignIn) {
         navAuth.innerHTML = `
             <div class="user">
-                <img src="./assets/img/avatar-fallback.jpg" class="user__avatar" alt="">
+                <img loading="lazy" src="./assets/img/avatar-fallback.jpg" class="user__avatar" alt="">
                 <p class="user__name">
                     ${currentUser.name}
                     <i class='bx bx-chevron-down'></i>
@@ -221,7 +221,7 @@ function showCurrentUser () {
 
         menuNavAuth.innerHTML = `
             <div class="menu__user">
-                <img class="menu__user-img" src="./assets/img/avatar-fallback.jpg" alt="">
+                <img loading="lazy" class="menu__user-img" src="./assets/img/avatar-fallback.jpg" alt="">
                 <p class="menu__user-name">${currentUser.name}</p>
             </div>
         `
