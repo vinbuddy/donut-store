@@ -30,7 +30,7 @@
 .cart__header-title span {
     font-size: 14px;
     margin-left: 5px;
-    color: #555;
+    color: #333;
 }
 
 #clear {
@@ -46,7 +46,6 @@
 }
 
 .cart__item {
-    /* border-bottom: 1px dotted #ccc; */
     padding: 24px 0;
 }
 
@@ -223,6 +222,10 @@
     padding-right: 10px;
 }
 
+.checkout__total > p {
+    color: #555;
+}
+
 .checkout__total-price {
     font-size: 24px;
     font-weight: 600;
@@ -245,7 +248,7 @@
     font-weight: 600;
 }
 
-.checkout__btn {
+.checkout__btn { 
     min-width: 150px;
     border-radius: 7px;
 }
@@ -360,6 +363,6 @@
     }
 
     .cart__empty {
-        width: 250px;
+        width: 220px;
     }
 }
