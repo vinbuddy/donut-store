@@ -288,6 +288,7 @@
 .result__close-btn {
     line-height: 0;
     font-size: 24px;
+    color: #000;
 }
 
 .result__item {
