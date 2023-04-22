@@ -17,5 +17,5 @@
 - Sign up / Sign in
 
 ## Live demo    
-- Demo 👉 [vinbuddy.github.io/donut-store](vinbuddy.github.io/donut-store/)
+- Demo 👉 [https://vinbuddy.github.io/donut-store/](vinbuddy.github.io/donut-store/)
 - Don't forget to give me a star ⭐
