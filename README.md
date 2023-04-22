@@ -1,5 +1,5 @@
 # Vermon Donut Store
- ![Alt text](/assets/img/preview-web/homepage.png?raw=true "")
+![Alt text](/assets/img/preview-web/homepage.png?raw=true "")
  
  ## Technology used
  - HTML
