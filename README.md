@@ -14,7 +14,7 @@
 - Add products
 - Remove products
 - Calculate total price 
-- Sign up / Sign in
+- Sign up / Sign in (form validation)
 
 ## Live demo    
 - Demo 👉 [https://vinbuddy.github.io/donut-store/](https://vinbuddy.github.io/donut-store/)
