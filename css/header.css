@@ -338,12 +338,14 @@
 }
 
 .nav__auth {
+    min-width: 120px;
     display: flex;
     align-items: center;
 }
 
 
 .user {
+    width: 100%;
     position: relative;
     display: flex;
     align-items: center;

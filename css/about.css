@@ -39,6 +39,7 @@
 
 .self__avatar {
     width: 100%;
+    filter: grayscale(0.75);
 }
 
 .self__name {
@@ -64,4 +65,12 @@
 .self__social-icon {
     color: #444;
     font-size: 28px;
+}
+
+
+/* Mobile */
+@media (max-width: 575px) {
+    .self__name {
+        text-align: center;
+    }
 }
