@@ -3,6 +3,7 @@ import { storage } from "./cart/storage.js"
 import { products } from "./products.js"
 import { updateQuantity } from "./cart/updateQuantity.js"
 import renderPreviewCart from "./cart/renderPreviewCart.js"
+import { user } from "./user/user.js"
 
 const cartList = document.getElementById('cart-list')
 const checkoutBtn = document.querySelector('.checkout__btn')
@@ -348,6 +349,36 @@ function clearProduct() {
     }
 }
 
+
+// Confirm 
+function ShowHideConfirm() {
+    const confirmWrapper = document.querySelector('.confirm')
+    const closeBtn = document.querySelector('.confirm__close')
+
+    checkoutBtn.onclick = function () {
+        // sign in
+        const currentUser = user.get()
+        let isSignIn = Object.keys(currentUser).length !== 0
+
+        if(isSignIn) {
+            confirmWrapper.classList.add('confirm--show')
+            
+        } else {
+
+        }
+        
+    }
+
+    // confirmWrapper.onclick = function (e) {
+    //     if (e.target.classList.contains('confirm'))
+    //         confirmWrapper.classList.remove('confirm--show')
+    // }
+
+    closeBtn.onclick = function () {
+        confirmWrapper.classList.remove('confirm--show')
+    }
+}
+
 function start() {
     renderCart()
     selectCartQuantity()
@@ -355,6 +386,8 @@ function start() {
     selectAllProduct()
     removeProduct()
     clearProduct()
+
+    ShowHideConfirm()
 }
 
 start()

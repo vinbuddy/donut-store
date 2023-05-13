@@ -11,7 +11,7 @@
     background-color: rgba(0,0,0, 0.3);
     visibility: hidden;
     opacity: 0;  
-    pointer-events: all;
+    pointer-events: auto;
     transition: all ease-in 0.3s;
 }
 

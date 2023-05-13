@@ -105,3 +105,11 @@ input {
     outline: none;
     border: none;
 }
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+}

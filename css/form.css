@@ -118,6 +118,21 @@
     animation: loading linear 0.2s infinite;
 }
 
+.form__text {
+    width: 100%;
+    resize: none;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 12px 12px;
+    outline: none;
+    min-height: 80px;
+    max-height: 120px;
+}
+
+.form__text:focus {
+    border-color: var(--primary-color);
+}
+
 @keyframes loading {
     from {
         transform: rotate(0);

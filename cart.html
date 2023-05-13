@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="./css/card.css">
     <link rel="stylesheet" href="./css/footer.css">
     <link rel="stylesheet" href="./css/menuSidebar.css">
+    <link rel="stylesheet" href="./css/form.css">
 
     <!-- box icon -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -32,6 +33,7 @@
 <body>
     <main>
         <div id="overlay"></div>
+        
 
         <div id="menu">
             <header class="menu__header">
@@ -77,7 +79,6 @@
                 </ul>
             </div>
         </div>
-
 
         <div class="wrapper">
             <header id="header">
@@ -211,7 +212,7 @@
                         <span>Vouchers</span>
                     </button>
                     
-                    <div class="d-flex align-items-center mt-3">
+                    <div class="d-flex align-items-center mt-2">
                         <p class="checkout__price">Total bill: <span id="total-bill">$0</span></p>
                         <p class="checkout__price">Shipping cost: <span>$1.99</span></p>
                     </div>
@@ -232,10 +233,45 @@
                 </div>
             </section>
         </div>
+
+        <div class="confirm">
+            <form id="confirm-checkout-info" class="confirm__info">
+                <header class="confirm__header">
+                    <h3 class="confirm__title">Confirm Info</h3>
+                    <button type="button" class="confirm__close">
+                        <i class='bx bx-x'></i>
+                    </button>
+                </header>
+
+                <section class="form__group">
+                    <label class="form__label" for="">Full name</label>
+                    <input id="name" name="full-name" class="form__input" type="text" placeholder="Enter your full name">
+                    <span class="form__error invalid"></span>
+                </section>
+
+                <section class="form__group">
+                    <label class="form__label" for="">Phone</label>
+                    <input id="phone" name="phone" class="form__input" type="text" placeholder="Enter your phone number">
+                    <span class="form__error invalid"></span>
+                </section>
+
+                <section class="form__group">
+                    <label class="form__label" for="">Address</label>
+                    <textarea name="address" placeholder="Enter your address" class="form__input form__text"></textarea>
+                    <span class="form__error invalid"></span>
+                </section>
+
+                <button id="confirm-info-submit" class="form__submit primary-btn">
+                    Continue
+                    <i class='form__loading bx bx-loader-alt'></i>
+                </button>
+            </form>
+        </div>
     
     </main>
 
     <script src="./js/index.js" type="module"></script>
     <script src="./js/cart.js" type="module"></script>
+    <script src="./js/form/checkout.js" type="module"></script>
 </body>
 </html>

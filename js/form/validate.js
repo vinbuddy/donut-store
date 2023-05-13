@@ -20,6 +20,10 @@ const validator = {
     },
     isConfirmed: function(value, password) {
         return value === password ? true : false
+    },
+    isFullName: function (value) {
+        const regex = /^([\w]{3,})+\s+([\w\s]{3,})+$/i
+        return regex.test(value) ? true : false;
     }
 }
 
@@ -302,4 +306,113 @@ function validateSignIn (formElement, onSubmit) {
     }
 }
 
-export { validateSignUp, validateSignIn }
+function validateCheckoutInfo(formElement, onSubmit) {
+    // Full Name, Phone, Address
+    let isValid = true
+    const fields = formElement.querySelectorAll('.form__input')
+
+    function validate(fieldName, element, value) {
+        switch (fieldName) {
+            // check isRequired - check existed 
+            case 'full-name':
+                if(!validator.isRequired(value)) {
+                    showError(element, "Please enter your full name")
+                    isValid = false;
+                } else {
+                    removeError(element)
+                    isValid = true;
+
+                    if (!validator.isFullName(value)) {
+                        showError(element, "Please enter valid full name")
+                        isValid = false;
+                    } 
+
+                }
+                break;
+
+            case 'phone':
+                if (!validator.isRequired(value)) {
+                    showError(element, "Please enter phone number")
+                    isValid = false;
+
+                }
+                else {
+                    removeError(element)
+                    if (!validator.isPhone(value)) {
+                        showError(element, "Please enter valid phone number")
+                        isValid = false;;
+                    }
+                }
+                break;
+            
+            case 'address': 
+                if(!validator.isRequired(value)) {
+                    showError(element, "Please enter address")
+                    isValid = false;
+                }
+                break;
+
+
+            default:
+                break;
+        }
+
+        return isValid;
+    }
+
+    function validateWhileTyping(fieldName, element, value) {
+        switch (fieldName) {
+            case 'full-name':
+                if (validator.isRequired(value)) {
+                    removeError(element)
+                    isValid = true;
+                } 
+                break;
+            case 'phone':
+                if(validator.isPhone(value)) {
+                    removeError(element)
+                    isValid = true
+                }
+                break;
+            case 'address': 
+                if(validator.isRequired(value)) {
+                    removeError(element)
+                    isValid = true
+                }
+            default:
+                break;
+        }
+    } 
+
+    fields.forEach(field => {
+        field.onblur = function (e) {
+            validate(field.name, field, e.target.value.trimStart())
+        }
+
+        field.oninput = function (e) {
+            validateWhileTyping(field.name, field, e.target.value.trimStart())
+        }
+    })
+
+    formElement.onsubmit = function(e) {
+        e.preventDefault()
+
+        // Validate all
+        fields.forEach(field => {
+            validate(field.name, field, field.value.trimStart())
+        })
+        
+        if (isValid) {
+            let formData = {}
+            
+            fields.forEach(field => {
+                formData[field.name] = field.value
+            })
+
+            onSubmit(formData)
+        }
+    }
+
+}
+
+export { validateSignUp, validateSignIn, validateCheckoutInfo }
