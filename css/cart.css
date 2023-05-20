@@ -60,7 +60,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 100%;
+    height: 94px;
 }
 
 
@@ -118,6 +118,7 @@
 
 .cart__product {
     width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -197,19 +198,8 @@
     border: 1px solid #eee;
     background-color: #fff;
     border-radius: 10px;
-    padding: 14px;
+    padding: 16px;
     box-shadow: 0 0 12px rgb(0 0 0 / 15%);
-}
-
-.checkout__voucher {
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-}
-
-.checkout__voucher span {
-    color: #555 ;
-    margin-left: 10px;
 }
 
 .checkout__area {
@@ -295,38 +285,204 @@
     opacity: 1;  
 }
 
-.confirm form {
+
+.confirm__forms {
+    overflow: hidden;
+    max-height: 100vh;
+    overflow-y: overlay;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.confirm__forms form {
     padding: 20px;
 }
 
-.confirm__info {
-    min-width: 450px;
-    background-color: #fff;
-    border-radius: 10px;
+.form__shipping-address {
+    width: 380px;
 }
 
-.confirm__header {
+.form__order {
+    min-width: 620px;
+}
+
+.form__order,
+.form__shipping-address {
+    display: none;
+}
+
+.form__shipping-address.form__shipping-address--show {
+    display: block;
+}
+.form__order.form__order--show {
+    display: block;
+}
+
+.confirm__forms .form__header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 20px;
-    border-bottom: 1px dashed #aaa;
-    padding-bottom: 10px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 7px;
 }
 
-.confirm__title {
+.confirm__forms .form__title {
     font-family: var(--heading-font);
     font-size: 30px;
     letter-spacing: 0.8px;
     margin-bottom: 0;
+    margin-left: 0;
 }
 
-.confirm__close {
+.confirm__forms .form__close {
     font-size: 30px;
 }
 
+.confirm__forms section {
+    margin-bottom: 22px;
+}
+
+.form__heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.form__heading > h5 {
+    color: #444;
+    font-size: 17px;
+    margin-bottom: 0;
+}
+
+.form__heading > .form__edit-btn {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    color: #333;
+}
+
+.form__address {
+    border-radius: 7px;
+    padding: 10px;
+    background-color: var(--secondary-color);
+}
+
+.form__address p {
+    color: #333;
+    margin-bottom: 0;
+}
+
+.form__orders {
+    padding-left: 0;
+    padding-right: 10px;
+    margin-bottom: 0;
+    max-height: 150px;
+    overflow-y: scroll;
+}
+
+.form__orders-item {
+    height: 50px;
+    margin-bottom: 18px;
+    
+}
+.form__orders-link {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.form__orders-link > img{
+    width: 50px;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.form__orders-info {
+    flex: 1;
+    margin-left: 10px;
+    overflow: hidden;
+}
+
+.form__orders-info p {
+    margin-bottom: 0;
+}
+
+.form__orders-name {
+    color: #444;
+    font-size: 16px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    word-wrap: break-word;
+}
+
+.form__orders-quantity {
+    font-size: 13px;
+    color: #555;
+    border: 1px solid #ccc;
+    padding: 0 3px;
+    border-radius: 4px;
+}
+
+/*  */
+.form__voucher {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    padding: 5px 10px;
+    transition: all ease 0.2s;
+}
+
+.form__voucher:focus-within {
+    border-color: var(--primary-color);
+}
+
+.form__voucher-input {
+    font-size: 15px;
+    flex: 1;
+    color: #333;
+}
+
+.form__voucher-btn {
+    color: var(--primary-color);
+    border-radius: 4px;
+    padding: 4px 8px;
+
+}
 
 
+/*  */
+.form__cost {
+    padding-left: 0;
+}
+
+.form__cost-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 7px 0;
+}
+
+.form__cost-item:last-child {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+}
+
+.form__cost-label {
+    color: #555;
+    margin-bottom: 0;
+}
+
+.form__cost-price {
+    font-size: 17px;
+    margin-bottom: 0;
+}
 
 
 /* Medium devices (tablets, 768px and up) */
@@ -425,5 +581,16 @@
 
     .cart__empty {
         width: 220px;
+    }
+
+    .confirm__forms {
+        border-radius: unset;
+    }
+
+    .form__order,
+    .form__shipping-address {
+        width: 100vw;
+        height: 100vh;
+        min-width: unset;
     }
 }

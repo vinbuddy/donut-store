@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+d<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,11 +11,11 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/content.css">
-    <link rel="stylesheet" href="./css/cart.css">
     <link rel="stylesheet" href="./css/card.css">
     <link rel="stylesheet" href="./css/footer.css">
     <link rel="stylesheet" href="./css/menuSidebar.css">
     <link rel="stylesheet" href="./css/form.css">
+    <link rel="stylesheet" href="./css/cart.css">
 
     <!-- box icon -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -207,12 +207,7 @@
                 </div>
 
                 <div class="checkout">
-                    <button class="checkout__voucher">
-                        <img width="25px" src="./assets/img/icons/voucher.png" alt="">
-                        <span>Vouchers</span>
-                    </button>
-                    
-                    <div class="d-flex align-items-center mt-2">
+                    <div class="d-flex align-items-center">
                         <p class="checkout__price">Total bill: <span id="total-bill">$0</span></p>
                         <p class="checkout__price">Shipping cost: <span>$1.99</span></p>
                     </div>
@@ -221,7 +216,7 @@
                         <div class="checkout__info">
                             
                             <div class="checkout__total">
-                                <p style="margin: 5px 0;">Total payment: </p>
+                                <p style="margin: 5px 0;">Total</p>
                                 <span class="checkout__total-price">$0</span>
                                 
                             </div>
@@ -235,37 +230,110 @@
         </div>
 
         <div class="confirm">
-            <form id="confirm-checkout-info" class="confirm__info">
-                <header class="confirm__header">
-                    <h3 class="confirm__title">Confirm Info</h3>
-                    <button type="button" class="confirm__close">
-                        <i class='bx bx-x'></i>
+            <div class="confirm__forms">
+                <form class="form__shipping-address"  id="form-shipping-address" action="">
+                    <header class="form__header">
+                        <h3 class="form__title">Delivery Info</h3>
+                        <button type="button" class="form__close">
+                            <i class='bx bx-x'></i>
+                        </button>
+                    </header>
+    
+                    <section class="form__group">
+                        <label class="form__label" for="">Full name</label>
+                        <input autocomplete="on" id="name" name="fullName" class="form__input" type="text" placeholder="Enter your full name">
+                        <span class="form__error invalid"></span>
+                    </section>
+    
+                    <section class="form__group">
+                        <label class="form__label" for="">Phone number</label>
+                        <input autocomplete="on" id="phone" name="phone" class="form__input" type="text" placeholder="Enter your phone number">
+                        <span class="form__error invalid"></span>
+                    </section>
+    
+                    <section class="form__group">
+                        <label class="form__label" for="">Shipping address</label>
+                        <textarea autocomplete="on" id="address" name="address" placeholder="Enter your address" class="form__input form__text"></textarea>
+                        <span class="form__error invalid"></span>
+                    </section>
+    
+                    <button id="confirm-info-submit" class="form__submit primary-btn">
+                        Continue
                     </button>
-                </header>
+                </form>
 
-                <section class="form__group">
-                    <label class="form__label" for="">Full name</label>
-                    <input id="name" name="full-name" class="form__input" type="text" placeholder="Enter your full name">
-                    <span class="form__error invalid"></span>
-                </section>
+                <form class="form__order" action="" id="form-order">
+                    <header class="form__header">
+                        <h3 class="form__title">Order</h3>
+                        <button type="button" class="form__close">
+                            <i class='bx bx-x'></i>
+                        </button>
+                    </header>
 
-                <section class="form__group">
-                    <label class="form__label" for="">Phone</label>
-                    <input id="phone" name="phone" class="form__input" type="text" placeholder="Enter your phone number">
-                    <span class="form__error invalid"></span>
-                </section>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                            <section>
+                                <header class="form__heading">
+                                    <h5>Shipping address</h5>
+                                    <button type="button" class="form__edit-btn">
+                                        <i class='bx bx-pencil'></i> &nbsp;
+                                        <!-- Edit -->
+                                    </button>
+                                </header>
+                                <div class="form__address">
+                                    <!-- Render shipping address -->
+                                </div>
+                           </section>
+        
+                            <section>
+                                <ul class="form__orders">
 
-                <section class="form__group">
-                    <label class="form__label" for="">Address</label>
-                    <textarea name="address" placeholder="Enter your address" class="form__input form__text"></textarea>
-                    <span class="form__error invalid"></span>
-                </section>
+                                </ul>
+                            </section>
 
-                <button id="confirm-info-submit" class="form__submit primary-btn">
-                    Continue
-                    <i class='form__loading bx bx-loader-alt'></i>
-                </button>
-            </form>
+                            <section>
+                                <div class="form__voucher">
+                                    <input class="form__voucher-input" type="text" placeholder="Enter voucher code...">
+                                    <button type="button" class="form__voucher-btn">Apply</button>
+                                </div>
+                            </section>
+        
+                            <section class="mb-lg-0 mb-md-0">
+                                <!-- <input id="note" name="note" class="form__input" type="text" placeholder="Note about your order..."> -->
+                                <textarea name="note" placeholder="Note about your order" class="form__input form__text"></textarea>
+                            </section>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                            <section class="mb-lg-0 mb-md-0">
+                                <header class="form__heading">
+                                    <h5>Total payment</h5>
+                                </header>
+                                <ul class="form__cost">
+                                    <li class="form__cost-item">
+                                        <span class="form__cost-label">Total bill</span>
+                                        <span class="form__cost-price">$2.99</span>
+                                    </li>
+                                    <li class="form__cost-item">
+                                        <span class="form__cost-label">Shipping cost</span>
+                                        <span class="form__cost-price">$1.99</span>
+                                    </li>
+                                    <li class="form__cost-item">
+                                        <span class="form__cost-label">Discount</span>
+                                        <span class="form__cost-price">$1.00</span>
+                                    </li>
+                                    <li class="form__cost-item">
+                                        <span class="form__cost-label">Total</span>
+                                        <span style="color: var(--primary-color); font-size: 20px; font-weight: 600;" class="form__cost-price">$4.00</span>
+                                    </li>
+                                </ul>
+                                <button id="confirm-order-submit" class="form__submit primary-btn">
+                                    Place order
+                                </button>
+                            </section>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
     
     </main>

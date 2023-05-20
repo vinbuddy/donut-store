@@ -1,9 +1,7 @@
-const increaseBtn = document.querySelectorAll('.increase-btn')
-const decreaseBtn = document.querySelectorAll('.decrease-btn')
-const selectedQuantity = document.querySelectorAll('.quantity-select-value')
-
-
 function handleIncrease () {
+    const increaseBtn = document.querySelectorAll('.increase-btn')
+    const selectedQuantity = document.querySelectorAll('.quantity-select-value')
+
     increaseBtn.forEach(btn => {
         btn.onclick = function () {
             selectedQuantity.forEach(selectValue => {
@@ -15,6 +13,9 @@ function handleIncrease () {
 }
 
 function handleDecrease () {
+    const decreaseBtn = document.querySelectorAll('.decrease-btn')
+    const selectedQuantity = document.querySelectorAll('.quantity-select-value')
+
     decreaseBtn.forEach(btn => {
         btn.onclick = function () {
             selectedQuantity.forEach(selectValue => {
@@ -27,9 +28,4 @@ function handleDecrease () {
 }
 
 
-function start() {
-    handleIncrease()
-    handleDecrease()
-}
-
-start()
+export {handleDecrease, handleIncrease}

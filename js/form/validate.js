@@ -22,8 +22,8 @@ const validator = {
         return value === password ? true : false
     },
     isFullName: function (value) {
-        const regex = /^([\w]{3,})+\s+([\w\s]{3,})+$/i
-        return regex.test(value) ? true : false;
+        const names = value.split(' ')
+        return names.length > 1 ? true : false
     }
 }
 
@@ -306,7 +306,7 @@ function validateSignIn (formElement, onSubmit) {
     }
 }
 
-function validateCheckoutInfo(formElement, onSubmit) {
+function validateShippingAdress(formElement, onSubmit) {
     // Full Name, Phone, Address
     let isValid = true
     const fields = formElement.querySelectorAll('.form__input')
@@ -314,7 +314,7 @@ function validateCheckoutInfo(formElement, onSubmit) {
     function validate(fieldName, element, value) {
         switch (fieldName) {
             // check isRequired - check existed 
-            case 'full-name':
+            case 'fullName':
                 if(!validator.isRequired(value)) {
                     showError(element, "Please enter your full name")
                     isValid = false;
@@ -362,7 +362,7 @@ function validateCheckoutInfo(formElement, onSubmit) {
 
     function validateWhileTyping(fieldName, element, value) {
         switch (fieldName) {
-            case 'full-name':
+            case 'fullName':
                 if (validator.isRequired(value)) {
                     removeError(element)
                     isValid = true;
@@ -406,7 +406,7 @@ function validateCheckoutInfo(formElement, onSubmit) {
             let formData = {}
             
             fields.forEach(field => {
-                formData[field.name] = field.value
+                formData[field.name] = field.value.trim()
             })
 
             onSubmit(formData)
@@ -415,4 +415,4 @@ function validateCheckoutInfo(formElement, onSubmit) {
 
 }
 
-export { validateSignUp, validateSignIn, validateCheckoutInfo }
+export { validateSignUp, validateSignIn, validateShippingAdress }

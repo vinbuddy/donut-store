@@ -14,7 +14,8 @@ function addToStorage(id, quantity) {
     let isDuplicate = cart.some((item, index) => {
         // Duplicate => update quantity
         if(item.id === id) {
-            storage.update(index, {id, quantity: item.quantity + Number(quantity)})
+            storage.update(index, "quantity",  item.quantity + Number(quantity))
+            
         }
 
         return item.id === id

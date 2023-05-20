@@ -4,6 +4,7 @@ import { products } from "./products.js"
 import { updateQuantity } from "./cart/updateQuantity.js"
 import renderPreviewCart from "./cart/renderPreviewCart.js"
 import { user } from "./user/user.js"
+import { renderOderProduct } from "./form/checkout.js"
 
 const cartList = document.getElementById('cart-list')
 const checkoutBtn = document.querySelector('.checkout__btn')
@@ -104,10 +105,12 @@ function renderCart() {
 
 }
 
-var totalBill = 0
-var islessThanOne = false
-var shippingCost = 1.99;
-var isCheckAll = false
+let totalBill = 0
+let islessThanOne = false
+let shippingCost = 1.99;
+let isCheckAll = false
+
+let selectedProducts = []
 
 function toggleDisableBtn() {
     const checked = cartList.querySelectorAll('.cart__checkbox--checked')
@@ -119,6 +122,7 @@ function toggleDisableBtn() {
         checkoutBtn.disabled = true
     }
 }
+
 
 function renderPriceTotalBill() {
     const totalBillElement = document.getElementById('total-bill')
@@ -182,6 +186,15 @@ function updatePriceCheckout(productElement) {
     }
 }
 
+function toggleSelectProduct(item) {
+    if (selectedProducts.includes(item)) {
+        let index = selectedProducts.indexOf(item);
+        selectedProducts.splice(index, 1)
+    } else {
+        selectedProducts.push(item)
+    }
+}
+
 // select -> update 
 function selectProduct() {
     const checkBtns = document.querySelectorAll('.cart__check-single')
@@ -189,13 +202,10 @@ function selectProduct() {
     checkBtns.forEach(btn => {
         btn.onclick = function () {
             this.classList.toggle('cart__checkbox--checked')
-
             const product = this.closest('.cart__item')
-            const checked = document.querySelectorAll('.cart__checkbox--checked')
             
-            toggleDisableBtn()
-
             if (!isCheckAll) {
+                toggleSelectProduct(product.dataset.id)
                 updatePriceCheckout(product)
                 isCheckAll = false
 
@@ -207,8 +217,12 @@ function selectProduct() {
                 })
 
                 calculateTotalBill(0, 1, 'reset')
+                selectedProducts = []
                 isCheckAll = false
             }
+
+            toggleDisableBtn()
+
         }
     })
 }
@@ -256,7 +270,7 @@ function selectCartQuantity() {
 
                     cart.forEach((item, index) => {
                         if(item.id === productElement.dataset.id) {
-                            storage.update(index, {id: item.id, quantity: item.quantity - 1})
+                            storage.update(index, "quantity", item.quantity - 1)
                         }
                     })
                     islessThanOne = false
@@ -289,9 +303,16 @@ function selectAllProduct() {
     checkAllBtn.onclick = function () {
         isCheckAll = !isCheckAll   
         checkAllBtn.classList.toggle('cart__checkbox--checked')
-
+        
         checkBtns.forEach(btn => {
+            const product = btn.closest('.cart__item')
             if (isCheckAll) {
+                let checked = btn.classList.contains('cart__checkbox--checked')
+                
+                if (checked === false) {
+                    toggleSelectProduct(product.dataset.id, "add")
+                }
+
                 btn.classList.add('cart__checkbox--checked')
 
                 calculateTotalBill(null, null, 'reset') // reset total bill = null 
@@ -300,15 +321,19 @@ function selectAllProduct() {
                 productElements.forEach(productElement => {
                     updatePriceCheckout(productElement)
                 })
+
                 
             } else {
                 btn.classList.remove('cart__checkbox--checked')
-                
                 calculateTotalBill(null, null, 'reset')
                 
+                toggleSelectProduct(product.dataset.id)
+                
             }
+            
         })
 
+        
         toggleDisableBtn()
     }
 }
@@ -329,6 +354,7 @@ function removeProduct() {
                 // After removed product -> update new DOM
                 start()
                 updateQuantity()
+                renderPreviewCart()
                 calculateTotalBill(null, null, 'reset')
             })
 
@@ -350,10 +376,10 @@ function clearProduct() {
 }
 
 
-// Confirm 
-function ShowHideConfirm() {
+// Confirm forms
+function confirm() {
     const confirmWrapper = document.querySelector('.confirm')
-    const closeBtn = document.querySelector('.confirm__close')
+    const closeBtn = document.querySelectorAll('.form__close')
 
     checkoutBtn.onclick = function () {
         // sign in
@@ -362,20 +388,43 @@ function ShowHideConfirm() {
 
         if(isSignIn) {
             confirmWrapper.classList.add('confirm--show')
+            showCheckoutForm()
+            renderOderProduct(selectedProducts)
             
         } else {
+            let paths = window.location.pathname.split('/')
+            let length = paths.length
+            paths[length - 1] = 'login.html'
 
+            let path = paths.join('/')
+
+            window.location.href = window.location.origin + path
         }
         
     }
 
-    // confirmWrapper.onclick = function (e) {
-    //     if (e.target.classList.contains('confirm'))
-    //         confirmWrapper.classList.remove('confirm--show')
-    // }
 
-    closeBtn.onclick = function () {
-        confirmWrapper.classList.remove('confirm--show')
+    closeBtn.forEach(btn => {
+        btn.onclick = function () {
+            confirmWrapper.classList.remove('confirm--show')
+        }
+    })
+}
+
+function showCheckoutForm() {
+    const deliveryForm = document.getElementById('form-shipping-address')
+    const orderForm = document.getElementById('form-order')
+    
+    const currentUser = user.get()
+    let shippingAddress  = currentUser.shipping_address
+
+
+    if (!shippingAddress) {
+        orderForm.classList.remove('form__order--show')
+        deliveryForm.classList.add('form__shipping-address--show')
+    } else {
+        orderForm.classList.add('form__order--show')
+        deliveryForm.classList.remove('form__shipping-address--show')
     }
 }
 
@@ -387,7 +436,9 @@ function start() {
     removeProduct()
     clearProduct()
 
-    ShowHideConfirm()
+    confirm()
 }
 
 start()
+
+export {selectedProducts}

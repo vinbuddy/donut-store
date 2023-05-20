@@ -1,5 +1,6 @@
 import { addToCart } from './cart/addToCart.js';
 import {products} from './products.js'
+import { handleDecrease, handleIncrease } from './cart/selectQuantity.js';
 import renderStarRating from './renderStarRating.js';
 
 const detail = document.getElementById('detail')
@@ -65,6 +66,8 @@ function start () {
     render(currentId);
     
     addToCart()
+    handleDecrease()
+    handleIncrease()
     
     // re-render when location change
     window.addEventListener("popstate", function() {
@@ -72,6 +75,9 @@ function start () {
         render(newCurrentId)
 
         addToCart()
+
+        handleDecrease()
+        handleIncrease()
 
     })
 

@@ -77,6 +77,7 @@
 }
 
 .search__input {
+    width: 100%;
     margin-left: 5px;
     caret-color: var(--primary-color);
 }
@@ -470,4 +471,12 @@
         padding-right: 5px;
     }
 
+}
+
+
+/* Mobile Z Fold */
+@media (max-width: 280px) {
+    .search {
+        width: 155px;
+    }
 }

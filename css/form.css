@@ -91,7 +91,7 @@
 .form__submit {
     margin-top: 26px;
     width: 100%;
-    border-radius: 6px;
+    border-radius: 8px;
 }
 
 .form__other {
@@ -125,7 +125,7 @@
     border-radius: 6px;
     padding: 12px 12px;
     outline: none;
-    min-height: 80px;
+    min-height: 70px;
     max-height: 120px;
 }
 
@@ -147,7 +147,7 @@
         overflow-y: auto;
     }
 
-    .form__header {
+    .form .form__header {
         flex-direction: column;
     }
 }
