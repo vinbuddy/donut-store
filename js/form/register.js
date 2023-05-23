@@ -1,15 +1,27 @@
 import {validateSignUp} from './validate.js'
 import { user } from '../user/user.js'
 import { storeAccounts } from '../user/storeAccounts.js'
+import { vouchers } from '../voucher.js'
 
 function start() {
     const form = document.querySelector('#form-register')
     const submitBtn  = form.querySelector('#submit-btn')
     
     function onSubmit(data) {
-        
+        // // add voucher 
+        vouchers.forEach(voucher => {
+            let date = new Date()
+            let month = date.getUTCMonth() + 1
+            let day = date.getUTCDate() + 3
+            let year = date.getUTCFullYear();
+
+            voucher['date'] = `${day}-${month}-${year}`
+        })
+
+        data['vouchers'] = vouchers
         user.set(data)
         storeAccounts.set(data)
+
         
         submitBtn.classList.add('loading')
         submitBtn.style.pointerEvents = 'none'

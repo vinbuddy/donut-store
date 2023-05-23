@@ -271,8 +271,8 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ced4da;
-    box-shadow: 0 0 12px -6px #666;
+    background-color: #fff;
+
     visibility: hidden;
     opacity: 0;  
     pointer-events: auto;
@@ -292,6 +292,7 @@
     overflow-y: overlay;
     background-color: #fff;
     border-radius: 8px;
+    box-shadow: 0 0 12px -4px #666;
 }
 
 .confirm__forms form {
@@ -307,7 +308,8 @@
 }
 
 .form__order,
-.form__shipping-address {
+.form__shipping-address ,
+.form__bill {
     display: none;
 }
 
@@ -315,6 +317,10 @@
     display: block;
 }
 .form__order.form__order--show {
+    display: block;
+}
+
+.form__bill.form__bill--show {
     display: block;
 }
 
@@ -455,6 +461,9 @@
 
 }
 
+.form__voucher-btn  {
+    
+}
 
 /*  */
 .form__cost {
@@ -484,6 +493,25 @@
     margin-bottom: 0;
 }
 
+.form__bill {
+    min-width: 370px;
+    position: relative;
+    padding: 20px;
+}
+
+.bill__header {
+    margin-bottom: 20px;
+    border-bottom: 2px dashed #ccc;
+}
+
+.bill__success-icon {
+    font-size: 55px;
+    color: var(--primary-color);
+}
+
+.bill__title {
+    margin-top: 10px;
+}
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991px) {
@@ -587,10 +615,19 @@
         border-radius: unset;
     }
 
+    .confirm {
+        background-color: rgba(0, 0, 0 , 0.3);
+        align-items: flex-end;
+    }
+
     .form__order,
     .form__shipping-address {
         width: 100vw;
-        height: 100vh;
+        height: 89vh;
         min-width: unset;
+    }
+
+    .form__bill {
+        width: 100vw;
     }
 }

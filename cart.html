@@ -209,7 +209,7 @@ d<!DOCTYPE html>
                 <div class="checkout">
                     <div class="d-flex align-items-center">
                         <p class="checkout__price">Total bill: <span id="total-bill">$0</span></p>
-                        <p class="checkout__price">Shipping cost: <span>$1.99</span></p>
+                        <p class="checkout__price">Shipping cost: <span id="shipping-cost">$1.99</span></p>
                     </div>
 
                     <div class="checkout__area">
@@ -217,7 +217,7 @@ d<!DOCTYPE html>
                             
                             <div class="checkout__total">
                                 <p style="margin: 5px 0;">Total</p>
-                                <span class="checkout__total-price">$0</span>
+                                <span id="total-pay" class="checkout__total-price">$0</span>
                                 
                             </div>
                         </div>
@@ -294,8 +294,9 @@ d<!DOCTYPE html>
                             <section>
                                 <div class="form__voucher">
                                     <input class="form__voucher-input" type="text" placeholder="Enter voucher code...">
-                                    <button type="button" class="form__voucher-btn">Apply</button>
+                                    <div type="button" class="form__voucher-btn">Apply</div>
                                 </div>
+                                <span style="margin-left: 10px;" class="form__error invalid"></span>
                             </section>
         
                             <section class="mb-lg-0 mb-md-0">
@@ -309,22 +310,7 @@ d<!DOCTYPE html>
                                     <h5>Total payment</h5>
                                 </header>
                                 <ul class="form__cost">
-                                    <li class="form__cost-item">
-                                        <span class="form__cost-label">Total bill</span>
-                                        <span class="form__cost-price">$2.99</span>
-                                    </li>
-                                    <li class="form__cost-item">
-                                        <span class="form__cost-label">Shipping cost</span>
-                                        <span class="form__cost-price">$1.99</span>
-                                    </li>
-                                    <li class="form__cost-item">
-                                        <span class="form__cost-label">Discount</span>
-                                        <span class="form__cost-price">$1.00</span>
-                                    </li>
-                                    <li class="form__cost-item">
-                                        <span class="form__cost-label">Total</span>
-                                        <span style="color: var(--primary-color); font-size: 20px; font-weight: 600;" class="form__cost-price">$4.00</span>
-                                    </li>
+                                    <!-- Render -->
                                 </ul>
                                 <button id="confirm-order-submit" class="form__submit primary-btn">
                                     Place order
@@ -333,6 +319,29 @@ d<!DOCTYPE html>
                         </div>
                     </div>
                 </form>
+
+                <div id="form-bill" class="form__bill" action="">
+                   <div class="bill__header">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <i class='bill__success-icon bx bxs-check-circle'></i>
+                            <div id="bill-data" class="d-flex flex-column align-items-end">
+                                <!-- Render -->
+                            </div>
+                        </div>
+                        
+                        <div class="bill__title">
+                            <h3>Thank you!</h3>
+                            <p>Your order is on its way</p>
+                        </div>
+                   </div>
+                   <div class="bill__body">
+                        <div class="d-flex justify-content-end">
+                            <button style="font-size: 16px;" type="button" class=" form__close primary-btn transparent">Close</button>
+                            <button type="button" class="primary-btn">Tracking your order</button>
+                        </div>
+                   </div>
+                   
+                </div>
             </div>
         </div>
     

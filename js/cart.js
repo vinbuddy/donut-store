@@ -4,7 +4,7 @@ import { products } from "./products.js"
 import { updateQuantity } from "./cart/updateQuantity.js"
 import renderPreviewCart from "./cart/renderPreviewCart.js"
 import { user } from "./user/user.js"
-import { renderOderProduct } from "./form/checkout.js"
+import { renderOderProduct, renderTotalPayment } from "./form/checkout.js"
 
 const cartList = document.getElementById('cart-list')
 const checkoutBtn = document.querySelector('.checkout__btn')
@@ -338,6 +338,10 @@ function selectAllProduct() {
     }
 }
 
+function removeSingleProduct() {
+
+}
+
 function removeProduct() {
     const removeBtns = document.querySelectorAll('.cart__remove')
 
@@ -381,6 +385,9 @@ function confirm() {
     const confirmWrapper = document.querySelector('.confirm')
     const closeBtn = document.querySelectorAll('.form__close')
 
+    const voucherInput = document.querySelector('.form__voucher-input')
+
+
     checkoutBtn.onclick = function () {
         // sign in
         const currentUser = user.get()
@@ -388,8 +395,11 @@ function confirm() {
 
         if(isSignIn) {
             confirmWrapper.classList.add('confirm--show')
+
             showCheckoutForm()
             renderOderProduct(selectedProducts)
+            renderTotalPayment()
+            voucherInput.value = ''
             
         } else {
             let paths = window.location.pathname.split('/')
@@ -409,11 +419,16 @@ function confirm() {
             confirmWrapper.classList.remove('confirm--show')
         }
     })
+    confirmWrapper.onclick = function (e) {
+        if (e.target.classList.contains('confirm'))
+            confirmWrapper.classList.remove('confirm--show')
+    }
 }
 
 function showCheckoutForm() {
-    const deliveryForm = document.getElementById('form-shipping-address')
+    const shippingAddressForm = document.getElementById('form-shipping-address')
     const orderForm = document.getElementById('form-order')
+    const billForm = document.getElementById('form-bill')
     
     const currentUser = user.get()
     let shippingAddress  = currentUser.shipping_address
@@ -421,11 +436,14 @@ function showCheckoutForm() {
 
     if (!shippingAddress) {
         orderForm.classList.remove('form__order--show')
-        deliveryForm.classList.add('form__shipping-address--show')
+        shippingAddressForm.classList.add('form__shipping-address--show')
     } else {
         orderForm.classList.add('form__order--show')
-        deliveryForm.classList.remove('form__shipping-address--show')
+        shippingAddressForm.classList.remove('form__shipping-address--show')
     }
+    
+    billForm.classList.remove('form__bill--show')
+
 }
 
 function start() {
@@ -441,4 +459,4 @@ function start() {
 
 start()
 
-export {selectedProducts}
+export {removeProduct}
