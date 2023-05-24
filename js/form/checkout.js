@@ -206,6 +206,7 @@ function placeOrder() {
     orderForm.onsubmit = function (e) {
         const totalAmount = document.getElementById('total-amount').innerText
         const voucherInput = document.querySelector('.form__voucher-input')
+        const noteInput = document.getElementById('note')
         const currentUser = user.get()
 
         const cart = storage.get()
@@ -223,7 +224,7 @@ function placeOrder() {
         })
        
 
-        // Get data (create bill id, date)
+        // Get data (create bill id, date, note,...)
         orderProductIds.forEach(id => {
             const cartItem = cart.find((cartItem) => {
                 return cartItem.id === id
@@ -236,7 +237,8 @@ function placeOrder() {
             order_id: createOrderId(),
             date: getCurrentDate(),
             price: totalAmount,
-            order_products: orderProductData
+            order_products: orderProductData,
+            note: noteInput.value
         }
 
         // Show bill
