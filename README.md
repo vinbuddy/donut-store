@@ -1,5 +1,6 @@
 # Vermon Donut Store
-![Alt text](/assets/img/preview-web/homepage.png?raw=true "")
+![652_1x_shots_so](https://github.com/user-attachments/assets/b37b4316-cf73-4941-a47a-660cc973f847)
+
  
  ## Technology used
  - HTML
